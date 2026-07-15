@@ -503,3 +503,16 @@ img, svg, video { max-width: 100%; height: auto; }
   .nav-toggle { display: inline-flex !important; }
   .nav-links { display: none !important; }
 }
+
+/* Compact mobile header: logo + CTA + hamburger fit one row */
+@media (max-width: 480px) {
+  .nav-container { gap: 6px; }
+  .nav-logo img { height: 30px !important; width: auto !important; }
+  .nav-ctas { gap: 6px; }
+  .nav-ctas .btn--seller { font-size: 0.72rem !important; padding: 8px 10px !important; }
+  .nav-toggle { min-width: 40px !important; min-height: 40px !important; padding: 8px 5px !important; }
+}
+@media (max-width: 360px) {
+  .nav-logo img { height: 26px !important; }
+  .nav-ctas .btn--seller { font-size: 0.66rem !important; padding: 7px 8px !important; }
+}
