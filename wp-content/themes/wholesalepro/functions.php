@@ -76,6 +76,7 @@ $wholesalepro_includes = array(
 	'/inc/ajax.php',
 	'/inc/seo.php',
 	'/inc/schema.php',
+	'/inc/services.php',
 );
 
 foreach ( $wholesalepro_includes as $file ) {

@@ -68,3 +68,75 @@ add_action( 'init', function () {
 	update_option( 'shs_cleanup_v1', 1 );
 	flush_rewrite_rules();
 }, 20 );
+
+/**
+ * One-time setup v2: service categories, post assignments, Services in primary menu.
+ */
+add_action( 'init', function () {
+	if ( get_option( 'shs_cleanup_v2' ) ) {
+		return;
+	}
+	// 1. Categories per service.
+	$cats = array(
+		'foreclosure' => 'Stop Foreclosure',
+		'probate'     => 'Probate & Inherited',
+		'divorce'     => 'Divorce Home Sale',
+		'tax-liens'   => 'Tax Liens & Back Taxes',
+		'repairs'     => 'Major Repairs / As-Is',
+		'landlord'    => 'Tired Landlord',
+		'general'     => 'Selling Guides',
+	);
+	$cat_ids = array();
+	foreach ( $cats as $slug => $name ) {
+		$term = get_term_by( 'slug', $slug, 'category' );
+		if ( ! $term ) {
+			$res = wp_insert_term( $name, 'category', array( 'slug' => $slug ) );
+			$cat_ids[ $slug ] = is_wp_error( $res ) ? 0 : $res['term_id'];
+		} else {
+			$cat_ids[ $slug ] = $term->term_id;
+		}
+	}
+	// 2. Assign existing guides to their service categories.
+	$map = array(
+		25 => array( 'foreclosure' ),
+		26 => array( 'probate' ),
+		27 => array( 'tax-liens' ),
+		28 => array( 'divorce' ),
+		29 => array( 'general', 'foreclosure', 'probate', 'divorce', 'tax-liens', 'repairs', 'landlord' ),
+		30 => array( 'repairs' ),
+	);
+	foreach ( $map as $post_id => $slugs ) {
+		if ( get_post( $post_id ) ) {
+			$ids = array();
+			foreach ( $slugs as $sl ) {
+				if ( ! empty( $cat_ids[ $sl ] ) ) { $ids[] = (int) $cat_ids[ $sl ]; }
+			}
+			if ( $ids ) { wp_set_post_categories( $post_id, $ids, false ); }
+		}
+	}
+	// 3. Add Services + Book a Call to the primary menu (if a menu is assigned).
+	$locations = get_nav_menu_locations();
+	if ( ! empty( $locations['primary'] ) ) {
+		$menu_id  = (int) $locations['primary'];
+		$existing = wp_get_nav_menu_items( $menu_id );
+		$titles   = $existing ? wp_list_pluck( $existing, 'title' ) : array();
+		$add = array(
+			'services'    => 'Services',
+			'book-a-call' => 'Book a Call',
+		);
+		foreach ( $add as $slug => $title ) {
+			if ( in_array( $title, $titles, true ) ) { continue; }
+			$page = get_page_by_path( $slug );
+			if ( $page ) {
+				wp_update_nav_menu_item( $menu_id, 0, array(
+					'menu-item-title'     => $title,
+					'menu-item-object'    => 'page',
+					'menu-item-object-id' => $page->ID,
+					'menu-item-type'      => 'post_type',
+					'menu-item-status'    => 'publish',
+				) );
+			}
+		}
+	}
+	update_option( 'shs_cleanup_v2', 1 );
+}, 25 );

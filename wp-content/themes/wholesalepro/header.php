@@ -91,6 +91,7 @@ if ( $fb_pixel ) :
 						'fallback_cb'    => function() {
 							$nav_pages = array(
 								'sell-my-house-fast' => __( 'Sell My House', 'wholesalepro' ),
+								'services'           => __( 'Services', 'wholesalepro' ),
 								'how-it-works'       => __( 'How It Works', 'wholesalepro' ),
 								'faq'                => __( 'FAQ', 'wholesalepro' ),
 								'about-us'           => __( 'About', 'wholesalepro' ),
@@ -110,7 +111,12 @@ if ( $fb_pixel ) :
 					<?php
 					$sell_page = get_page_by_path( 'sell-my-house-fast' );
 					$sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-house-fast' );
+					$book_page = get_page_by_path( 'book-a-call' );
+					$book_url  = $book_page ? get_permalink( $book_page->ID ) : home_url( '/book-a-call' );
 					?>
+					<a href="<?php echo esc_url( $book_url ); ?>" class="btn btn--outline btn--sm" style="color:var(--wp-navy);border-color:var(--wp-navy);">
+						<?php esc_html_e( 'Book a Call', 'wholesalepro' ); ?>
+					</a>
 					<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--sm">
 						<?php esc_html_e( 'Get Cash Offer', 'wholesalepro' ); ?>
 					</a>
@@ -144,6 +150,8 @@ if ( $fb_pixel ) :
 		<?php
 		$overlay_pages = array(
 			'sell-my-house-fast'   => __( 'Sell My House', 'wholesalepro' ),
+			'services'             => __( 'Services', 'wholesalepro' ),
+			'book-a-call'          => __( 'Book a Call', 'wholesalepro' ),
 			'how-it-works'         => __( 'How It Works', 'wholesalepro' ),
 			'cash-sale-vs-listing' => __( 'Cash Sale vs. Agent', 'wholesalepro' ),
 			'faq'                  => __( 'FAQ', 'wholesalepro' ),
