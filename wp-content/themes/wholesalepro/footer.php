@@ -173,9 +173,9 @@
 				<p class="footer-legal-links">
 					<?php
 					$legal = array(
-						'privacy-policy' => __( 'Privacy Policy', 'wholesalepro' ),
+						'privacy-policy'   => __( 'Privacy Policy', 'wholesalepro' ),
+						'imprint'          => __( 'Imprint', 'wholesalepro' ),
 						'terms-of-service' => __( 'Terms of Service', 'wholesalepro' ),
-						'sitemap'        => __( 'Sitemap', 'wholesalepro' ),
 					);
 					$links_html = array();
 					foreach ( $legal as $slug => $label ) {

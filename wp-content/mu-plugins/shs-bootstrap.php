@@ -198,7 +198,7 @@ add_action( 'init', function () {
  * One-time v4: assign the guide library posts to service categories.
  */
 add_action( 'init', function () {
-	if ( get_option( 'shs_guides_v4' ) ) {
+	if ( get_option( 'shs_guides_v5' ) ) {
 		return;
 	}
 	$all_cats = array( 'foreclosure', 'probate', 'divorce', 'tax-liens', 'repairs', 'landlord', 'general' );
@@ -211,6 +211,7 @@ add_action( 'init', function () {
 		84 => array( 'tax-liens' ),
 		85 => array( 'repairs' ),
 		86 => array( 'landlord' ),
+		87 => array( 'landlord' ),
 	);
 	$assigned = 0;
 	foreach ( $map as $post_id => $slugs ) {
@@ -226,6 +227,6 @@ add_action( 'init', function () {
 		}
 	}
 	if ( $assigned === count( $map ) ) {
-		update_option( 'shs_guides_v4', 1 );
+		update_option( 'shs_guides_v5', 1 );
 	}
 }, 35 );
