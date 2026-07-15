@@ -1,0 +1,53 @@
+/*
+Theme Name:  WholesalePro
+Theme URI:   https://example.com/wholesalepro
+Author:      WholesalePro Team
+Author URI:  https://example.com
+Description: A professional WordPress theme built for real estate wholesalers and cash home buyers. Dual-audience design serving motivated sellers and active investors. Includes custom property post type, deal management, geo landing pages for all 50 states, AJAX forms, and conversion-optimized copy throughout.
+Version:     1.0.0
+Requires at least: 6.0
+Tested up to:      6.5
+Requires PHP:      7.4
+License:           GNU General Public License v2 or later
+License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:       wholesalepro
+Tags:              real-estate, business, custom-colors, custom-logo, custom-menu, featured-images, full-width-template, theme-options, two-columns, wide-blocks
+
+== DESCRIPTION ==
+
+WholesalePro is a conversion-optimised WordPress theme for cash home buying businesses and real estate wholesalers. It includes:
+
+- Dual-audience hero (sellers + investors)
+- Custom Property post type with deal management
+- State and city geo landing page templates (50 states, unlimited cities)
+- AJAX seller and buyer opt-in forms
+- Comparison tables, FAQ accordions, process timelines
+- Customizer settings for all brand options
+- SEO schema markup (LocalBusiness, FAQPage, Product)
+- WCAG AA compliant colour contrast throughout
+- Mobile-first responsive design
+- Admin meta box with auto profit calculator
+
+== INSTALLATION ==
+
+1. Upload wholesalepro/ to /wp-content/themes/ or install via Appearance > Themes > Upload.
+2. Activate the theme.
+3. Go to Appearance > Customize to set company name, phone, email, and logo.
+4. Create the required pages (see README.md for slug list).
+5. Assign menus via Appearance > Menus.
+6. Import sample-content.xml via Tools > Import > WordPress for demo blog posts.
+
+== CHANGELOG ==
+
+= 1.0.0 =
+* Initial release
+*/
+
+/*
+  NOTE: All theme styles are loaded via wp_enqueue_style() in inc/enqueue.php.
+  This file intentionally contains only the WordPress theme header comment
+  and a minimal body reset to satisfy WordPress theme requirements.
+  Do NOT add styles here — use assets/css/ files instead.
+*/
+
+body { margin: 0; }

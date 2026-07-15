@@ -1,0 +1,231 @@
+/* Google Fonts loaded via <link rel="preload"> in header.php to eliminate FOUT */
+/* Fallback font stack prevents layout shift before fonts arrive */
+
+/* =============================================
+   CSS CUSTOM PROPERTIES
+   ============================================= */
+:root {
+  --wp-navy:    #1B2B4B;
+  --wp-red:     #E63946;
+  --wp-green:   #2D6A4F;
+  --wp-gold:    #F4A261;
+  --wp-white:   #FFFFFF;
+  --wp-light:   #F8F9FA;
+  --wp-gray-1:  #F8F9FA;
+  --wp-gray-2:  #E9ECEF;
+  --wp-gray-3:  #DEE2E6;
+  --wp-gray-4:  #CED4DA;
+  --wp-gray-5:  #ADB5BD;
+  --wp-gray-6:  #6C757D;
+  --wp-gray-7:  #495057;
+  --wp-gray-8:  #343A40;
+  --wp-gray-9:  #212529;
+  --wp-success: #28A745;
+  --wp-warning: #FFC107;
+
+  --font-head: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --text-xs:   clamp(0.75rem, 1.5vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 1.8vw, 1rem);
+  --text-base: clamp(1rem, 2vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 2.2vw, 1.25rem);
+  --text-xl:   clamp(1.25rem, 2.5vw, 1.5rem);
+  --text-2xl:  clamp(1.5rem, 3vw, 1.875rem);
+  --text-3xl:  clamp(1.875rem, 3.5vw, 2.25rem);
+  --text-4xl:  clamp(2.25rem, 4vw, 3rem);
+  --text-5xl:  clamp(3rem, 5vw, 4rem);
+  --text-hero: clamp(2.5rem, 6vw, 5rem);
+
+  --s1:  0.25rem;
+  --s2:  0.5rem;
+  --s3:  0.75rem;
+  --s4:  1rem;
+  --s5:  1.25rem;
+  --s6:  1.5rem;
+  --s8:  2rem;
+  --s10: 2.5rem;
+  --s12: 3rem;
+  --s16: 4rem;
+  --s20: 5rem;
+  --s24: 6rem;
+  --s32: 8rem;
+
+  --r-sm:   0.25rem;
+  --r-md:   0.5rem;
+  --r-lg:   0.75rem;
+  --r-xl:   1rem;
+  --r-2xl:  1.5rem;
+  --r-full: 9999px;
+
+  --sh-sm:   0 1px 3px rgba(0,0,0,0.1);
+  --sh-md:   0 4px 6px rgba(0,0,0,0.07);
+  --sh-lg:   0 10px 15px rgba(0,0,0,0.1);
+  --sh-xl:   0 20px 25px rgba(0,0,0,0.1);
+  --sh-card: 0 4px 24px rgba(27,43,75,0.08);
+  --sh-hover:0 8px 40px rgba(27,43,75,0.16);
+
+  --t-fast: 150ms ease-out;
+  --t-base: 250ms ease-out;
+  --t-slow: 350ms ease-out;
+
+  --z-base:     1;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+
+  /* ── Template aliases (used in inline styles) ── */
+  --wp-gray:       #6C757D;   /* = --wp-gray-6 */
+  --wp-dark:       #212529;   /* = --wp-gray-9 */
+  --wp-border:     #DEE2E6;   /* = --wp-gray-3 */
+  --wp-light-gray: #F8F9FA;   /* = --wp-gray-1 */
+
+  /* Space scale aliases */
+  --space-xs:  0.5rem;   /* --s2 */
+  --space-sm:  1rem;     /* --s4 */
+  --space-md:  1.5rem;   /* --s6 */
+  --space-lg:  2rem;     /* --s8 */
+  --space-xl:  3rem;     /* --s12 */
+  --space-2xl: 4rem;     /* --s16 */
+  --space-3xl: 5rem;     /* --s20 */
+
+  /* Border-radius aliases */
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   0.75rem;
+  --radius-xl:   1rem;
+  --radius-2xl:  1.5rem;
+  --radius-full: 9999px;
+}
+
+/* =============================================
+   MODERN CSS RESET
+   ============================================= */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+ul[role='list'], ol[role='list'] { list-style: none; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--wp-gray-9);
+  background-color: var(--wp-white);
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select { font: inherit; }
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+#root, #__next { isolation: isolate; }
+
+/* =============================================
+   BASE ELEMENT STYLES
+   ============================================= */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-head);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--wp-navy);
+}
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-3xl); }
+h4 { font-size: var(--text-2xl); }
+h5 { font-size: var(--text-xl); }
+h6 { font-size: var(--text-lg); }
+
+p {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  margin-bottom: var(--s4);
+}
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--wp-navy);
+  text-decoration: underline;
+  transition: color var(--t-fast);
+}
+a:hover { color: var(--wp-red); }
+a:focus-visible {
+  outline: 3px solid var(--wp-gold);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+
+img { height: auto; }
+hr { border: none; border-top: 1px solid var(--wp-gray-2); margin: var(--s8) 0; }
+
+ul, ol { padding-left: var(--s6); }
+
+blockquote {
+  border-left: 4px solid var(--wp-gold);
+  padding-left: var(--s6);
+  font-style: italic;
+  color: var(--wp-gray-7);
+  margin: var(--s8) 0;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  background: var(--wp-gray-1);
+  padding: 0.1em 0.4em;
+  border-radius: var(--r-sm);
+}
+
+pre {
+  background: var(--wp-gray-9);
+  color: var(--wp-white);
+  padding: var(--s6);
+  border-radius: var(--r-lg);
+  overflow-x: auto;
+}
+pre code { background: none; padding: 0; color: inherit; }
+
+/* Remove duplicate html/body declarations that followed (merged above) */
+
+/* Base form elements */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="url"],
+input[type="date"],
+input[type="search"],
+select, textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--wp-white);
+  border: 2px solid var(--wp-gray-3);
+  border-radius: var(--r-md);
+  color: var(--wp-gray-9);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  padding: var(--s3) var(--s4);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+  width: 100%;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--wp-navy);
+  box-shadow: 0 0 0 3px rgba(27,43,75,0.15);
+  outline: none;
+}
+button { cursor: pointer; background: none; border: none; padding: 0; font: inherit; }

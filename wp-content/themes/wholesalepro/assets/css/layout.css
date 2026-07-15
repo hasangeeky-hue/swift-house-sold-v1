@@ -1,0 +1,206 @@
+/* =============================================
+   CONTAINER SYSTEM
+   ============================================= */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--s6);
+  padding-right: var(--s6);
+}
+.container-wide {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--s6);
+  padding-right: var(--s6);
+}
+.container-narrow {
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--s6);
+  padding-right: var(--s6);
+}
+.container-text {
+  width: 100%;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--s6);
+  padding-right: var(--s6);
+}
+
+/* =============================================
+   GRID SYSTEM
+   ============================================= */
+.grid   { display: grid; gap: var(--s8); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s8); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s8); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s8); }
+.grid-auto { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--s8); }
+
+/* =============================================
+   FLEX UTILITIES
+   ============================================= */
+.flex            { display: flex; }
+.flex-col        { flex-direction: column; }
+.flex-wrap       { flex-wrap: wrap; }
+.items-center    { align-items: center; }
+.items-start     { align-items: flex-start; }
+.items-end       { align-items: flex-end; }
+.justify-center  { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-end     { justify-content: flex-end; }
+.gap-sm          { gap: var(--s4); }
+.gap-md          { gap: var(--s8); }
+.gap-lg          { gap: var(--s12); }
+
+/* =============================================
+   SECTION SPACING
+   ============================================= */
+.section    { padding: var(--s20) 0; }
+.section-sm { padding: var(--s12) 0; }
+.section-lg { padding: var(--s32) 0; }
+
+/* =============================================
+   BACKGROUND VARIANTS
+   ============================================= */
+.bg-navy     { background-color: var(--wp-navy); }
+.bg-light    { background-color: var(--wp-light); }
+.bg-white    { background-color: var(--wp-white); }
+.bg-green    { background-color: var(--wp-green); }
+.bg-gradient-dark {
+  background: linear-gradient(135deg, var(--wp-navy) 0%, #0f1d33 100%);
+}
+.bg-gradient-seller {
+  background: linear-gradient(135deg, #c62828 0%, var(--wp-red) 100%);
+}
+.bg-gradient-buyer {
+  background: linear-gradient(135deg, #1b4332 0%, var(--wp-green) 100%);
+}
+
+/* =============================================
+   SPLIT LAYOUT
+   ============================================= */
+.split         { display: grid; grid-template-columns: 55fr 45fr; }
+.split--equal  { display: grid; grid-template-columns: 1fr 1fr; }
+.split--reverse{ display: grid; grid-template-columns: 45fr 55fr; }
+
+/* =============================================
+   TEXT UTILITIES
+   ============================================= */
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+.text-white  { color: var(--wp-white); }
+.text-navy   { color: var(--wp-navy); }
+.text-red    { color: var(--wp-red); }
+.text-green  { color: var(--wp-green); }
+.text-gold   { color: var(--wp-gold); }
+.text-muted  { color: var(--wp-gray-6); }
+
+.fw-400 { font-weight: 400; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+
+/* =============================================
+   VISIBILITY
+   ============================================= */
+.hidden  { display: none !important; }
+.visible { visibility: visible; }
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* =============================================
+   SPACING HELPERS
+   ============================================= */
+.mt-0  { margin-top: 0; }
+.mt-4  { margin-top: var(--s4); }
+.mt-6  { margin-top: var(--s6); }
+.mt-8  { margin-top: var(--s8); }
+.mb-0  { margin-bottom: 0; }
+.mb-4  { margin-bottom: var(--s4); }
+.mb-6  { margin-bottom: var(--s6); }
+.mb-8  { margin-bottom: var(--s8); }
+.mb-16 { margin-bottom: var(--s16); }
+
+/* =============================================
+   DECORATIVE DIVIDER
+   ============================================= */
+.divider {
+  width: 60px;
+  height: 4px;
+  background: var(--wp-gold);
+  border-radius: var(--r-full);
+  margin: var(--s4) auto;
+}
+.divider--left { margin-left: 0; }
+
+/* =============================================
+   MISSING UTILITY CLASSES (template aliases)
+   ============================================= */
+
+/* .narrow — used as: <div class="container narrow"> */
+.narrow {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .split-layout — 2-col grid used across templates */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s12);
+  align-items: start;
+}
+.split-layout--contact { gap: var(--s16); }
+@media (max-width: 1024px) {
+  .split-layout { grid-template-columns: 1fr; }
+}
+
+/* Background variants used with double-dash BEM convention */
+.bg--light-gray { background-color: var(--wp-light-gray); }
+.bg--white       { background-color: var(--wp-white); }
+.bg--navy        { background-color: var(--wp-navy); }
+
+/* Section header BEM variants (used in PHP templates) */
+.section-header__title {
+  font-family: var(--font-head);
+  font-size: var(--text-4xl);
+  color: var(--wp-navy);
+  margin-bottom: var(--s4);
+  line-height: 1.15;
+}
+.section-header__title--white { color: white; }
+
+.section-header__sub {
+  font-size: var(--text-lg);
+  color: var(--wp-gray-6);
+  line-height: 1.7;
+}
+.section-header__sub--white { color: rgba(255,255,255,0.8); }
+
+.section-header__eyebrow {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wp-red);
+  margin-bottom: var(--s3);
+}
+.section-header__eyebrow--green { color: var(--wp-green); }
+.section-header__eyebrow--gold  { color: var(--wp-gold); }
+.section-header__eyebrow--white { color: rgba(255,255,255,0.8); }

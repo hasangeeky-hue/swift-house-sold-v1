@@ -1,0 +1,150 @@
+/* =============================================
+   RESPONSIVE OVERRIDES — mobile adjustments only
+   ============================================= */
+
+/* ── 1400px ──────────────────────────────────────────────────── */
+@media (max-width: 1400px) {
+  .container-wide { max-width: 100%; }
+}
+
+/* ── 1200px ──────────────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .grid-4       { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid  { grid-template-columns: repeat(2, 1fr); gap: var(--s8); }
+  .team-grid    { grid-template-columns: repeat(2, 1fr); }
+  .property-detail-grid { grid-template-columns: 1fr 340px; }
+}
+
+/* ── 1024px ──────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero--split            { grid-template-columns: 1fr; }
+  .hero__side             { min-height: 60vh; }
+  .hero__side--buyer      { min-height: auto; padding: var(--s16) 0; }
+  .split, .split--equal,
+  .split--reverse         { grid-template-columns: 1fr; }
+  .timeline::before       { display: none; }
+  .timeline__item         {
+    grid-template-columns: auto 1fr;
+    gap: var(--s6);
+    margin-bottom: var(--s10);
+  }
+  .timeline__item .timeline__empty { display: none; }
+  .timeline__item:nth-child(even) .timeline__content:first-child { order: unset; }
+  .timeline__item:nth-child(even) .timeline__dot { order: unset; }
+  .trust-bar__grid        { grid-template-columns: repeat(3, 1fr); gap: var(--s6); }
+  .property-detail-grid   { grid-template-columns: 1fr; }
+  .sticky-sidebar         { position: static; }
+  .deal-sidebar           { margin-top: var(--s8); }
+  .geo-content-grid       { grid-template-columns: 1fr; }
+  .what-we-buy-grid       { grid-template-columns: repeat(2, 1fr); }
+  .values-grid            { grid-template-columns: repeat(2, 1fr); }
+  .contact-methods        { grid-template-columns: 1fr 1fr; }
+  .next-steps-grid        { grid-template-columns: 1fr 1fr; }
+  .city-links-grid        { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── 768px ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .grid-3                   { grid-template-columns: 1fr; }
+  .grid-2                   { grid-template-columns: 1fr; }
+  .nav-links                { display: none; }
+  .nav-ctas                 { display: none; }
+  .nav-toggle               { display: flex; }
+  .footer-grid              { grid-template-columns: 1fr 1fr; gap: var(--s8); }
+  .trust-bar__grid          { grid-template-columns: repeat(2, 1fr); gap: var(--s6); }
+  .state-grid               { grid-template-columns: repeat(3, 1fr); }
+  .comparison-table         { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .property-card__actions   { grid-template-columns: 1fr; }
+  .what-we-buy-grid         { grid-template-columns: 1fr; }
+  .values-grid              { grid-template-columns: 1fr; }
+  .team-grid                { grid-template-columns: repeat(2, 1fr); }
+  .contact-methods          { grid-template-columns: 1fr; }
+  .next-steps-grid          { grid-template-columns: 1fr; }
+  .city-links-grid          { grid-template-columns: repeat(2, 1fr); }
+  .filter-bar               { position: static; }
+  .filter-bar__inner        { flex-direction: column; align-items: stretch; }
+  .filter-select,
+  .filter-input             { width: 100%; }
+  .filter-count             { margin-left: 0; }
+  .blog-single-meta         { gap: var(--s3); }
+  .author-box               { flex-direction: column; }
+  .section { padding: var(--s16) 0; }
+  .section-lg { padding: var(--s20) 0; }
+  .tabs__nav { gap: 0; overflow-x: auto; }
+  .tab-btn  { white-space: nowrap; padding: var(--s3) var(--s5); font-size: var(--text-sm); }
+  .property-gallery__main { height: 300px; }
+  .property-highlights { grid-template-columns: 1fr 1fr; }
+  .page-404-links { flex-direction: column; align-items: center; }
+  .topbar__inner { flex-direction: column; gap: var(--s1); text-align: center; font-size: var(--text-xs); }
+  .hero__content { padding: var(--s8); }
+}
+
+/* ── 480px ───────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .footer-grid              { grid-template-columns: 1fr; }
+  .trust-bar__grid          { grid-template-columns: repeat(2, 1fr); }
+  .state-grid               { grid-template-columns: repeat(2, 1fr); }
+  .hero__content            { padding: var(--s6); }
+  .card__body               { padding: var(--s6); }
+  .form-card__body          { padding: var(--s6); }
+  .section                  { padding: var(--s12) 0; }
+  .property-highlights      { grid-template-columns: 1fr; }
+  .team-grid                { grid-template-columns: 1fr 1fr; }
+  .city-links-grid          { grid-template-columns: 1fr 1fr; }
+  .back-to-top              { bottom: var(--s4); right: var(--s4); width: 44px; height: 44px; }
+  .cookie-bar               { flex-direction: column; gap: var(--s3); }
+  .deal-sidebar__body       { padding: var(--s4); }
+  .hero__ctas               { flex-direction: column; }
+  .hero__ctas .btn          { width: 100%; justify-content: center; }
+  .share-buttons            { flex-direction: column; align-items: flex-start; }
+}
+
+/* ── Touch target minimum ────────────────────────────────────── */
+@media (hover: none) {
+  .btn,
+  .nav-links a,
+  .tab-btn,
+  .accordion__trigger,
+  .footer__links a,
+  .state-link,
+  .city-link,
+  .share-btn,
+  .pagination a,
+  .pagination span,
+  .form-check__input {
+    min-height: 44px;
+  }
+}
+
+/* ── Nav overlay ─────────────────────────────────────────────── */
+.nav-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--wp-navy);
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s8);
+  padding: var(--s8);
+  transform: translateX(100%);
+  transition: transform var(--t-slow);
+  overflow-y: auto;
+}
+.nav-overlay.active { transform: translateX(0); }
+body.menu-open { overflow: hidden; }
+
+/* ── Print ───────────────────────────────────────────────────── */
+@media print {
+  .site-header,
+  .site-footer,
+  .filter-bar,
+  .nav-overlay,
+  .back-to-top,
+  .cookie-bar,
+  .reading-progress { display: none !important; }
+  body { font-size: 12pt; color: black; }
+  a { text-decoration: underline; color: black; }
+  .property-detail-grid { grid-template-columns: 1fr; }
+}

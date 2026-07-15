@@ -1,0 +1,377 @@
+/* =============================================================
+   WholesalePro — Design Enhancements (10/10 Polish Layer)
+   Loaded after all other stylesheets via functions.php
+   ============================================================= */
+
+/* ── FIX 1: Hero Background Image ────────────────────────────── */
+/* Page heroes get the generated hero-bg.jpg with overlay */
+.page-hero,
+.page-hero--seller {
+  position: relative;
+  background-image:
+    linear-gradient(135deg, rgba(10,18,35,0.96) 0%, rgba(27,43,75,0.90) 50%, rgba(36,62,99,0.88) 100%),
+    url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* Geometric dot pattern overlay for depth */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(244,162,97,0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-hero .container { position: relative; z-index: 1; }
+
+/* Hero inner: text left + form right */
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: center;
+}
+@media (max-width: 1024px) {
+  .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* Hero text colors on dark background */
+.page-hero h1,
+.page-hero .hero__title { color: #fff; }
+
+.page-hero .hero__eyebrow { color: var(--wp-gold); }
+.page-hero .hero__subtitle { color: rgba(255,255,255,0.85); }
+
+/* Hero form card */
+.hero__form-wrap { flex-shrink: 0; }
+.hero__form-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+}
+.hero__form-card__heading {
+  font-family: var(--font-head);
+  font-size: 1.375rem;
+  color: var(--wp-navy);
+  margin-bottom: 4px;
+}
+.hero__form-card__sub {
+  font-size: 0.875rem;
+  color: var(--wp-gray-6);
+  margin-bottom: 20px;
+}
+
+/* Gold underline accent below hero */
+.page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 5px;
+  background: linear-gradient(90deg, var(--wp-red) 0%, var(--wp-gold) 50%, var(--wp-green) 100%);
+}
+
+/* ── FIX 2: Property Card Image Placeholder ───────────────────── */
+/* When no image is set, show a styled placeholder */
+.property-card__image--placeholder,
+.property-card__image:empty,
+.property-card__image:not(:has(img)) {
+  background:
+    linear-gradient(135deg, #e8eef6 0%, #d0daea 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.property-card__image--placeholder::before {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 70px;
+  background-image: url('../images/property-placeholder.jpg');
+  background-size: cover;
+  border-radius: 8px;
+  opacity: 0.6;
+}
+
+/* Property card image — use placeholder when src missing */
+.property-card__image img[src=""],
+.property-card__image img:not([src]) {
+  display: none;
+}
+.property-card__image {
+  background:
+    url('../images/property-placeholder.jpg') center/cover no-repeat,
+    linear-gradient(135deg, #e8eef6 0%, #d0daea 100%);
+}
+
+/* ── FIX 3: Logo in Header ────────────────────────────────────── */
+/* If no WordPress custom logo is set, show SVG logo */
+.nav-logo__text {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.nav-logo--svg img,
+.custom-logo { height: 48px; width: auto; }
+
+/* Fallback SVG logo */
+.site-header .nav-logo a:not(:has(img))::before {
+  content: '';
+  display: inline-block;
+  width: 160px;
+  height: 44px;
+  background: url('../images/logo.svg') left center / contain no-repeat;
+}
+
+/* ── FIX 4: Mobile Nav — Smooth Stagger Animations ───────────── */
+.nav-overlay {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity   0.35s ease;
+  opacity: 0;
+}
+.nav-overlay.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Stagger each nav link appearing */
+.nav-overlay__links li {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.nav-overlay.active .nav-overlay__links li:nth-child(1) { opacity:1; transform:none; transition-delay:0.08s; }
+.nav-overlay.active .nav-overlay__links li:nth-child(2) { opacity:1; transform:none; transition-delay:0.14s; }
+.nav-overlay.active .nav-overlay__links li:nth-child(3) { opacity:1; transform:none; transition-delay:0.20s; }
+.nav-overlay.active .nav-overlay__links li:nth-child(4) { opacity:1; transform:none; transition-delay:0.26s; }
+.nav-overlay.active .nav-overlay__links li:nth-child(5) { opacity:1; transform:none; transition-delay:0.32s; }
+.nav-overlay.active .nav-overlay__links li:nth-child(6) { opacity:1; transform:none; transition-delay:0.38s; }
+
+/* Stagger CTAs */
+.nav-overlay__ctas .btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.15s ease;
+}
+.nav-overlay.active .nav-overlay__ctas .btn:nth-child(1) { opacity:1; transform:none; transition-delay:0.44s; }
+.nav-overlay.active .nav-overlay__ctas .btn:nth-child(2) { opacity:1; transform:none; transition-delay:0.50s; }
+
+/* Hamburger → X morphing animation */
+.nav-toggle { transition: transform 0.25s ease; }
+.nav-toggle[aria-expanded="true"] { transform: rotate(90deg); }
+
+/* ── FIX 5: Card Hover Shadows — Color-matched ────────────────── */
+.property-card {
+  transition: box-shadow 0.28s cubic-bezier(0.34,1.56,0.64,1),
+              transform  0.28s cubic-bezier(0.34,1.56,0.64,1);
+  will-change: transform;
+}
+.property-card:hover {
+  box-shadow: 0 12px 40px rgba(27,43,75,0.18), 0 4px 12px rgba(27,43,75,0.08);
+  transform: translateY(-6px);
+}
+
+.blog-card {
+  transition: box-shadow 0.28s cubic-bezier(0.34,1.56,0.64,1),
+              transform  0.28s cubic-bezier(0.34,1.56,0.64,1);
+  will-change: transform;
+}
+.blog-card:hover {
+  box-shadow: 0 12px 40px rgba(27,43,75,0.14), 0 4px 12px rgba(27,43,75,0.07);
+  transform: translateY(-4px);
+}
+
+.what-we-buy-card {
+  transition: box-shadow 0.28s cubic-bezier(0.34,1.56,0.64,1),
+              transform  0.28s cubic-bezier(0.34,1.56,0.64,1),
+              border-top-color 0.2s ease;
+  border-top: 3px solid transparent;
+}
+.what-we-buy-card:hover {
+  border-top-color: var(--wp-red);
+  box-shadow: 0 10px 32px rgba(230,57,70,0.12), 0 4px 12px rgba(0,0,0,0.06);
+  transform: translateY(-5px);
+}
+
+/* ── FIX 7: Form Validation States — Polished ─────────────────── */
+.form-control {
+  transition: border-color 0.18s ease,
+              box-shadow   0.18s ease,
+              background   0.18s ease;
+}
+
+/* Valid state — green tick */
+.form-control.valid {
+  border-color: var(--wp-green);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232D6A4F' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+.form-control.valid:focus {
+  box-shadow: 0 0 0 3px rgba(45,106,79,0.15);
+}
+
+/* Error state — red X */
+.form-control.error {
+  border-color: var(--wp-red);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23E63946' stroke-width='2.5' stroke-linecap='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+.form-control.error:focus {
+  box-shadow: 0 0 0 3px rgba(230,57,70,0.15);
+}
+
+/* Error message — animated slide down */
+.form-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--wp-red);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin-top: 6px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.25s ease, opacity 0.25s ease;
+}
+.form-error.visible {
+  max-height: 60px;
+  opacity: 1;
+}
+.form-error::before {
+  content: '⚠';
+  flex-shrink: 0;
+}
+
+/* Submit button loading animation */
+.btn--loading {
+  position: relative;
+  color: transparent !important;
+}
+.btn--loading::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 18px; height: 18px;
+  margin: -9px 0 0 -9px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Form success banner */
+.form-success {
+  background: rgba(45,106,79,0.08);
+  border: 1.5px solid rgba(45,106,79,0.3);
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--wp-green);
+  font-weight: 600;
+  animation: fadeInUp 0.4s ease both;
+}
+.form-success__icon { font-size: 1.5rem; flex-shrink: 0; }
+
+/* ── FIX 8: Coverage Map ─────────────────────────────────────── */
+#coverage-map,
+.coverage-map-wrap {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(27,43,75,0.12);
+  background: #dce8f5;
+}
+#coverage-map svg,
+.coverage-map-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── FIX 10: WCAG AA — Gold Contrast Fixes ────────────────────── */
+/* #F4A261 on white = 2.4:1 — FAILS AA. Fix: use navy text on gold bg */
+.badge--gold      { color: var(--wp-navy) !important; font-weight: 700; }
+.hero__eyebrow    { color: var(--wp-gold); }  /* on dark bg — passes */
+.trust-bar__number{ color: var(--wp-gold); }  /* on navy bg — passes */
+
+/* Gold buttons get navy text for proper contrast */
+.btn--gold {
+  background-color: var(--wp-gold);
+  color: var(--wp-navy) !important;
+  border-color: var(--wp-gold);
+  font-weight: 700;
+}
+.btn--gold:hover {
+  background-color: #e8913f;
+  border-color: #e8913f;
+  color: var(--wp-navy) !important;
+}
+
+/* Cookie consent gold button — already uses navy text; reinforce */
+.cookie-bar__btn { color: var(--wp-navy) !important; font-weight: 700; }
+
+/* ── BONUS: Checklist item icons (CSS-based, no icon font needed) */
+.checklist__item--check::before {
+  content: '';
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232D6A4F'%3E%3Ccircle cx='12' cy='12' r='12' fill='%232D6A4F'/%3E%3Cpolyline points='6,12 10,16 18,8' stroke='white' stroke-width='2.5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 1px;
+}
+
+/* ── BONUS: Smooth scroll progress visibility ─────────────────── */
+.reading-progress {
+  background: linear-gradient(90deg, var(--wp-red) 0%, var(--wp-gold) 100%);
+  height: 3px;
+}
+
+/* ── BONUS: Better focus rings throughout ─────────────────────── */
+:focus-visible {
+  outline: 3px solid var(--wp-gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── BONUS: Section divider wave ─────────────────────────────── */
+.section-wave {
+  position: relative;
+  overflow: hidden;
+}
+.section-wave::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 100%; height: 60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath d='M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z' fill='%23ffffff'/%3E%3C/svg%3E") center bottom / cover no-repeat;
+  pointer-events: none;
+}
+
+/* ── BONUS: Number counter animation ──────────────────────────── */
+.trust-bar__number {
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.trust-bar__stat:hover .trust-bar__number {
+  transform: scale(1.1);
+}

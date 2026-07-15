@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" role="img" aria-label="WholesalePro">
+  <!-- House icon mark -->
+  <g>
+    <!-- Roof -->
+    <polygon points="4,22 18,8 32,22" fill="#E63946"/>
+    <!-- House body -->
+    <rect x="7" y="22" width="22" height="18" fill="#1B2B4B"/>
+    <!-- Door -->
+    <rect x="14" y="30" width="8" height="10" fill="#F4A261"/>
+    <!-- Chimney -->
+    <rect x="24" y="11" width="5" height="8" fill="#1B2B4B"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="40" y="36" font-family="Georgia,'Times New Roman',serif" font-size="26" font-weight="700" fill="#1B2B4B" letter-spacing="-0.5">Wholesale</text>
+  <text x="176" y="36" font-family="Georgia,'Times New Roman',serif" font-size="26" font-weight="700" fill="#E63946" letter-spacing="-0.5">Pro</text>
+  <!-- Gold underline accent -->
+  <rect x="40" y="43" width="178" height="3" rx="1.5" fill="#F4A261"/>
+</svg>
