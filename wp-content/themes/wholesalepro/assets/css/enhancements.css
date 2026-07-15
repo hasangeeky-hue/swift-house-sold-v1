@@ -495,3 +495,11 @@ img, svg, video { max-width: 100%; height: auto; }
 @media (pointer: coarse) {
   .btn, .faq-item__trigger, .nav-overlay__links a { min-height: 44px; }
 }
+
+/* Hamburger button: always tappable on small screens */
+.nav-toggle { display: none; background: none; border: 0; cursor: pointer; color: var(--wp-navy, #1B2B4B); padding: 10px; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+.nav-toggle svg { width: 26px; height: 26px; display: block; }
+@media (max-width: 1024px) {
+  .nav-toggle { display: inline-flex !important; }
+  .nav-links { display: none !important; }
+}

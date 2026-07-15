@@ -74,7 +74,7 @@ if ( $fb_pixel ) :
 						the_custom_logo();
 					else : ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo__text" aria-label="<?php echo esc_attr( get_theme_mod( 'company_name', get_bloginfo( 'name' ) ) ); ?>, <?php esc_attr_e( 'Home', 'wholesalepro' ); ?>">
-							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo.svg"
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo.svg?v=<?php echo esc_attr( WHOLESALEPRO_VERSION ); ?>"
 								 alt="<?php echo esc_attr( get_theme_mod( 'company_name', get_bloginfo( 'name' ) ) ); ?>"
 								 width="220" height="52"
 								 style="height:44px;width:auto;display:block;">
