@@ -266,3 +266,47 @@ add_action( 'init', function () {
 add_filter( 'comments_open', '__return_false', 20 );
 add_filter( 'pings_open', '__return_false', 20 );
 add_filter( 'comments_array', '__return_empty_array', 10 );
+
+/**
+ * v7: investor categories + guide assignments.
+ */
+add_action( 'init', function () {
+	if ( get_option( 'shs_investors_v7' ) ) {
+		return;
+	}
+	$cats = array(
+		'fix-flip'     => 'Fix & Flip',
+		'buy-hold'     => 'Buy & Hold Rentals',
+		'out-of-state' => 'Out-of-State Investing',
+	);
+	$ids = array();
+	foreach ( $cats as $slug => $name ) {
+		$term = get_term_by( 'slug', $slug, 'category' );
+		if ( ! $term ) {
+			$res = wp_insert_term( $name, 'category', array( 'slug' => $slug ) );
+			$ids[ $slug ] = is_wp_error( $res ) ? 0 : $res['term_id'];
+		} else {
+			$ids[ $slug ] = $term->term_id;
+		}
+	}
+	$all_inv = array( 'fix-flip', 'buy-hold', 'out-of-state' );
+	$map = array(
+		197 => $all_inv, 200 => $all_inv, 202 => $all_inv, 205 => $all_inv, 207 => $all_inv,
+		210 => $all_inv, 212 => $all_inv, 215 => $all_inv, 217 => $all_inv,
+		220 => array( 'fix-flip' ),
+		222 => array( 'buy-hold' ),
+		225 => array( 'out-of-state' ),
+	);
+	$done = 0;
+	foreach ( $map as $post_id => $slugs ) {
+		if ( ! get_post( $post_id ) ) { continue; }
+		$tids = array();
+		foreach ( $slugs as $sl ) {
+			if ( ! empty( $ids[ $sl ] ) ) { $tids[] = (int) $ids[ $sl ]; }
+		}
+		if ( $tids ) { wp_set_post_categories( $post_id, $tids, false ); $done++; }
+	}
+	if ( count( $map ) === $done ) {
+		update_option( 'shs_investors_v7', 1 );
+	}
+}, 45 );
