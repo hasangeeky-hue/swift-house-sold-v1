@@ -453,3 +453,45 @@
 .footer-nav a, .nav-links a { transition: color .15s ease; }
 .faq-item { transition: box-shadow .2s ease; }
 .faq-item:hover { box-shadow: 0 6px 18px rgba(15,23,42,0.08); }
+
+/* ══ Device-friendly layer: mobile / tablet / desktop ══════════ */
+
+/* Kill horizontal scroll everywhere (off-canvas overlay was stretching body) */
+html, body { overflow-x: hidden; max-width: 100%; }
+.nav-overlay { visibility: hidden; }
+.nav-overlay.active { visibility: visible; }
+
+/* Fluid media */
+img, svg, video { max-width: 100%; height: auto; }
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .split-layout { display: block !important; }
+  .split-layout > * + * { margin-top: 32px; }
+  .grid-4 { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+  .grid-3 { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+  .hero.hero--split { padding: 80px 0 60px; }
+}
+
+/* Mobile (≤640px) */
+@media (max-width: 640px) {
+  .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr !important; }
+  .form-row { grid-template-columns: 1fr !important; }
+  .section { padding-top: 48px; padding-bottom: 48px; }
+  .container { padding-left: 18px; padding-right: 18px; }
+  .compare-table { font-size: 0.85rem; }
+  .compare-table th, .compare-table td { padding: 10px 8px !important; }
+  .hero__form-card { padding: 24px 18px; }
+  .hero__title { font-size: clamp(1.7rem, 8vw, 2.2rem) !important; }
+  .footer-bottom__inner { flex-direction: column; text-align: center; }
+  .footer-legal-links a { margin: 0 8px; }
+  .btn--lg { padding: 14px 20px; font-size: 0.95rem; }
+  .topbar__inner { justify-content: center; }
+  .topbar__message { font-size: 0.72rem; line-height: 1.5; }
+  .trust-bar__grid { grid-template-columns: repeat(2, 1fr) !important; gap: 18px !important; }
+}
+
+/* Touch targets: min 44px for buttons and faq triggers on touch devices */
+@media (pointer: coarse) {
+  .btn, .faq-item__trigger, .nav-overlay__links a { min-height: 44px; }
+}
