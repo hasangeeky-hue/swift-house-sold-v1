@@ -207,9 +207,9 @@ function shs_render_service_page( $key ) {
 				</div>
 				<div class="hero__form-wrap">
 					<div class="hero__form-card">
-						<h2 class="hero__form-card__heading">Get Your Free Cash Offer</h2>
-						<p class="hero__form-card__sub">Takes less than 2 minutes. No obligation.</p>
-						<?php echo wholesalepro_render_seller_form( 'service-' . $key ); // phpcs:ignore ?>
+						<h2 class="hero__form-card__heading"><?php echo $investor ? 'Join the Buyer List' : 'Get Your Free Cash Offer'; ?></h2>
+						<p class="hero__form-card__sub"><?php echo $investor ? 'Free. Deals matching your criteria reach you first.' : 'Takes less than 2 minutes. No obligation.'; ?></p>
+						<?php echo $investor ? wholesalepro_render_buyer_form( 'investor-' . $key ) : wholesalepro_render_seller_form( 'service-' . $key ); // phpcs:ignore ?>
 					</div>
 				</div>
 			</div>
