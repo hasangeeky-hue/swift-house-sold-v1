@@ -59,6 +59,21 @@ $seller_faqs = array(
 
 ?>
 
+<?php
+$faq_ld = array(
+	'@context'   => 'https://schema.org',
+	'@type'      => 'FAQPage',
+	'mainEntity' => array_map( function ( $f ) {
+		return array(
+			'@type'          => 'Question',
+			'name'           => $f['q'],
+			'acceptedAnswer' => array( '@type' => 'Answer', 'text' => $f['a'] ),
+		);
+	}, $seller_faqs ),
+);
+echo '<script type="application/ld+json">' . wp_json_encode( $faq_ld ) . '</script>';
+?>
+
 <section class="page-hero page-hero--inner" aria-labelledby="faq-hero-heading">
 	<div class="container">
 		<nav class="breadcrumb" aria-label="Breadcrumb">

@@ -27,7 +27,7 @@ function shs_services_config() {
 		'sell-probate-property' => array(
 			'menu'     => 'Probate / Inherited Property',
 			'category' => 'probate',
-			'eyebrow'  => 'PROBATE & INHERITED PROPERTY, OH · TX · GA',
+			'eyebrow'  => 'PROBATE & INHERITED PROPERTY · OH · TX · GA',
 			'title'    => 'Sell an Inherited or Probate Property Without the Burden',
 			'answer'   => 'You can sell an inherited house as-is, belongings included, repairs ignored, from another state, usually as soon as the probate court grants the executor authority. We work with your estate attorney, buy the property exactly as it stands, and close on the timeline the estate needs.',
 			'pains'    => array(
@@ -52,7 +52,7 @@ function shs_services_config() {
 		'stop-foreclosure' => array(
 			'menu'     => 'Stop Foreclosure',
 			'category' => 'foreclosure',
-			'eyebrow'  => 'PRE-FORECLOSURE, ACT BEFORE THE SALE DATE',
+			'eyebrow'  => 'PRE-FORECLOSURE · ACT BEFORE THE SALE DATE',
 			'title'    => 'Behind on Your Mortgage? Sell Before the Foreclosure Sale',
 			'answer'   => 'You can stop a foreclosure by selling your house for cash before the auction, the loan is paid off at closing, the foreclosure ends, and you keep your remaining equity instead of losing it at the sheriff\'s sale. In Ohio, Texas and Georgia we can often close within 7–14 days.',
 			'pains'    => array(
@@ -77,8 +77,8 @@ function shs_services_config() {
 		'sell-house-divorce' => array(
 			'menu'     => 'Divorce Home Sale',
 			'category' => 'divorce',
-			'eyebrow'  => 'DIVORCE, ONE CLEAN CLOSING, TWO FRESH STARTS',
-			'title'    => 'Sell the House During Divorce, Fast, Neutral, Final',
+			'eyebrow'  => 'DIVORCE · ONE CLEAN CLOSING · TWO FRESH STARTS',
+			'title'    => 'Sell the House During Divorce: Fast, Neutral, Final',
 			'answer'   => 'The fastest clean way to divide a house in divorce is a cash sale: one written offer both attorneys can review, no repairs to argue over, a closing date that fits the settlement, and proceeds wired separately to each party if instructed. Often done in under 3 weeks.',
 			'pains'    => array(
 				array( 'Every listing decision becomes a new argument', 'A single as-is cash offer removes months of joint decisions about agents, prices, repairs and buyers.' ),
@@ -103,7 +103,7 @@ function shs_services_config() {
 			'menu'     => 'Tax Liens & Back Taxes',
 			'category' => 'tax-liens',
 			'eyebrow'  => 'TAX LIENS · CODE VIOLATIONS · JUDGMENTS',
-			'title'    => 'Sell a House With Tax Liens or Back Taxes, Liens Are Paid at Closing',
+			'title'    => 'Sell a House With Tax Liens: The Debt Is Paid at Closing',
 			'answer'   => 'A tax lien does not block the sale of your house. At closing, the title company pays the county directly out of the purchase price, you never write a check. This works for property tax debt, code violation fines, and most judgment liens in Ohio, Texas and Georgia.',
 			'pains'    => array(
 				array( 'The debt keeps growing every month', 'Texas penalties alone can reach 47% in year one. Every month of waiting transfers more of your equity to the county.' ),
@@ -127,8 +127,8 @@ function shs_services_config() {
 		'sell-damaged-house' => array(
 			'menu'     => 'House Needs Major Repairs',
 			'category' => 'repairs',
-			'eyebrow'  => 'AS-IS, ANY CONDITION, ZERO REPAIRS',
-			'title'    => 'Sell a House That Needs Major Repairs, Without Spending a Dollar',
+			'eyebrow'  => 'AS-IS · ANY CONDITION · ZERO REPAIRS',
+			'title'    => 'Sell a House That Needs Major Repairs: Spend Nothing',
 			'answer'   => 'You can sell a house needing major repairs completely as-is: no fixing, no cleaning, no inspections to pass. Foundation problems, fire or water damage, mold, ancient wiring, we price the work into a written offer and close in as little as 7 days.',
 			'pains'    => array(
 				array( 'Contractors quoted more than you can spend', 'Repair quotes routinely overrun 20–40%. Selling as-is means the renovation risk is our problem, priced honestly into the offer.' ),
@@ -152,8 +152,8 @@ function shs_services_config() {
 		'sell-rental-property' => array(
 			'menu'     => 'Tired Landlord / Rental',
 			'category' => 'landlord',
-			'eyebrow'  => 'LANDLORDS, EXIT WITH TENANTS IN PLACE',
-			'title'    => 'Tired Landlord? Sell Your Rental, Tenants and All',
+			'eyebrow'  => 'LANDLORDS · EXIT WITH TENANTS IN PLACE',
+			'title'    => 'Tired Landlord? Sell Your Rental: Tenants and All',
 			'answer'   => 'You can sell a rental property with tenants still in it, paying or not. We buy tenant-occupied properties as-is in Ohio, Texas and Georgia, take over the lease situation completely, and close on your schedule. No evictions to run, no make-ready repairs.',
 			'pains'    => array(
 				array( 'Tenants are not paying and eviction is expensive', 'Sell with the tenants in place. The occupancy situation becomes ours the day we close.' ),
@@ -228,6 +228,20 @@ function shs_render_service_page( $key ) {
 		</div>
 	</section>
 
+	<?php
+	$faq_ld = array(
+		'@context'   => 'https://schema.org',
+		'@type'      => 'FAQPage',
+		'mainEntity' => array_map( function ( $qa ) {
+			return array(
+				'@type'          => 'Question',
+				'name'           => $qa[0],
+				'acceptedAnswer' => array( '@type' => 'Answer', 'text' => $qa[1] ),
+			);
+		}, $svc['faq'] ),
+	);
+	echo '<script type="application/ld+json">' . wp_json_encode( $faq_ld ) . '</script>';
+	?>
 	<section class="section bg--light-gray" aria-labelledby="svc-faq-heading">
 		<div class="container">
 			<div class="section-header text-center">

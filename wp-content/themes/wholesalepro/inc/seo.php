@@ -9,8 +9,38 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/* ── Remove WP default title tag (we handle it) ─────────────── */
+/* ── Title handling ──────────────────────────────────────────── */
 add_filter( 'document_title_separator', function() { return '|'; } );
+remove_action( 'wp_head', 'rel_canonical' );
+
+/**
+ * Use the same page-aware titles for the real <title> tag.
+ */
+add_filter( 'pre_get_document_title', function () {
+	$data = wholesalepro_seo_data();
+	return $data['title'] ? $data['title'] : '';
+} );
+
+/**
+ * Compute title/description once per request.
+ */
+function wholesalepro_seo_data() {
+	static $cache = null;
+	if ( null !== $cache ) { return $cache; }
+	if ( ! did_action( 'wp' ) ) { return array( 'title' => '', 'description' => '' ); }
+	$cache = array( 'title' => '', 'description' => '' );
+	$company = get_theme_mod( 'company_name', 'Swift House Sold' );
+	if ( is_front_page() ) {
+		$cache['title'] = $company . ' | Sell Your House Fast For Cash in Ohio, Texas & Georgia';
+	} elseif ( is_page( 'faq' ) ) {
+		$cache['title'] = 'FAQ: Selling Your House For Cash in OH, TX & GA | ' . $company;
+	} elseif ( is_page( 'services' ) ) {
+		$cache['title'] = 'Our Services: Foreclosure, Probate, Divorce & More | ' . $company;
+	} elseif ( is_singular() ) {
+		$cache['title'] = get_the_title() . ' | ' . $company;
+	}
+	return $cache;
+}
 
 /* ── Output Meta Tags ────────────────────────────────────────── */
 function wholesalepro_seo_meta() {

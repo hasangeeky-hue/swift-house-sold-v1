@@ -32,7 +32,7 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 		<div class="hero__inner">
 			<div class="hero__content">
 				<p class="hero__eyebrow animate-on-scroll">
-					CASH HOME BUYERS, OHIO &middot; TEXAS &middot; GEORGIA
+					CASH HOME BUYERS &middot; OHIO &middot; TEXAS &middot; GEORGIA
 				</p>
 				<h1 class="hero__title animate-on-scroll" id="hero-heading" style="transition-delay:0.1s">
 					<?php echo esc_html( get_theme_mod( 'shs_hero_title', 'Sell Your House Fast For Cash, Like a Rocket' ) ); ?>

@@ -230,3 +230,28 @@ add_action( 'init', function () {
 		update_option( 'shs_guides_v5', 1 );
 	}
 }, 35 );
+
+/**
+ * v6: site identity, sitemap, and menu hygiene (idempotent).
+ */
+add_action( 'init', function () {
+	// Proper site name + tagline for SEO.
+	if ( 'swift-house-sold(SHS)' === get_option( 'blogname' ) ) {
+		update_option( 'blogname', 'Swift House Sold' );
+	}
+	if ( '' === get_option( 'blogdescription' ) ) {
+		update_option( 'blogdescription', 'Sell Your House Fast for Cash in Ohio, Texas & Georgia' );
+	}
+	// Remove any Book a Call item from the primary menu (button lives in header).
+	$locations = get_nav_menu_locations();
+	if ( ! empty( $locations['primary'] ) ) {
+		foreach ( (array) wp_get_nav_menu_items( (int) $locations['primary'] ) as $it ) {
+			if ( $it && 'Book a Call' === $it->title ) {
+				wp_delete_post( $it->ID, true );
+			}
+		}
+	}
+}, 40 );
+
+/* Core sitemaps stay enabled. */
+add_filter( 'wp_sitemaps_enabled', '__return_true', 99 );
