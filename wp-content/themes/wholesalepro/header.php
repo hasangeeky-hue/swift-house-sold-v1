@@ -88,18 +88,48 @@ if ( $fb_pixel ) :
 					$svc_url  = $svc_page ? get_permalink( $svc_page->ID ) : home_url( '/services' );
 					$inv_page = get_page_by_path( 'investors' );
 					$inv_url  = $inv_page ? get_permalink( $inv_page->ID ) : home_url( '/investors' );
+					$book_page = get_page_by_path( 'book-a-call' );
+					$book_url2 = $book_page ? get_permalink( $book_page->ID ) : home_url( '/book-a-call' );
+					$situations = array(
+						'stop-foreclosure'      => __( "I'm behind on my mortgage", 'wholesalepro' ),
+						'sell-probate-property' => __( 'I inherited a house', 'wholesalepro' ),
+						'sell-house-divorce'    => __( "We're divorcing", 'wholesalepro' ),
+						'sell-house-tax-liens'  => __( 'I owe back taxes or have liens', 'wholesalepro' ),
+						'sell-damaged-house'    => __( 'The house needs major repairs', 'wholesalepro' ),
+						'sell-rental-property'  => __( "I'm a tired landlord", 'wholesalepro' ),
+					);
 					?>
 					<li class="nav-links__item menu-item menu-item-has-children">
-						<a href="<?php echo esc_url( $svc_url ); ?>" class="nav-pill"><?php esc_html_e( 'Sellers', 'wholesalepro' ); ?> <span aria-hidden="true" style="font-size:0.7em;">&#9662;</span></a>
+						<a href="<?php echo esc_url( $svc_url ); ?>"><?php esc_html_e( 'Sell My House', 'wholesalepro' ); ?> <span aria-hidden="true" style="font-size:0.65em;">&#9662;</span></a>
 						<ul class="sub-menu">
+							<li class="sub-menu__label"><?php esc_html_e( 'WHAT'S YOUR SITUATION?', 'wholesalepro' ); ?></li>
 							<?php
-							foreach ( shs_services_config() as $slug => $svc ) {
+							foreach ( $situations as $slug => $label ) {
 								$p = get_page_by_path( $slug );
-								echo '<li><a href="' . esc_url( $p ? get_permalink( $p->ID ) : home_url( '/' . $slug ) ) . '">' . esc_html( $svc['menu'] ) . '</a></li>';
+								echo '<li><a href="' . esc_url( $p ? get_permalink( $p->ID ) : home_url( '/' . $slug ) ) . '">' . esc_html( $label ) . '</a></li>';
 							}
 							?>
-							<li><a href="<?php echo esc_url( $svc_url ); ?>"><?php esc_html_e( 'All Seller Services →', 'wholesalepro' ); ?></a></li>
+							<li class="sub-menu__divider" aria-hidden="true"></li>
+							<li><a href="<?php echo esc_url( $svc_url ); ?>"><?php esc_html_e( 'See all situations →', 'wholesalepro' ); ?></a></li>
+							<li><a href="<?php echo esc_url( $book_url2 ); ?>"><?php esc_html_e( 'Book a free call', 'wholesalepro' ); ?></a></li>
 						</ul>
+					</li>
+					<?php
+					$plain = array(
+						'how-it-works' => __( 'How It Works', 'wholesalepro' ),
+						'blog'         => __( 'Guides', 'wholesalepro' ),
+						'faq'          => __( 'FAQ', 'wholesalepro' ),
+					);
+					foreach ( $plain as $slug => $label ) {
+						$p = get_page_by_path( $slug );
+						echo '<li class="nav-links__item menu-item"><a href="' . esc_url( $p ? get_permalink( $p->ID ) : home_url( '/' . $slug ) ) . '">' . esc_html( $label ) . '</a></li>';
+					}
+					?>
+					<li class="nav-links__divider" aria-hidden="true"></li>
+					<li class="nav-links__item menu-item">
+						<a href="<?php echo esc_url( $inv_url ); ?>" class="nav-investors"><?php esc_html_e( 'For Investors', 'wholesalepro' ); ?></a>
+					</li>
+				</ul>
 					</li>
 					<li class="nav-links__item menu-item menu-item-has-children">
 						<a href="<?php echo esc_url( $inv_url ); ?>" class="nav-pill"><?php esc_html_e( 'Investors', 'wholesalepro' ); ?> <span aria-hidden="true" style="font-size:0.7em;">&#9662;</span></a>
@@ -128,9 +158,6 @@ if ( $fb_pixel ) :
 					$book_page = get_page_by_path( 'book-a-call' );
 					$book_url  = $book_page ? get_permalink( $book_page->ID ) : home_url( '/book-a-call' );
 					?>
-					<a href="<?php echo esc_url( $book_url ); ?>" class="btn btn--outline btn--sm" style="color:var(--wp-navy);border-color:var(--wp-navy);">
-						<?php echo esc_html( get_theme_mod( 'shs_book_cta', __( 'Book a Call', 'wholesalepro' ) ) ); ?>
-					</a>
 					<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--sm">
 						<?php esc_html_e( 'Get Cash Offer', 'wholesalepro' ); ?>
 					</a>
@@ -163,16 +190,18 @@ if ( $fb_pixel ) :
 	<ul class="nav-overlay__links" role="list">
 		<?php
 		$overlay_pages = array(
-			'sell-my-house-fast'   => __( 'Sell My House', 'wholesalepro' ),
-			'services'             => __( 'Services', 'wholesalepro' ),
-			'investors'            => __( 'Investors', 'wholesalepro' ),
-			'book-a-call'          => __( 'Book a Call', 'wholesalepro' ),
-			'how-it-works'         => __( 'How It Works', 'wholesalepro' ),
-			'cash-sale-vs-listing' => __( 'Cash Sale vs. Agent', 'wholesalepro' ),
-			'faq'                  => __( 'FAQ', 'wholesalepro' ),
-			'about-us'             => __( 'About Us', 'wholesalepro' ),
-			'blog'                 => __( 'Seller Guides', 'wholesalepro' ),
-			'contact'              => __( 'Contact', 'wholesalepro' ),
+			'stop-foreclosure'      => __( "I'm behind on my mortgage", 'wholesalepro' ),
+			'sell-probate-property' => __( 'I inherited a house', 'wholesalepro' ),
+			'sell-house-divorce'    => __( "We're divorcing", 'wholesalepro' ),
+			'sell-house-tax-liens'  => __( 'I owe back taxes or liens', 'wholesalepro' ),
+			'sell-damaged-house'    => __( 'The house needs repairs', 'wholesalepro' ),
+			'sell-rental-property'  => __( "I'm a tired landlord", 'wholesalepro' ),
+			'how-it-works'          => __( 'How It Works', 'wholesalepro' ),
+			'blog'                  => __( 'Guides', 'wholesalepro' ),
+			'faq'                   => __( 'FAQ', 'wholesalepro' ),
+			'book-a-call'           => __( 'Book a Free Call', 'wholesalepro' ),
+			'investors'             => __( 'For Investors', 'wholesalepro' ),
+			'contact'               => __( 'Contact', 'wholesalepro' ),
 		);
 		foreach ( $overlay_pages as $slug => $label ) {
 			$page = get_page_by_path( $slug );

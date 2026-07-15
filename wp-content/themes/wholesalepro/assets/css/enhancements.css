@@ -535,3 +535,16 @@ img, svg, video { max-width: 100%; height: auto; }
 .nav-links .menu-item-has-children:focus-within > .sub-menu { opacity: 1; visibility: visible; transform: translateY(0); }
 /* hamburger icon-only button hidden on desktop (Menu pill replaces it) */
 @media (min-width: 1025px) { .nav-toggle { display: none !important; } }
+
+/* ── Final nav structure: seller-first, investor door ────────── */
+.nav-links { gap: 4px; align-items: center; }
+.nav-links > .menu-item > a { padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 0.93rem; color: var(--wp-navy, #1B2B4B); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: background .15s ease; }
+.nav-links > .menu-item > a:hover { background: #f1f5f9; }
+.nav-links__divider { width: 1px; height: 22px; background: #e2e8f0; margin: 0 8px; }
+.nav-investors { color: #64748b !important; font-weight: 500 !important; }
+.nav-investors:hover { color: var(--wp-navy, #1B2B4B) !important; }
+.sub-menu__label { padding: 8px 12px 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: #94a3b8; }
+.sub-menu__divider { height: 1px; background: #e8edf3; margin: 6px 8px; }
+.nav-links .sub-menu { min-width: 280px; }
+/* retire pill styles from previous iteration */
+.nav-pill { all: unset; }
