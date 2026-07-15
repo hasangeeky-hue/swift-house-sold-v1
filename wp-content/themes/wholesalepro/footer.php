@@ -224,6 +224,24 @@
 	</div>
 </div>
 
+
+<script data-no-optimize="1" data-cfasync="false">
+(function(){
+	if (window.__shsFaqBound) return; window.__shsFaqBound = true;
+	document.addEventListener('click', function (e) {
+		var t = e.target; while (t && t !== document && !(t.classList && t.classList.contains('js-faq-trigger'))) { t = t.parentNode; }
+		if (!t || t === document) return;
+		var body = document.getElementById(t.getAttribute('aria-controls'));
+		if (!body) return;
+		var open = t.getAttribute('aria-expanded') === 'true';
+		t.setAttribute('aria-expanded', open ? 'false' : 'true');
+		if (open) { body.setAttribute('hidden', ''); } else { body.removeAttribute('hidden'); }
+		var icon = t.querySelector('.faq-item__icon');
+		if (icon) { icon.style.transform = open ? '' : 'rotate(180deg)'; }
+	}, true);
+})();
+</script>
+
 <?php wp_footer(); ?>
 </body>
 </html>
