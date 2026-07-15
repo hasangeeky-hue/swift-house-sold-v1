@@ -48,11 +48,9 @@ if ( $fb_pixel ) :
 		<div class="container">
 			<div class="topbar__inner">
 				<span class="topbar__message">
-					<?php echo esc_html( get_theme_mod( 'topbar_message', sprintf(
-						'%s | %s+ Deals Closed | Written Cash Offer in 24 Hours',
-						__( 'We Buy Houses in Ohio, Texas & Georgia', 'wholesalepro' ),
-						get_theme_mod( 'deals_closed_count', '500' )
-					) ) ); ?>
+					<?php echo esc_html( get_theme_mod( 'topbar_message',
+						__( 'We Buy Houses in Ohio, Texas & Georgia | Written Cash Offer in 24 Hours | $0 Fees', 'wholesalepro' )
+					) ); ?>
 				</span>
 				<span class="topbar__contact">
 					<?php if ( get_theme_mod( 'company_phone_raw', '' ) ) : ?>
@@ -164,9 +162,6 @@ if ( $fb_pixel ) :
 	<div class="nav-overlay__ctas">
 		<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--lg btn--full">
 			<?php esc_html_e( 'Get My Free Cash Offer', 'wholesalepro' ); ?>
-		</a>
-		<a href="<?php echo esc_url( $deal_url ); ?>" class="btn btn--outline-white btn--lg btn--full">
-			<?php esc_html_e( 'View Available Deals', 'wholesalepro' ); ?>
 		</a>
 	</div>
 
