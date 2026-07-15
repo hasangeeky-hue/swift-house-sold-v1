@@ -345,3 +345,14 @@ function wholesalepro_front_page_setup() {
 	}
 }
 add_action( 'template_redirect', 'wholesalepro_front_page_setup' );
+
+/**
+ * Ensure pretty permalinks are active (postname structure).
+ * Runs once: sets the structure and flushes rewrite rules.
+ */
+add_action( 'init', function () {
+	if ( get_option( 'permalink_structure' ) !== '/%postname%/' ) {
+		update_option( 'permalink_structure', '/%postname%/' );
+		flush_rewrite_rules();
+	}
+}, 99 );
