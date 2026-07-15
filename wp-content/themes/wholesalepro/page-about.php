@@ -96,7 +96,7 @@ $deals_url = ( $p = get_page_by_path( 'browse-deals' ) )       ? get_permalink( 
 				array(
 					'icon'  => '🗺️',
 					'title' => 'National Reach, Local Knowledge',
-					'body'  => 'We cover every county in Ohio, Texas and Georgia — with current comparable sales data and knowledge of each state's foreclosure, probate and tax rules. Focus beats footprint: three states known deeply serve sellers better than fifty known barely.',
+					'body'  => 'We cover every county in Ohio, Texas and Georgia — with current comparable sales data and knowledge of each state\'s foreclosure, probate and tax rules. Focus beats footprint: three states known deeply serve sellers better than fifty known barely.',
 				),
 			);
 			foreach ( $values as $i => $val ) : ?>
