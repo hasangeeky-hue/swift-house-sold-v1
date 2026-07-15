@@ -440,3 +440,16 @@
 .footer-legal-links { margin: 0; }
 .footer-legal-links a { color: rgba(255,255,255,0.7); font-size: 0.85rem; text-decoration: none; margin-left: 16px; }
 .footer-legal-links a:hover { color: #fff; text-decoration: underline; }
+
+/* ── Hover effects: cards, guides, table, buttons ──────────── */
+.card { transition: transform .2s ease, box-shadow .2s ease; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(15,23,42,0.12); }
+.card--guide img { transition: transform .35s ease; }
+.card--guide:hover img { transform: scale(1.05); }
+.compare-table tbody tr { transition: background .15s ease; }
+.compare-table tbody tr:hover { background: #f8fafc; }
+.btn { transition: transform .15s ease, box-shadow .15s ease, background .15s ease; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(15,23,42,0.15); }
+.footer-nav a, .nav-links a { transition: color .15s ease; }
+.faq-item { transition: box-shadow .2s ease; }
+.faq-item:hover { box-shadow: 0 6px 18px rgba(15,23,42,0.08); }

@@ -7,6 +7,21 @@
  * @package WholesalePro
  */
 
+
+function shs_cat_image( $cat ) {
+	$map = array(
+		'probate'     => 'house-brick.jpg',
+		'foreclosure' => 'house-suburban.jpg',
+		'divorce'     => 'keys-hand.jpg',
+		'tax-liens'   => 'calculator-tax.jpg',
+		'repairs'     => 'house-porch.jpg',
+		'landlord'    => 'house-modern.jpg',
+		'general'     => 'documents-signing.jpg',
+	);
+	$file = isset( $map[ $cat ] ) ? $map[ $cat ] : 'house-suburban.jpg';
+	return get_template_directory_uri() . '/assets/images/' . $file;
+}
+
 function shs_services_config() {
 	return array(
 		'sell-probate-property' => array(
@@ -255,10 +270,13 @@ function shs_render_service_page( $key ) {
 			</div>
 			<div class="grid grid-2" style="gap:var(--space-lg);max-width:960px;margin:0 auto;">
 				<?php while ( $guides->have_posts() ) : $guides->the_post(); ?>
-				<article class="card" style="padding:var(--space-xl);">
+				<article class="card card--guide" style="padding:0;overflow:hidden;">
+					<img src="<?php echo esc_url( shs_cat_image( $svc['category'] ) ); ?>" alt="" loading="lazy" style="width:100%;height:150px;object-fit:cover;display:block;">
+					<div style="padding:var(--space-lg) var(--space-xl) var(--space-xl);">
 					<h3 style="font-size:1.05rem;margin-bottom:var(--space-sm);"><a href="<?php the_permalink(); ?>" style="color:inherit;text-decoration:none;"><?php the_title(); ?></a></h3>
 					<p style="color:var(--wp-gray);font-size:0.92rem;"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 20 ) ); ?></p>
 					<a href="<?php the_permalink(); ?>" style="font-weight:600;color:var(--wp-red);text-decoration:none;">Read Guide &rarr;</a>
+					</div>
 				</article>
 				<?php endwhile; wp_reset_postdata(); ?>
 			</div>

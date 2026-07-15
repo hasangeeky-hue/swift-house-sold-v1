@@ -35,11 +35,14 @@ $book_url = ( $p = get_page_by_path( 'book-a-call' ) ) ? get_permalink( $p->ID )
 				$page = get_page_by_path( $slug );
 				$url  = $page ? get_permalink( $page->ID ) : home_url( '/' . $slug );
 				?>
-			<div class="card animate-on-scroll" style="padding:var(--space-xl);display:flex;flex-direction:column;">
+			<div class="card animate-on-scroll" style="padding:0;display:flex;flex-direction:column;overflow:hidden;">
+				<img src="<?php echo esc_url( shs_cat_image( $svc['category'] ) ); ?>" alt="" loading="lazy" style="width:100%;height:160px;object-fit:cover;display:block;">
+				<div style="padding:var(--space-lg) var(--space-xl) var(--space-xl);display:flex;flex-direction:column;flex:1;">
 				<div style="font-size:2rem;margin-bottom:var(--space-sm);" aria-hidden="true"><?php echo isset( $icons[ $slug ] ) ? $icons[ $slug ] : '🏠'; // phpcs:ignore ?></div>
 				<h3 style="font-size:1.1rem;margin-bottom:var(--space-sm);"><?php echo esc_html( $svc['menu'] ); ?></h3>
 				<p style="color:var(--wp-gray);font-size:0.93rem;flex:1;"><?php echo esc_html( wp_trim_words( $svc['answer'], 24 ) ); ?></p>
 				<a href="<?php echo esc_url( $url ); ?>" class="btn btn--seller btn--full" style="margin-top:var(--space-md);">Learn More &rarr;</a>
+				</div>
 			</div>
 			<?php endforeach; ?>
 		</div>
