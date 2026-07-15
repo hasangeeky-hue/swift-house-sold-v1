@@ -375,3 +375,17 @@
 .trust-bar__stat:hover .trust-bar__number {
   transform: scale(1.1);
 }
+
+/* Front-page split hero: navy backdrop + stacked layout fix */
+.hero.hero--split {
+  display: block;
+  position: relative;
+  min-height: auto;
+  padding: 110px 0 90px;
+  background: linear-gradient(135deg, #16233f 0%, #1B2B4B 55%, #243a66 100%);
+}
+.hero.hero--split .hero__bg { display: none; }
+.hero__actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+@media (max-width: 640px) {
+  .hero.hero--split { padding: 70px 0 60px; }
+}
