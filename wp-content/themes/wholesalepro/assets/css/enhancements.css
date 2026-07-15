@@ -389,3 +389,31 @@
 @media (max-width: 640px) {
   .hero.hero--split { padding: 70px 0 60px; }
 }
+
+/* ── Footer nav: visible links on navy bg ─────────────────────── */
+.site-footer { background: #16233f; color: rgba(255,255,255,0.8); }
+.site-footer .footer-col__heading { color: #E8B54D; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+.site-footer .footer-nav { list-style: none; margin: 0; padding: 0; }
+.site-footer .footer-nav li { margin: 0 0 10px; }
+.site-footer .footer-nav a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 0.93rem; }
+.site-footer .footer-nav a:hover { color: #fff; text-decoration: underline; }
+.site-footer .footer-brand-name { color: #fff; font-size: 1.2rem; font-weight: 700; }
+.site-footer .footer-tagline { color: rgba(255,255,255,0.65); }
+.site-footer .footer-contact-list { list-style: none; margin: 12px 0 0; padding: 0; }
+.site-footer .footer-contact-list a { color: rgba(255,255,255,0.78); text-decoration: none; }
+.footer-cta-band { background: var(--wp-navy, #1B2B4B); padding: 40px 0; }
+.footer-cta-band h2 { color: #fff; }
+.footer-cta-band p { color: rgba(255,255,255,0.75); }
+
+/* ── Mobile: keep the primary CTA visible next to the hamburger ── */
+@media (max-width: 1024px) {
+  .nav-ctas { display: flex !important; }
+  .nav-ctas .btn--outline { display: none; } /* hide Book a Call on small screens; it's in the menu */
+  .nav-ctas .btn--seller { font-size: 0.8rem; padding: 9px 12px; white-space: nowrap; }
+}
+@media (max-width: 380px) {
+  .nav-ctas .btn--seller { font-size: 0.72rem; padding: 8px 9px; }
+}
+
+/* ── Cookie banner: compact, never a full-screen blocker ───────── */
+.cookie-banner, .cookie-notice, #cookie-banner { max-height: 40vh; overflow: auto; }
