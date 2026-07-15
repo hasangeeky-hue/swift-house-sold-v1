@@ -239,6 +239,32 @@
 		var icon = t.querySelector('.faq-item__icon');
 		if (icon) { icon.style.transform = open ? '' : 'rotate(180deg)'; }
 	}, true);
+	// Mobile nav toggle (same optimizer-proof pattern).
+	document.addEventListener('click', function (e) {
+		var t = e.target;
+		var toggle = null, close = null, overlayLink = false;
+		while (t && t !== document) {
+			if (t.classList) {
+				if (t.classList.contains('js-nav-toggle')) { toggle = t; break; }
+				if (t.classList.contains('js-nav-close')) { close = t; break; }
+				if (t.tagName === 'A' && t.closest && t.closest('.nav-overlay')) { overlayLink = true; break; }
+			}
+			t = t.parentNode;
+		}
+		var ov = document.querySelector('.js-nav-overlay');
+		if (!ov) return;
+		if (toggle) {
+			var opening = !ov.classList.contains('active');
+			ov.classList.toggle('active', opening);
+			ov.setAttribute('aria-hidden', opening ? 'false' : 'true');
+			toggle.setAttribute('aria-expanded', opening ? 'true' : 'false');
+			document.body.style.overflow = opening ? 'hidden' : '';
+		} else if (close || overlayLink) {
+			ov.classList.remove('active');
+			ov.setAttribute('aria-hidden', 'true');
+			document.body.style.overflow = '';
+		}
+	}, true);
 })();
 </script>
 

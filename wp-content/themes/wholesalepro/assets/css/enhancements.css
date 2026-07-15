@@ -516,3 +516,6 @@ img, svg, video { max-width: 100%; height: auto; }
   .nav-logo img { height: 26px !important; }
   .nav-ctas .btn--seller { font-size: 0.66rem !important; padding: 7px 8px !important; }
 }
+
+/* Overlay active state (inline handler drives .active) */
+.nav-overlay.active { visibility: visible !important; transform: translateX(0) !important; }
