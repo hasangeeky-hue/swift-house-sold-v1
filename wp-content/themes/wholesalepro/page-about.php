@@ -44,20 +44,20 @@ $deals_url = ( $p = get_page_by_path( 'browse-deals' ) )       ? get_permalink( 
 				</p>
 				<div style="display:flex;gap:var(--space-lg);flex-wrap:wrap;">
 					<div class="text-center" style="padding:var(--space-lg);background:var(--wp-light-gray);border-radius:var(--radius-md);min-width:120px;">
-						<div style="font-size:2.5rem;font-weight:800;color:var(--wp-navy);">500+</div>
-						<p style="font-size:0.85rem;color:var(--wp-gray);margin:0;">Deals Closed</p>
+						<div style="font-size:2.5rem;font-weight:800;color:var(--wp-navy);">24h</div>
+						<p style="font-size:0.85rem;color:var(--wp-gray);margin:0;">Written Offer</p>
 					</div>
 					<div class="text-center" style="padding:var(--space-lg);background:var(--wp-light-gray);border-radius:var(--radius-md);min-width:120px;">
-						<div style="font-size:2.5rem;font-weight:800;color:var(--wp-navy);">50</div>
-						<p style="font-size:0.85rem;color:var(--wp-gray);margin:0;">States Covered</p>
+						<div style="font-size:2.5rem;font-weight:800;color:var(--wp-navy);">501</div>
+						<p style="font-size:0.85rem;color:var(--wp-gray);margin:0;">Counties — OH·TX·GA</p>
 					</div>
 					<div class="text-center" style="padding:var(--space-lg);background:var(--wp-light-gray);border-radius:var(--radius-md);min-width:120px;">
-						<div style="font-size:2.5rem;font-weight:800;color:var(--wp-navy);">4.9★</div>
-						<p style="font-size:0.85rem;color:var(--wp-gray);margin:0;">Avg. Rating</p>
+						<div style="font-size:2.5rem;font-weight:800;color:var(--wp-navy);">$0</div>
+						<p style="font-size:0.85rem;color:var(--wp-gray);margin:0;">Fees or Commissions</p>
 					</div>
 					<div class="text-center" style="padding:var(--space-lg);background:var(--wp-light-gray);border-radius:var(--radius-md);min-width:120px;">
-						<div style="font-size:2.5rem;font-weight:800;color:var(--wp-navy);">14</div>
-						<p style="font-size:0.85rem;color:var(--wp-gray);margin:0;">Day Avg. Close</p>
+						<div style="font-size:2.5rem;font-weight:800;color:var(--wp-navy);">7</div>
+						<p style="font-size:0.85rem;color:var(--wp-gray);margin:0;">Day Fastest Close</p>
 					</div>
 				</div>
 			</div>
