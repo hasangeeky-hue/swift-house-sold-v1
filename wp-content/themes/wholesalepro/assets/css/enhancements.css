@@ -519,3 +519,7 @@ img, svg, video { max-width: 100%; height: auto; }
 
 /* Overlay active state (inline handler drives .active) */
 .nav-overlay.active { visibility: visible !important; transform: translateX(0) !important; }
+
+/* Guide cards: whole card clickable feel */
+.card--guide a { transition: color .15s ease; }
+.card--guide:hover h3 { color: var(--wp-red, #E63946); }

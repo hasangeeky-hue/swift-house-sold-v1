@@ -138,16 +138,89 @@ while ( have_posts() ) :
 			</nav>
 			<?php endif; ?>
 
-			<?php if ( comments_open() || get_comments_number() ) : ?>
-			<div style="margin-top:var(--space-2xl);">
-				<?php comments_template(); ?>
-			</div>
-			<?php endif; ?>
-
 		</div>
 	</div>
 
 </article>
+
+<?php
+/* Newsletter: deal list & seller tips (replaces comments sitewide) */
+?>
+<section class="section bg--navy" aria-labelledby="newsletter-heading">
+	<div class="container" style="max-width:720px;">
+		<div class="text-center">
+			<p class="section-header__eyebrow" style="color:var(--wp-gold);">FREE NEWSLETTER</p>
+			<h2 id="newsletter-heading" style="color:#fff;margin-bottom:var(--space-sm);">Get New Guides &amp; Off-Market Deal Alerts</h2>
+			<p style="color:rgba(255,255,255,0.75);margin-bottom:var(--space-lg);">One useful email at a time: new seller guides, and first access to off-market deals in Ohio, Texas and Georgia when they go live. No spam, unsubscribe anytime.</p>
+		</div>
+		<form class="wp-form js-ajax-form" data-action="wholesalepro_buyer_form" novalidate style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+			<?php wp_nonce_field( 'wholesalepro-nonce', 'nonce' ); ?>
+			<input type="hidden" name="action" value="wholesalepro_buyer_form">
+			<input type="hidden" name="form_location" value="newsletter-post">
+			<div style="position:absolute;left:-9999px;" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+			<input class="form-control" type="text" name="buyer_name" required placeholder="Your name" autocomplete="name" style="flex:1;min-width:160px;max-width:220px;">
+			<input class="form-control" type="email" name="buyer_email" required placeholder="you@email.com" autocomplete="email" style="flex:2;min-width:200px;max-width:320px;">
+			<button type="submit" class="btn btn--seller js-submit" style="white-space:nowrap;">Subscribe &rarr;</button>
+			<div class="form-success" style="display:none;flex-basis:100%;text-align:center;color:#fff;" role="status" aria-live="polite">
+				<p style="margin:12px 0 0;">You're on the list. Watch your inbox!</p>
+			</div>
+		</form>
+	</div>
+</section>
+
+<?php
+/* Related guides: interactive cards + internal linking */
+$rel_cats = wp_get_post_categories( get_the_ID() );
+if ( $rel_cats ) :
+	$related = new WP_Query( array(
+		'posts_per_page' => 3,
+		'post__not_in'   => array( get_the_ID() ),
+		'category__in'   => $rel_cats,
+		'post_status'    => 'publish',
+	) );
+	if ( $related->have_posts() ) :
+		$rel_cat_slug = get_category( $rel_cats[0] )->slug;
+?>
+<section class="section" aria-labelledby="related-heading">
+	<div class="container">
+		<div class="section-header text-center">
+			<p class="section-header__eyebrow">KEEP LEARNING</p>
+			<h2 class="section-header__title" id="related-heading">Related Guides</h2>
+		</div>
+		<div class="grid grid-3" style="gap:var(--space-lg);">
+			<?php while ( $related->have_posts() ) : $related->the_post(); ?>
+			<article class="card card--guide" style="padding:0;overflow:hidden;">
+				<a href="<?php the_permalink(); ?>" style="text-decoration:none;color:inherit;display:block;">
+					<img src="<?php echo esc_url( shs_cat_image( $rel_cat_slug ) ); ?>" alt="" loading="lazy" style="width:100%;height:140px;object-fit:cover;display:block;">
+					<div style="padding:var(--space-lg);">
+						<h3 style="font-size:1rem;margin-bottom:var(--space-sm);"><?php the_title(); ?></h3>
+						<span style="font-weight:600;color:var(--wp-red);">Read Guide &rarr;</span>
+					</div>
+				</a>
+			</article>
+			<?php endwhile; wp_reset_postdata(); ?>
+		</div>
+	</div>
+</section>
+<?php endif; endif; ?>
+
+<?php
+/* CTA band: the reason the guides exist */
+$sell_page = get_page_by_path( 'sell-my-house-fast' );
+$sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-house-fast' );
+$book_page = get_page_by_path( 'book-a-call' );
+$book_url  = $book_page ? get_permalink( $book_page->ID ) : home_url( '/book-a-call' );
+?>
+<section class="section bg--light-gray" aria-labelledby="post-cta-heading">
+	<div class="container text-center">
+		<h2 id="post-cta-heading" style="margin-bottom:var(--space-sm);">Ready to Talk About Your House?</h2>
+		<p style="color:var(--wp-gray);max-width:520px;margin:0 auto var(--space-lg);">Written cash offer in 24 hours, or a free consultation first. Both cost nothing and commit you to nothing.</p>
+		<div style="display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap;">
+			<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--lg">Get My Free Cash Offer &rarr;</a>
+			<a href="<?php echo esc_url( $book_url ); ?>" class="btn btn--outline btn--lg">Book a Free Consultation</a>
+		</div>
+	</div>
+</section>
 
 <?php
 endwhile;

@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /* ── Constants ───────────────────────────────────────────────────── */
-define( 'WHOLESALEPRO_VERSION', '2.4.3' );
+define( 'WHOLESALEPRO_VERSION', '2.5.0' );
 define( 'WHOLESALEPRO_DIR',     get_template_directory() );
 define( 'WHOLESALEPRO_URI',     get_template_directory_uri() );
 

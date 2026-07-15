@@ -255,3 +255,14 @@ add_action( 'init', function () {
 
 /* Core sitemaps stay enabled. */
 add_filter( 'wp_sitemaps_enabled', '__return_true', 99 );
+
+/**
+ * Comments off sitewide: this is a lead-gen education site, not a forum.
+ */
+add_action( 'init', function () {
+	remove_post_type_support( 'post', 'comments' );
+	remove_post_type_support( 'page', 'comments' );
+} );
+add_filter( 'comments_open', '__return_false', 20 );
+add_filter( 'pings_open', '__return_false', 20 );
+add_filter( 'comments_array', '__return_empty_array', 10 );
