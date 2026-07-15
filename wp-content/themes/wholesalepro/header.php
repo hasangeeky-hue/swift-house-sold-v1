@@ -55,11 +55,12 @@ if ( $fb_pixel ) :
 					) ) ); ?>
 				</span>
 				<span class="topbar__contact">
+					<?php if ( get_theme_mod( 'company_phone_raw', '' ) ) : ?>
 					<a href="tel:<?php echo esc_attr( get_theme_mod( 'company_phone_raw', '' ) ); ?>" class="topbar__phone">
-						<?php echo wholesalepro_get_star_rating( 4.9 ); // phpcs:ignore ?>
 						<?php esc_html_e( 'Call:', 'wholesalepro' ); ?>
 						<?php echo esc_html( get_theme_mod( 'company_phone', '' ) ); ?>
 					</a>
+					<?php endif; ?>
 				</span>
 			</div>
 		</div>
