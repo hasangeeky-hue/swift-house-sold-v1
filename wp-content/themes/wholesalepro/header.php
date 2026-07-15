@@ -92,6 +92,7 @@ if ( $fb_pixel ) :
 							$nav_pages = array(
 								'sell-my-house-fast' => __( 'Sell My House', 'wholesalepro' ),
 								'services'           => __( 'Services', 'wholesalepro' ),
+								'investors'          => __( 'Investors', 'wholesalepro' ),
 								'how-it-works'       => __( 'How It Works', 'wholesalepro' ),
 								'faq'                => __( 'FAQ', 'wholesalepro' ),
 								'about-us'           => __( 'About', 'wholesalepro' ),
@@ -151,6 +152,7 @@ if ( $fb_pixel ) :
 		$overlay_pages = array(
 			'sell-my-house-fast'   => __( 'Sell My House', 'wholesalepro' ),
 			'services'             => __( 'Services', 'wholesalepro' ),
+			'investors'            => __( 'Investors', 'wholesalepro' ),
 			'book-a-call'          => __( 'Book a Call', 'wholesalepro' ),
 			'how-it-works'         => __( 'How It Works', 'wholesalepro' ),
 			'cash-sale-vs-listing' => __( 'Cash Sale vs. Agent', 'wholesalepro' ),

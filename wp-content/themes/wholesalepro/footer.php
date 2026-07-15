@@ -106,7 +106,7 @@
 				</div>
 
 				<div class="footer-col">
-					<h3 class="footer-col__heading"><?php esc_html_e( 'Situations We Solve', 'wholesalepro' ); ?></h3>
+					<h3 class="footer-col__heading"><?php esc_html_e( 'For Investors', 'wholesalepro' ); ?></h3>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'footer-col-2',
@@ -114,10 +114,10 @@
 						'menu_class'     => 'footer-nav',
 						'fallback_cb'    => function() {
 							$links = array(
-								'sell-my-house-fast'    => __( 'Foreclosure · Probate · Divorce', 'wholesalepro' ),
-								'cash-sale-vs-listing'  => __( 'Cash Sale vs. Agent', 'wholesalepro' ),
-								'blog'                  => __( 'Free Seller Guides', 'wholesalepro' ),
-								'faq'                   => __( 'Common Questions', 'wholesalepro' ),
+								'investors'            => __( 'Join the Buyer List', 'wholesalepro' ),
+								'invest-fix-and-flip'  => __( 'Fix & Flip Deals', 'wholesalepro' ),
+								'invest-buy-and-hold'  => __( 'Buy & Hold Rentals', 'wholesalepro' ),
+								'invest-out-of-state'  => __( 'Out-of-State Investing', 'wholesalepro' ),
 							);
 							echo '<ul class="footer-nav">';
 							foreach ( $links as $slug => $label ) {

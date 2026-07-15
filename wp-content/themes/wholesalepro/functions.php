@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /* ── Constants ───────────────────────────────────────────────────── */
-define( 'WHOLESALEPRO_VERSION', '2.5.0' );
+define( 'WHOLESALEPRO_VERSION', '2.6.0' );
 define( 'WHOLESALEPRO_DIR',     get_template_directory() );
 define( 'WHOLESALEPRO_URI',     get_template_directory_uri() );
 
@@ -77,6 +77,7 @@ $wholesalepro_includes = array(
 	'/inc/seo.php',
 	'/inc/schema.php',
 	'/inc/services.php',
+	'/inc/investors.php',
 );
 
 foreach ( $wholesalepro_includes as $file ) {

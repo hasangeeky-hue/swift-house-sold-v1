@@ -16,7 +16,10 @@ function shs_cat_image( $cat ) {
 		'tax-liens'   => 'calculator-tax.jpg',
 		'repairs'     => 'house-porch.jpg',
 		'landlord'    => 'house-modern.jpg',
-		'general'     => 'documents-signing.jpg',
+		'general'      => 'documents-signing.jpg',
+		'fix-flip'     => 'house-porch.jpg',
+		'buy-hold'     => 'house-modern.jpg',
+		'out-of-state' => 'house-luxury.jpg',
 	);
 	$file = isset( $map[ $cat ] ) ? $map[ $cat ] : 'house-suburban.jpg';
 	return get_template_directory_uri() . '/assets/images/' . $file;
@@ -181,11 +184,12 @@ function shs_services_config() {
  * Render a complete service landing page for the given service key.
  */
 function shs_render_service_page( $key ) {
-	$all = shs_services_config();
+	$all = function_exists( 'shs_all_landing_configs' ) ? shs_all_landing_configs() : shs_services_config();
 	if ( ! isset( $all[ $key ] ) ) {
 		return;
 	}
 	$svc      = $all[ $key ];
+	$investor = ! empty( $svc['audience'] ) && 'investor' === $svc['audience'];
 	$sell_url = ( $p = get_page_by_path( 'sell-my-house-fast' ) ) ? get_permalink( $p->ID ) : home_url( '/sell-my-house-fast' );
 	$book_url = ( $p = get_page_by_path( 'book-a-call' ) ) ? get_permalink( $p->ID ) : home_url( '/book-a-call' );
 	?>
@@ -300,13 +304,15 @@ function shs_render_service_page( $key ) {
 
 	<section class="section bg--navy" aria-labelledby="svc-cta-heading">
 		<div class="container text-center">
-			<h2 id="svc-cta-heading" style="color:#fff;margin-bottom:var(--space-md);">Talk It Through With a Real Person First?</h2>
+			<h2 id="svc-cta-heading" style="color:#fff;margin-bottom:var(--space-md);"><?php echo $investor ? 'Questions Before You Join?' : 'Talk It Through With a Real Person First?'; ?></h2>
 			<p style="color:rgba(255,255,255,0.8);max-width:560px;margin:0 auto var(--space-xl);">
-				Book a free consultation, online or by phone. No pressure, no obligation. Or get your written cash offer right away.
+				<?php echo $investor ? 'Book a free call, online or by phone. Tell us your strategy and we will tell you honestly whether our pipeline fits it.' : 'Book a free consultation, online or by phone. No pressure, no obligation. Or get your written cash offer right away.'; ?>
 			</p>
 			<div style="display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap;">
-				<a href="<?php echo esc_url( $book_url ); ?>" class="btn btn--outline-white btn--lg">Book a Free Consultation</a>
+				<a href="<?php echo esc_url( $book_url ); ?>" class="btn btn--outline-white btn--lg">Book a Free Call</a>
+				<?php if ( ! $investor ) : ?>
 				<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--lg">Get My Cash Offer &rarr;</a>
+				<?php endif; ?>
 			</div>
 		</div>
 	</section>
