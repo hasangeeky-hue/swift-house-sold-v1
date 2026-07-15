@@ -36,6 +36,14 @@ function wholesalepro_seo_data() {
 		$cache['title'] = 'FAQ: Selling Your House For Cash in OH, TX & GA | ' . $company;
 	} elseif ( is_page( 'services' ) ) {
 		$cache['title'] = 'Our Services: Foreclosure, Probate, Divorce & More | ' . $company;
+	} elseif ( is_page() && function_exists( 'shs_all_landing_configs' ) ) {
+		$slug    = get_post_field( 'post_name', get_queried_object_id() );
+		$configs = shs_all_landing_configs();
+		if ( isset( $configs[ $slug ] ) ) {
+			$cache['title'] = wp_strip_all_tags( html_entity_decode( $configs[ $slug ]['title'] ) ) . ' | ' . $company;
+		} else {
+			$cache['title'] = get_the_title() . ' | ' . $company;
+		}
 	} elseif ( is_singular() ) {
 		$cache['title'] = get_the_title() . ' | ' . $company;
 	}

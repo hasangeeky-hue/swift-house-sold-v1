@@ -36,6 +36,11 @@ function wholesalepro_output_schema() {
 		'@type'       => 'Organization',
 		'name'        => $company,
 		'url'         => home_url( '/' ),
+		'areaServed'  => array(
+			array( '@type' => 'State', 'name' => 'Ohio' ),
+			array( '@type' => 'State', 'name' => 'Texas' ),
+			array( '@type' => 'State', 'name' => 'Georgia' ),
+		),
 		'telephone'   => $phone,
 		'email'       => $email,
 		'address'     => array(
