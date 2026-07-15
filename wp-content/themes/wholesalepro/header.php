@@ -102,7 +102,7 @@ if ( $fb_pixel ) :
 					<li class="nav-links__item menu-item menu-item-has-children">
 						<a href="<?php echo esc_url( $svc_url ); ?>"><?php esc_html_e( 'Sell My House', 'wholesalepro' ); ?> <span aria-hidden="true" style="font-size:0.65em;">&#9662;</span></a>
 						<ul class="sub-menu">
-							<li class="sub-menu__label"><?php esc_html_e( 'WHAT'S YOUR SITUATION?', 'wholesalepro' ); ?></li>
+							<li class="sub-menu__label"><?php esc_html_e( 'WHAT IS YOUR SITUATION?', 'wholesalepro' ); ?></li>
 							<?php
 							foreach ( $situations as $slug => $label ) {
 								$p = get_page_by_path( $slug );
