@@ -19,7 +19,7 @@ $deals_url = ( $p = get_page_by_path( 'browse-deals' ) )       ? get_permalink( 
 			The Company Behind the Deals
 		</h1>
 		<p class="page-hero__subtitle animate-on-scroll" style="transition-delay:0.1s">
-			We are not a faceless acquisition company. We are a team of real estate professionals who built a better process for buying distressed properties — one that respects sellers, rewards investors, and creates genuine value on every deal.
+			We are not a faceless acquisition company. We are a team of real estate professionals who built a better process for buying distressed properties, one that respects sellers, rewards investors, and creates genuine value on every deal.
 		</p>
 	</div>
 </section>
@@ -34,13 +34,13 @@ $deals_url = ( $p = get_page_by_path( 'browse-deals' ) )       ? get_permalink( 
 				<p class="section-header__eyebrow">WHY WE EXIST</p>
 				<h2 id="about-story-heading" style="margin-bottom:var(--space-lg);">Why WholesalePro Exists</h2>
 				<p style="color:var(--wp-gray);margin-bottom:var(--space-md);">
-					WholesalePro began with a single observation: millions of American homeowners find themselves in situations where the traditional real estate process is genuinely the wrong solution. Months of showings, uncertain financing, agent commissions, and mandatory repairs — none of this helps someone who has missed four mortgage payments and needs certainty within the next 30 days.
+					WholesalePro began with a single observation: millions of American homeowners find themselves in situations where the traditional real estate process is genuinely the wrong solution. Months of showings, uncertain financing, agent commissions, and mandatory repairs, none of this helps someone who has missed four mortgage payments and needs certainty within the next 30 days.
 				</p>
 				<p style="color:var(--wp-gray);margin-bottom:var(--space-md);">
-					We built a different kind of operation. One that uses data to find motivated sellers before they even begin searching for help, that responds within hours rather than days, and that measures success by how cleanly each seller walks away from a difficult situation — not by how wide the margin was on the deal.
+					We built a different kind of operation. One that uses data to find motivated sellers before they even begin searching for help, that responds within hours rather than days, and that measures success by how cleanly each seller walks away from a difficult situation, not by how wide the margin was on the deal.
 				</p>
 				<p style="color:var(--wp-gray);margin-bottom:var(--space-xl);">
-					We focus on three states we know deeply — Ohio, Texas and Georgia. Deep local knowledge of foreclosure timelines, probate courts and tax rules in these markets means faster closings and fairer offers than any generalist buyer claiming to cover the whole country.
+					We focus on three states we know deeply, Ohio, Texas and Georgia. Deep local knowledge of foreclosure timelines, probate courts and tax rules in these markets means faster closings and fairer offers than any generalist buyer claiming to cover the whole country.
 				</p>
 				<div style="display:flex;gap:var(--space-lg);flex-wrap:wrap;">
 					<div class="text-center" style="padding:var(--space-lg);background:var(--wp-light-gray);border-radius:var(--radius-md);min-width:120px;">
@@ -49,7 +49,7 @@ $deals_url = ( $p = get_page_by_path( 'browse-deals' ) )       ? get_permalink( 
 					</div>
 					<div class="text-center" style="padding:var(--space-lg);background:var(--wp-light-gray);border-radius:var(--radius-md);min-width:120px;">
 						<div style="font-size:2.5rem;font-weight:800;color:var(--wp-navy);">501</div>
-						<p style="font-size:0.85rem;color:var(--wp-gray);margin:0;">Counties — OH·TX·GA</p>
+						<p style="font-size:0.85rem;color:var(--wp-gray);margin:0;">Counties, OH·TX·GA</p>
 					</div>
 					<div class="text-center" style="padding:var(--space-lg);background:var(--wp-light-gray);border-radius:var(--radius-md);min-width:120px;">
 						<div style="font-size:2.5rem;font-weight:800;color:var(--wp-navy);">$0</div>
@@ -86,7 +86,7 @@ $deals_url = ( $p = get_page_by_path( 'browse-deals' ) )       ? get_permalink( 
 				array(
 					'icon'  => '⚡',
 					'title' => 'Speed as a Form of Respect',
-					'body'  => 'A homeowner facing a deadline does not have the luxury of waiting three weeks for a response. We treat speed as a fundamental part of our service. One-hour response times are not a marketing claim — they are an operational standard we hold our team to on every business day.',
+					'body'  => 'A homeowner facing a deadline does not have the luxury of waiting three weeks for a response. We treat speed as a fundamental part of our service. One-hour response times are not a marketing claim, they are an operational standard we hold our team to on every business day.',
 				),
 				array(
 					'icon'  => '⚖️',
@@ -96,7 +96,7 @@ $deals_url = ( $p = get_page_by_path( 'browse-deals' ) )       ? get_permalink( 
 				array(
 					'icon'  => '🗺️',
 					'title' => 'National Reach, Local Knowledge',
-					'body'  => 'We cover every county in Ohio, Texas and Georgia — with current comparable sales data and knowledge of each state\'s foreclosure, probate and tax rules. Focus beats footprint: three states known deeply serve sellers better than fifty known barely.',
+					'body'  => 'We cover every county in Ohio, Texas and Georgia, with current comparable sales data and knowledge of each state\'s foreclosure, probate and tax rules. Focus beats footprint: three states known deeply serve sellers better than fifty known barely.',
 				),
 			);
 			foreach ( $values as $i => $val ) : ?>
@@ -125,7 +125,7 @@ $deals_url = ( $p = get_page_by_path( 'browse-deals' ) )       ? get_permalink( 
 				array( 'Alex Johnson',  'Founder &amp; CEO',              '12 years in wholesale real estate across 30+ states. Founded WholesalePro to build the process he wished had existed earlier.' ),
 				array( 'Maria Santos',  'Director of Acquisitions',        'Former real estate attorney. Oversees every offer and ensures every seller receives complete, accurate information before deciding.' ),
 				array( 'David Kim',     'Lead Underwriter',                'Licensed contractor background. Personally validates repair estimates on every deal to ensure investor numbers are reliable.' ),
-				array( 'Priya Patel',   'Investor Relations',              'Manages relationships with over 5,000 network investors. Former hedge fund analyst — she speaks every investor\'s language.' ),
+				array( 'Priya Patel',   'Investor Relations',              'Manages relationships with over 5,000 network investors. Former hedge fund analyst, she speaks every investor\'s language.' ),
 			);
 			foreach ( $team as $i => $member ) : ?>
 			<div class="team-card animate-on-scroll" style="transition-delay:<?php echo esc_attr( $i * 0.1 ); ?>s;text-align:center;">
@@ -145,7 +145,7 @@ $deals_url = ( $p = get_page_by_path( 'browse-deals' ) )       ? get_permalink( 
 <section class="section bg--light-gray" aria-labelledby="about-cta-heading">
 	<div class="container narrow text-center animate-on-scroll">
 		<h2 id="about-cta-heading" style="margin-bottom:var(--space-md);">Ready to Work With Us?</h2>
-		<p style="color:var(--wp-gray);margin-bottom:var(--space-xl);">Whether you need to sell a property or you are looking for investment deals — we are here to help.</p>
+		<p style="color:var(--wp-gray);margin-bottom:var(--space-xl);">Whether you need to sell a property or you are looking for investment deals, we are here to help.</p>
 		<div style="display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap;">
 			<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--lg">Get My Cash Offer</a>
 			<a href="<?php echo esc_url( $deals_url ); ?>" class="btn btn--buyer btn--lg">Browse Investor Deals</a>

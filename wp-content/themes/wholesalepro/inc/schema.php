@@ -194,11 +194,11 @@ function wholesalepro_get_faq_schema_items() {
 	$faqs = array(
 		array(
 			'question' => wholesalepro_content( '{{FAQ_QUESTION_1}}', 'How quickly can you close on my house?' ),
-			'answer'   => wholesalepro_content( '{{FAQ_ANSWER_1}}', 'We can close in as little as 7 days or on your timeline — whatever works best for you.' ),
+			'answer'   => wholesalepro_content( '{{FAQ_ANSWER_1}}', 'We can close in as little as 7 days or on your timeline, whatever works best for you.' ),
 		),
 		array(
 			'question' => wholesalepro_content( '{{FAQ_QUESTION_2}}', 'Do I need to make repairs before selling?' ),
-			'answer'   => wholesalepro_content( '{{FAQ_ANSWER_2}}', 'No repairs needed. We buy houses in any condition — move-in ready or completely distressed.' ),
+			'answer'   => wholesalepro_content( '{{FAQ_ANSWER_2}}', 'No repairs needed. We buy houses in any condition, move-in ready or completely distressed.' ),
 		),
 		array(
 			'question' => wholesalepro_content( '{{FAQ_QUESTION_3}}', 'Are there any fees or commissions?' ),
@@ -210,7 +210,7 @@ function wholesalepro_get_faq_schema_items() {
 		),
 		array(
 			'question' => wholesalepro_content( '{{FAQ_QUESTION_5}}', 'What types of properties do you buy?' ),
-			'answer'   => wholesalepro_content( '{{FAQ_ANSWER_5}}', 'We buy single-family homes, multi-family properties, condos, townhouses and land across Ohio, Texas and Georgia — any condition, including houses needing major repairs.' ),
+			'answer'   => wholesalepro_content( '{{FAQ_ANSWER_5}}', 'We buy single-family homes, multi-family properties, condos, townhouses and land across Ohio, Texas and Georgia, any condition, including houses needing major repairs.' ),
 		),
 	);
 

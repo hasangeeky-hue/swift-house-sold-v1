@@ -1,6 +1,6 @@
 <?php
 /**
- * Services hub — one card per target customer group.
+ * Services hub, one card per target customer group.
  *
  * @package WholesalePro
  */
@@ -12,9 +12,9 @@ $book_url = ( $p = get_page_by_path( 'book-a-call' ) ) ? get_permalink( $p->ID )
 
 <section class="page-hero page-hero--seller" aria-labelledby="services-hero-heading">
 	<div class="container">
-		<p class="page-hero__eyebrow">OUR SERVICES — OHIO · TEXAS · GEORGIA</p>
+		<p class="page-hero__eyebrow">OUR SERVICES, OHIO · TEXAS · GEORGIA</p>
 		<h1 class="page-hero__title" id="services-hero-heading">Whatever You're Facing, There's a Service Built For It</h1>
-		<p class="page-hero__subtitle">Every situation below has its own dedicated process, timeline knowledge, and guides. Pick yours — or book a free consultation and we'll figure it out together.</p>
+		<p class="page-hero__subtitle">Every situation below has its own dedicated process, timeline knowledge, and guides. Pick yours, or book a free consultation and we'll figure it out together.</p>
 	</div>
 </section>
 

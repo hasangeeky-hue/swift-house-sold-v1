@@ -22,7 +22,7 @@ $how_url   = ( $p = get_page_by_path( 'how-it-works' ) )       ? get_permalink( 
 		</h1>
 
 		<p class="animate-on-scroll" style="transition-delay:0.2s;color:var(--wp-gray);font-size:1.125rem;max-width:520px;margin-inline:auto;margin-top:var(--space-md);">
-			But your property situation does — and we can help with that. The page you were looking for could not be found. It may have been moved, renamed, or removed. Here are some pages that might be what you were looking for:
+			But your property situation does, and we can help with that. The page you were looking for could not be found. It may have been moved, renamed, or removed. Here are some pages that might be what you were looking for:
 		</p>
 
 		<div class="animate-on-scroll" style="transition-delay:0.3s;margin-top:var(--space-2xl);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-md);max-width:640px;margin-inline:auto;">

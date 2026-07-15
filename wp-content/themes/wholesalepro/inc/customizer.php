@@ -42,6 +42,23 @@ function wholesalepro_customizer_register( $wp_customize ) {
 	wholesalepro_add_fields( $wp_customize, 'wholesalepro_company', $company_fields );
 
 	/* ════════════════════════════════════════════════════════════
+	   SECTION: Homepage Content (dynamic)
+	   ════════════════════════════════════════════════════════════ */
+	$wp_customize->add_section( 'shs_homepage', array(
+		'title'    => __( 'Homepage Content', 'wholesalepro' ),
+		'panel'    => 'wholesalepro_panel',
+		'priority' => 12,
+	) );
+	$home_fields = array(
+		array( 'id' => 'shs_hero_title',    'label' => __( 'Hero Title', 'wholesalepro' ),            'default' => 'Sell Your House Fast For Cash, Like a Rocket', 'type' => 'text',     'transport' => 'refresh' ),
+		array( 'id' => 'shs_hero_subtitle', 'label' => __( 'Hero Subtitle', 'wholesalepro' ),         'default' => '', 'type' => 'textarea', 'transport' => 'refresh' ),
+		array( 'id' => 'shs_hero_cta',      'label' => __( 'Hero Button Text', 'wholesalepro' ),      'default' => 'Get My Free Cash Offer', 'type' => 'text', 'transport' => 'refresh' ),
+		array( 'id' => 'shs_compare_rows',  'label' => __( 'Comparison Table Rows (one per line: Factor | Us | Traditional)', 'wholesalepro' ), 'default' => '', 'type' => 'textarea', 'transport' => 'refresh' ),
+		array( 'id' => 'shs_book_cta',      'label' => __( 'Book a Call Button Text', 'wholesalepro' ), 'default' => 'Book a Call', 'type' => 'text', 'transport' => 'refresh' ),
+	);
+	wholesalepro_add_fields( $wp_customize, 'shs_homepage', $home_fields );
+
+	/* ════════════════════════════════════════════════════════════
 	   SECTION: API Keys
 	   ════════════════════════════════════════════════════════════ */
 	$wp_customize->add_section( 'wholesalepro_api', array(

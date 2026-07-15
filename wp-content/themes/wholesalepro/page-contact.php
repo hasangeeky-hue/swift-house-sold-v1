@@ -22,7 +22,7 @@ $business_hours  = get_theme_mod( 'business_hours', 'Mon–Fri: 8am–7pm EST &m
 			Let Us Help You Today
 		</h1>
 		<p class="page-hero__subtitle animate-on-scroll" style="transition-delay:0.1s">
-			Whether you are a homeowner looking for options or an investor looking for deals — every inquiry receives a personal response within one hour.
+			Whether you are a homeowner looking for options or an investor looking for deals, every inquiry receives a personal response within one hour.
 		</p>
 	</div>
 </section>

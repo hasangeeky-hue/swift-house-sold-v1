@@ -58,7 +58,7 @@ function wholesalepro_enqueue_assets() {
 	$ver = WHOLESALEPRO_VERSION;
 	$uri = WHOLESALEPRO_URI;
 
-	// Google Fonts — loaded via <link rel="preload"> in header.php for FOUT elimination
+	// Google Fonts, loaded via <link rel="preload"> in header.php for FOUT elimination
 	// wp_enqueue_style( 'wholesalepro-google-fonts', ... ) intentionally removed
 
 	// Core stylesheets
@@ -78,7 +78,7 @@ function wholesalepro_enqueue_assets() {
 		wp_enqueue_style( 'wholesalepro-property', $uri . '/assets/css/property.css', array( 'wholesalepro-components' ), $ver );
 	}
 
-	// Design enhancements — loaded last so they override base styles
+	// Design enhancements, loaded last so they override base styles
 	wp_enqueue_style( 'wholesalepro-enhancements', $uri . '/assets/css/enhancements.css', array( 'wholesalepro-responsive' ), $ver );
 
 	// Core scripts
@@ -127,7 +127,7 @@ add_action( 'wp_enqueue_scripts', 'wholesalepro_enqueue_assets' );
 function wholesalepro_admin_enqueue( $hook ) {
 	$screen = get_current_screen();
 
-	// Meta box calc script — property edit screen
+	// Meta box calc script, property edit screen
 	if ( $screen && 'property' === $screen->post_type && in_array( $hook, array( 'post.php', 'post-new.php' ), true ) ) {
 		wp_enqueue_script(
 			'wholesalepro-meta-calc',

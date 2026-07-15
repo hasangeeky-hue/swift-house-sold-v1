@@ -34,10 +34,10 @@ $company_address = get_theme_mod( 'company_address', '123 Main Street, Your City
 			<h2>1. Information We Collect</h2>
 			<p>We collect information you provide directly to us, including:</p>
 			<ul>
-				<li><strong>Contact information</strong> — name, email address, phone number, mailing address</li>
-				<li><strong>Property information</strong> — property address, condition, situation, and any details you share about your property</li>
-				<li><strong>Communication records</strong> — emails, text messages, and phone call records when you contact us</li>
-				<li><strong>Form submissions</strong> — any information you submit through our online forms</li>
+				<li><strong>Contact information</strong>, name, email address, phone number, mailing address</li>
+				<li><strong>Property information</strong>, property address, condition, situation, and any details you share about your property</li>
+				<li><strong>Communication records</strong>, emails, text messages, and phone call records when you contact us</li>
+				<li><strong>Form submissions</strong>, any information you submit through our online forms</li>
 			</ul>
 			<p>We also collect certain information automatically when you visit our website, including your IP address, browser type, pages visited, and referring URLs through cookies and similar tracking technologies.</p>
 
@@ -58,10 +58,10 @@ $company_address = get_theme_mod( 'company_address', '123 Main Street, Your City
 			<h2>4. How We Share Your Information</h2>
 			<p>We do not sell your personal information. We may share your information with:</p>
 			<ul>
-				<li><strong>Service providers</strong> — third-party vendors who assist us in operating our website and conducting our business (such as CRM platforms, email providers, and title companies)</li>
-				<li><strong>Business partners</strong> — other investors in our buyer network, only when you have expressed interest in selling and we are presenting your property as a deal</li>
-				<li><strong>Legal requirements</strong> — when required by law, court order, or government authority</li>
-				<li><strong>Business transfers</strong> — in connection with a merger, acquisition, or sale of business assets</li>
+				<li><strong>Service providers</strong>, third-party vendors who assist us in operating our website and conducting our business (such as CRM platforms, email providers, and title companies)</li>
+				<li><strong>Business partners</strong>, other investors in our buyer network, only when you have expressed interest in selling and we are presenting your property as a deal</li>
+				<li><strong>Legal requirements</strong>, when required by law, court order, or government authority</li>
+				<li><strong>Business transfers</strong>, in connection with a merger, acquisition, or sale of business assets</li>
 			</ul>
 
 			<h2>5. Cookies and Tracking Technologies</h2>

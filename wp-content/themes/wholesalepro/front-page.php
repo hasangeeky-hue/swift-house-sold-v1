@@ -1,6 +1,6 @@
 <?php
 /**
- * Front Page Template — Swift House Sold
+ * Front Page Template, Swift House Sold
  * Pain-point-first, OH/TX/GA focused, AEO question-structured.
  *
  * @package WholesalePro
@@ -32,17 +32,17 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 		<div class="hero__inner">
 			<div class="hero__content">
 				<p class="hero__eyebrow animate-on-scroll">
-					CASH HOME BUYERS &mdash; OHIO &middot; TEXAS &middot; GEORGIA
+					CASH HOME BUYERS, OHIO &middot; TEXAS &middot; GEORGIA
 				</p>
 				<h1 class="hero__title animate-on-scroll" id="hero-heading" style="transition-delay:0.1s">
-					Sell Your House Fast For Cash &mdash; Like a Rocket
+					<?php echo esc_html( get_theme_mod( 'shs_hero_title', 'Sell Your House Fast For Cash, Like a Rocket' ) ); ?>
 				</h1>
 				<p class="hero__subtitle animate-on-scroll" style="transition-delay:0.2s">
-					Behind on the mortgage? Inherited a house you can't keep up? Divorce forcing a sale? We buy houses in any condition across Ohio, Texas and Georgia. Written cash offer within 24 hours &mdash; no repairs, no commissions, no waiting.
+					<?php echo esc_html( get_theme_mod( 'shs_hero_subtitle', "Behind on the mortgage? Inherited a house you can't keep up? Divorce forcing a sale? We buy houses in any condition across Ohio, Texas and Georgia. Written cash offer within 24 hours, no repairs, no commissions, no waiting." ) ); ?>
 				</p>
 				<div class="hero__actions animate-on-scroll" style="transition-delay:0.3s">
 					<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--lg">
-						Get My Free Cash Offer
+						<?php echo esc_html( get_theme_mod( 'shs_hero_cta', 'Get My Free Cash Offer' ) ); ?>
 					</a>
 					<a href="<?php echo esc_url( $how_url ); ?>" class="btn btn--outline-white btn--lg">
 						See How It Works
@@ -72,16 +72,16 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 		<div class="section-header text-center">
 			<p class="section-header__eyebrow">WE SPECIALIZE IN DIFFICULT SITUATIONS</p>
 			<h2 class="section-header__title" id="situations-heading">Whatever You're Facing, We've Helped Someone Through It</h2>
-			<p class="section-header__subtitle">A traditional listing works for a normal sale. These situations are not normal sales &mdash; they need speed, certainty and zero out-of-pocket cost.</p>
+			<p class="section-header__subtitle">A traditional listing works for a normal sale. These situations are not normal sales, they need speed, certainty and zero out-of-pocket cost.</p>
 		</div>
 		<div class="grid grid-3" style="gap:var(--space-lg);">
 			<?php
 			$situations = array(
 				array( '⏰', 'Behind on Mortgage / Foreclosure', 'Once the bank files, the clock moves fast. In many cases we can close before the sheriff\'s sale and you walk away with cash instead of a foreclosure on your record.' ),
 				array( '🏠', 'Inherited or Probate Property', 'A house you didn\'t ask for, in another city, full of belongings. We work with your estate attorney, buy as-is, and you never have to clean it out.' ),
-				array( '⚖️', 'Divorce &mdash; Need a Clean, Fast Split', 'Two people who need to move on can\'t wait six months for a buyer. One cash sale, one closing date, both sides get certainty.' ),
+				array( '⚖️', 'Divorce, Need a Clean, Fast Split', 'Two people who need to move on can\'t wait six months for a buyer. One cash sale, one closing date, both sides get certainty.' ),
 				array( '🔧', 'Major Repairs You Can\'t Afford', 'Foundation, roof, fire damage, mold, outdated everything. We buy the house exactly as it stands. You fix nothing, clean nothing.' ),
-				array( '📋', 'Tax Liens &amp; Code Violations', 'Most owners think liens mean they can\'t sell. Usually wrong &mdash; liens are handled at closing, out of the sale price, not your pocket.' ),
+				array( '📋', 'Tax Liens &amp; Code Violations', 'Most owners think liens mean they can\'t sell. Usually wrong, liens are handled at closing, out of the sale price, not your pocket.' ),
 				array( '🔑', 'Tired Landlord / Problem Tenants', 'Non-paying tenants, constant repairs, eviction costs. Sell the property with tenants in place and stop the bleeding this month.' ),
 			);
 			foreach ( $situations as $i => $s ) : ?>
@@ -105,7 +105,7 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 			<div class="animate-on-scroll">
 				<h2 id="howfast-heading" style="margin-bottom:var(--space-md);">How Fast Can I Sell My House in Ohio, Texas or Georgia?</h2>
 				<p style="color:var(--wp-gray);margin-bottom:var(--space-md);">
-					You can sell your house for cash in as little as 7 days in Ohio, Texas or Georgia. After you submit your address, you receive a written cash offer within 24 hours. If you accept, a licensed title company handles the closing on the date you choose &mdash; from 7 days up to 60 days if you need time. Compare that with a traditional listing, which averages 90&ndash;180 days.
+					You can sell your house for cash in as little as 7 days in Ohio, Texas or Georgia. After you submit your address, you receive a written cash offer within 24 hours. If you accept, a licensed title company handles the closing on the date you choose, from 7 days up to 60 days if you need time. Compare that with a traditional listing, which averages 90&ndash;180 days.
 				</p>
 				<a href="<?php echo esc_url( $how_url ); ?>" class="btn btn--outline">See the Full 4-Step Process &rarr;</a>
 			</div>
@@ -114,7 +114,7 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 				<p style="color:var(--wp-gray);margin-bottom:var(--space-md);">
 					Nothing. Selling to us costs you zero: no agent commission (typically 5&ndash;6% of the sale price), no closing costs (we pay them), no repair bills, and no cleaning costs. The written offer we send is the amount you receive at closing. A traditional sale of a $200,000 home often costs the seller $12,000+ in commissions alone before repairs.
 				</p>
-				<a href="<?php echo esc_url( $compare_url ); ?>" class="btn btn--outline">Cash Sale vs. Agent &mdash; Real Numbers &rarr;</a>
+				<a href="<?php echo esc_url( $compare_url ); ?>" class="btn btn--outline">Cash Sale vs. Agent, Real Numbers &rarr;</a>
 			</div>
 		</div>
 	</div>
@@ -152,13 +152,13 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 		<div class="section-header text-center">
 			<p class="section-header__eyebrow" style="color:var(--wp-gold);">THREE STATES. DEEP LOCAL KNOWLEDGE.</p>
 			<h2 class="section-header__title" id="states-heading" style="color:#fff;">Where Do We Buy Houses?</h2>
-			<p class="section-header__subtitle" style="color:rgba(255,255,255,0.75);">Ohio, Texas and Georgia &mdash; every county. We know the local foreclosure timelines, probate courts and tax rules, because we work them every week.</p>
+			<p class="section-header__subtitle" style="color:rgba(255,255,255,0.75);">Ohio, Texas and Georgia, every county. We know the local foreclosure timelines, probate courts and tax rules, because we work them every week.</p>
 		</div>
 		<div class="grid grid-3" style="gap:var(--space-lg);">
 			<?php
 			$states = array(
 				array( 'Ohio', 'All 88 counties', 'Columbus &middot; Cleveland &middot; Cincinnati &middot; Dayton &middot; Toledo', 'Judicial foreclosure specialists. We know Ohio\'s court timeline and often close before the sheriff\'s sale.' ),
-				array( 'Texas', 'All 254 counties', 'Houston &middot; Dallas &middot; San Antonio &middot; Austin &middot; Fort Worth', 'Property tax liens handled at closing. Flood and storm damage welcome &mdash; Houston to the Panhandle.' ),
+				array( 'Texas', 'All 254 counties', 'Houston &middot; Dallas &middot; San Antonio &middot; Austin &middot; Fort Worth', 'Property tax liens handled at closing. Flood and storm damage welcome, Houston to the Panhandle.' ),
 				array( 'Georgia', 'All 159 counties', 'Atlanta &middot; Savannah &middot; Augusta &middot; Macon &middot; Columbus', 'Georgia probate experience. Historic and older properties welcome, code violations included.' ),
 			);
 			foreach ( $states as $i => $st ) : ?>
@@ -180,7 +180,7 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 		<div class="section-header text-center">
 			<p class="section-header__eyebrow">SIDE BY SIDE</p>
 			<h2 class="section-header__title" id="compare-heading">Is a Cash Sale Better Than Listing With an Agent?</h2>
-			<p class="section-header__subtitle">It depends on your situation. If you have time and a market-ready house, list it. If you need speed, certainty, or the house needs work &mdash; here's the honest comparison.</p>
+			<p class="section-header__subtitle">It depends on your situation. If you have time and a market-ready house, list it. If you need speed, certainty, or the house needs work, here's the honest comparison.</p>
 		</div>
 		<div style="overflow-x:auto;">
 			<table class="compare-table" style="width:100%;border-collapse:collapse;">
@@ -193,10 +193,19 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 				</thead>
 				<tbody>
 					<?php
-					$rows = array(
+					$rows_raw = get_theme_mod( 'shs_compare_rows', '' );
+					$rows = array();
+					if ( $rows_raw ) {
+						foreach ( explode( "
+", $rows_raw ) as $line ) {
+							$parts = array_map( 'trim', explode( '|', $line ) );
+							if ( count( $parts ) === 3 ) { $rows[] = $parts; }
+						}
+					}
+					if ( ! $rows ) $rows = array(
 						array( 'Timeline', '7&ndash;21 days', '90&ndash;180 days' ),
 						array( 'Agent commission', '$0', '5&ndash;6% of sale price' ),
-						array( 'Repairs required', 'None &mdash; sold as-is', 'Often $10K&ndash;$40K+' ),
+						array( 'Repairs required', 'None, sold as-is', 'Often $10K&ndash;$40K+' ),
 						array( 'Closing costs', 'We pay all', 'Seller pays 1&ndash;3%' ),
 						array( 'Certainty', 'No financing contingencies', 'Deals fall through' ),
 						array( 'Showings &amp; open houses', 'None', 'Multiple required' ),
@@ -224,14 +233,14 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 		<div class="section-header text-center">
 			<p class="section-header__eyebrow">STRAIGHT ANSWERS, EVERY NUMBER SHOWN</p>
 			<h2 class="section-header__title" id="trust-heading">Why Should I Trust a "We Buy Houses" Company?</h2>
-			<p class="section-header__subtitle">You shouldn't &mdash; not automatically. Judge every cash buyer by the same three tests we invite you to run on us.</p>
+			<p class="section-header__subtitle">You shouldn't, not automatically. Judge every cash buyer by the same three tests we invite you to run on us.</p>
 		</div>
 		<div class="grid grid-3" style="gap:var(--space-lg);">
 			<?php
 			$trust = array(
 				array( '🧮', 'Every Number Explained', 'Our written offer shows how we calculated it: the comparable sales we used, our repair estimate, and our margin. If a buyer won\'t show their math, walk away.' ),
-				array( '🏛️', 'Licensed Title Company Closing', 'Money and documents go through a licensed, insured title company &mdash; never directly to us. That protects you at every step.' ),
-				array( '🚪', 'No Pressure, Ever', 'A real offer survives a few days of thinking. Anyone rushing you to sign today is telling you something. Take our offer to your attorney &mdash; we encourage it.' ),
+				array( '🏛️', 'Licensed Title Company Closing', 'Money and documents go through a licensed, insured title company, never directly to us. That protects you at every step.' ),
+				array( '🚪', 'No Pressure, Ever', 'A real offer survives a few days of thinking. Anyone rushing you to sign today is telling you something. Take our offer to your attorney, we encourage it.' ),
 			);
 			foreach ( $trust as $i => $t ) : ?>
 			<div class="card animate-on-scroll" style="padding:var(--space-xl);transition-delay:<?php echo esc_attr( $i * 0.1 ); ?>s">

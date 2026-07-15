@@ -1,6 +1,6 @@
 <?php
 /**
- * Thank You – Seller Page Template
+ * Thank You to Seller Page Template
  * Template Name: Thank You Seller
  *
  * @package WholesalePro
@@ -38,7 +38,7 @@ $business_hours = get_theme_mod( 'business_hours', 'Mon–Fri: 8am–7pm EST · 
 					<div style="width:36px;height:36px;border-radius:50%;background:var(--wp-navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">1</div>
 					<div>
 						<strong style="display:block;margin-bottom:4px;">Within 1 hour: Personal contact</strong>
-						<span style="color:var(--wp-gray);font-size:0.9rem;">A member of our team contacts you directly by phone or text — whichever you prefer. If you submitted after hours, you receive a confirmation now and a personal call first thing tomorrow morning.</span>
+						<span style="color:var(--wp-gray);font-size:0.9rem;">A member of our team contacts you directly by phone or text, whichever you prefer. If you submitted after hours, you receive a confirmation now and a personal call first thing tomorrow morning.</span>
 					</div>
 				</div>
 				<div style="display:flex;gap:var(--space-md);align-items:flex-start;">
@@ -51,7 +51,7 @@ $business_hours = get_theme_mod( 'business_hours', 'Mon–Fri: 8am–7pm EST · 
 				<div style="display:flex;gap:var(--space-md);align-items:flex-start;">
 					<div style="width:36px;height:36px;border-radius:50%;background:var(--wp-navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">3</div>
 					<div>
-						<strong style="display:block;margin-bottom:4px;">You decide — no pressure, no deadline</strong>
+						<strong style="display:block;margin-bottom:4px;">You decide, no pressure, no deadline</strong>
 						<span style="color:var(--wp-gray);font-size:0.9rem;">You accept, decline, or ask questions. There is zero pressure and zero obligation at any point in this process. The decision is entirely yours, on your timeline.</span>
 					</div>
 				</div>

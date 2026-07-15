@@ -56,7 +56,7 @@ $company_address = get_theme_mod( 'company_address', '123 Main Street, Your City
 			<p>Our website may contain links to third-party websites. These links are provided for your convenience only. We have no control over the content of those sites and accept no responsibility for them or for any loss or damage that may arise from your use of them.</p>
 
 			<h2>6. Intellectual Property</h2>
-			<p>All content on this website — including text, graphics, logos, images, and software — is the property of <?php echo esc_html( $company_name ); ?> or its content suppliers and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
+			<p>All content on this website, including text, graphics, logos, images, and software, is the property of <?php echo esc_html( $company_name ); ?> or its content suppliers and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
 
 			<h2>7. Disclaimer of Warranties</h2>
 			<p>THIS WEBSITE AND ITS CONTENT ARE PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE WEBSITE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.</p>

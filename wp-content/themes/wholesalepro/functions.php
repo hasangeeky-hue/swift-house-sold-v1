@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /* ── Constants ───────────────────────────────────────────────────── */
-define( 'WHOLESALEPRO_VERSION', '2.0.2' );
+define( 'WHOLESALEPRO_VERSION', '2.1.0' );
 define( 'WHOLESALEPRO_DIR',     get_template_directory() );
 define( 'WHOLESALEPRO_URI',     get_template_directory_uri() );
 
@@ -52,9 +52,9 @@ function wholesalepro_setup() {
 	// Navigation menus
 	register_nav_menus( array(
 		'primary'  => esc_html__( 'Primary Navigation', 'wholesalepro' ),
-		'footer-1' => esc_html__( 'Footer Column 1 — Company',  'wholesalepro' ),
-		'footer-2' => esc_html__( 'Footer Column 2 — Sellers',  'wholesalepro' ),
-		'footer-3' => esc_html__( 'Footer Column 3 — Investors', 'wholesalepro' ),
+		'footer-1' => esc_html__( 'Footer Column 1, Company',  'wholesalepro' ),
+		'footer-2' => esc_html__( 'Footer Column 2, Sellers',  'wholesalepro' ),
+		'footer-3' => esc_html__( 'Footer Column 3, Investors', 'wholesalepro' ),
 	) );
 }
 add_action( 'after_setup_theme', 'wholesalepro_setup' );
@@ -254,7 +254,7 @@ function wholesalepro_theme_activation() {
 		array( 'title' => 'About Us',                               'slug' => 'about-us',            'template' => 'page-about.php',           'order' => 4 ),
 		array( 'title' => 'How It Works',                           'slug' => 'how-it-works',        'template' => 'page-how-it-works.php',    'order' => 5 ),
 		array( 'title' => 'Contact',                                'slug' => 'contact',             'template' => 'page-contact.php',         'order' => 6 ),
-		array( 'title' => 'Thank You — We Received Your Inquiry',   'slug' => 'thank-you-seller',    'template' => 'page-thank-you-seller.php','order' => 7 ),
+		array( 'title' => 'Thank You, We Received Your Inquiry',   'slug' => 'thank-you-seller',    'template' => 'page-thank-you-seller.php','order' => 7 ),
 		array( 'title' => 'Welcome to the Buyer Network',           'slug' => 'thank-you-buyer',     'template' => 'page-thank-you-buyer.php', 'order' => 8 ),
 		array( 'title' => 'Privacy Policy',                          'slug' => 'privacy-policy',      'template' => 'page-privacy-policy.php',  'order' => 9 ),
 		array( 'title' => 'Terms of Service',                        'slug' => 'terms-of-service',    'template' => 'page-terms.php',           'order' => 10 ),
@@ -331,7 +331,7 @@ function wholesalepro_theme_activation() {
 
 	// Set a sensible blog tagline default
 	if ( get_option( 'blogdescription' ) === 'Just another WordPress site' ) {
-		update_option( 'blogdescription', 'We Buy Houses For Cash — Nationwide' );
+		update_option( 'blogdescription', 'We Buy Houses For Cash, Nationwide' );
 	}
 
 	// Flush rewrite rules

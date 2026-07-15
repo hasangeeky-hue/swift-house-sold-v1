@@ -73,7 +73,7 @@ if ( $fb_pixel ) :
 					<?php if ( has_custom_logo() ) :
 						the_custom_logo();
 					else : ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo__text" aria-label="<?php echo esc_attr( get_theme_mod( 'company_name', get_bloginfo( 'name' ) ) ); ?> &mdash; <?php esc_attr_e( 'Home', 'wholesalepro' ); ?>">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo__text" aria-label="<?php echo esc_attr( get_theme_mod( 'company_name', get_bloginfo( 'name' ) ) ); ?>, <?php esc_attr_e( 'Home', 'wholesalepro' ); ?>">
 							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo.svg"
 								 alt="<?php echo esc_attr( get_theme_mod( 'company_name', get_bloginfo( 'name' ) ) ); ?>"
 								 width="220" height="52"
@@ -115,7 +115,7 @@ if ( $fb_pixel ) :
 					$book_url  = $book_page ? get_permalink( $book_page->ID ) : home_url( '/book-a-call' );
 					?>
 					<a href="<?php echo esc_url( $book_url ); ?>" class="btn btn--outline btn--sm" style="color:var(--wp-navy);border-color:var(--wp-navy);">
-						<?php esc_html_e( 'Book a Call', 'wholesalepro' ); ?>
+						<?php echo esc_html( get_theme_mod( 'shs_book_cta', __( 'Book a Call', 'wholesalepro' ) ) ); ?>
 					</a>
 					<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--sm">
 						<?php esc_html_e( 'Get Cash Offer', 'wholesalepro' ); ?>

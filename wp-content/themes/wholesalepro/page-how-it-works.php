@@ -18,7 +18,7 @@ $phone_raw = get_theme_mod( 'company_phone_raw', '' );
 	<div class="container">
 		<?php wholesalepro_breadcrumb(); ?>
 		<h1 class="page-hero__title animate-on-scroll" id="hiw-hero-heading">
-			How WholesalePro Works &mdash; For Sellers and Investors
+			How WholesalePro Works, For Sellers and Investors
 		</h1>
 		<p class="page-hero__subtitle animate-on-scroll" style="transition-delay:0.1s">
 			Two simple processes. Complete transparency throughout. No surprises at any stage.
@@ -42,15 +42,15 @@ $phone_raw = get_theme_mod( 'company_phone_raw', '' );
 			$seller_steps = array(
 				array(
 					'num'   => '01',
-					'time'  => 'Today — Within 1 Hour',
+					'time'  => 'Today, Within 1 Hour',
 					'title' => 'You Reach Out to Us',
-					'body'  => 'Fill out the short form on our Sell My House page or call us directly. Our system operates around the clock. During business hours, a real member of our acquisitions team calls or texts you within one hour. Outside business hours, our system sends you an immediate confirmation and you receive a personal response first thing the following morning. Your information is completely confidential and goes only to our internal team — we never share, sell, or disclose your details to anyone under any circumstances.',
+					'body'  => 'Fill out the short form on our Sell My House page or call us directly. Our system operates around the clock. During business hours, a real member of our acquisitions team calls or texts you within one hour. Outside business hours, our system sends you an immediate confirmation and you receive a personal response first thing the following morning. Your information is completely confidential and goes only to our internal team, we never share, sell, or disclose your details to anyone under any circumstances.',
 				),
 				array(
 					'num'   => '02',
 					'time'  => 'Within 24 Hours',
 					'title' => 'We Research Your Property Thoroughly',
-					'body'  => 'Using comparable sales data from the last 90 days in your specific neighborhood, our team calculates the After Repair Value — what your property would realistically sell for if fully updated. We then factor in realistic renovation costs and determine a fair offer price that accounts honestly for the current condition of your property. For most properties, this entire process completes within 24 hours of your first contact.',
+					'body'  => 'Using comparable sales data from the last 90 days in your specific neighborhood, our team calculates the After Repair Value, what your property would realistically sell for if fully updated. We then factor in realistic renovation costs and determine a fair offer price that accounts honestly for the current condition of your property. For most properties, this entire process completes within 24 hours of your first contact.',
 				),
 				array(
 					'num'   => '03',
@@ -60,15 +60,15 @@ $phone_raw = get_theme_mod( 'company_phone_raw', '' );
 				),
 				array(
 					'num'   => '04',
-					'time'  => 'Your Decision — No Deadline',
-					'title' => 'You Accept or Decline — Completely Your Choice',
-					'body'  => 'If our offer works for your situation, you let us know and we proceed immediately. If the offer does not work for you, we part on good terms with no obligation and no hard feelings. We genuinely want you to make the best decision for your situation — even if that decision is not us. If you accept, you tell us your preferred closing date and we open the title process.',
+					'time'  => 'Your Decision, No Deadline',
+					'title' => 'You Accept or Decline, Completely Your Choice',
+					'body'  => 'If our offer works for your situation, you let us know and we proceed immediately. If the offer does not work for you, we part on good terms with no obligation and no hard feelings. We genuinely want you to make the best decision for your situation, even if that decision is not us. If you accept, you tell us your preferred closing date and we open the title process.',
 				),
 				array(
 					'num'   => '05',
 					'time'  => 'As Fast as 7 Days',
 					'title' => 'You Sign, Receive Your Funds, and Move Forward',
-					'body'  => 'You meet with our licensed title company — in person or remotely in states where remote closing is permitted. The title company manages all paperwork, pays off any existing mortgage directly from the proceeds, clears all liens, and wires your net funds to your bank account on the same business day as closing. You hand over the keys and the property is no longer your responsibility.',
+					'body'  => 'You meet with our licensed title company, in person or remotely in states where remote closing is permitted. The title company manages all paperwork, pays off any existing mortgage directly from the proceeds, clears all liens, and wires your net funds to your bank account on the same business day as closing. You hand over the keys and the property is no longer your responsibility.',
 				),
 			);
 			foreach ( $seller_steps as $i => $step ) : ?>
@@ -86,7 +86,7 @@ $phone_raw = get_theme_mod( 'company_phone_raw', '' );
 		</div>
 
 		<div class="text-center animate-on-scroll" style="margin-top:var(--space-2xl);">
-			<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--lg">Start the Process Now &mdash; Free</a>
+			<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--lg">Start the Process Now, Free</a>
 		</div>
 	</div>
 </section>
@@ -107,7 +107,7 @@ $phone_raw = get_theme_mod( 'company_phone_raw', '' );
 					'num'   => '01',
 					'time'  => 'Under 2 Minutes',
 					'title' => 'Join Our Investor Network',
-					'body'  => 'Register free in under two minutes. Tell us your exact buying criteria — which states you operate in, your price range, the property types you prefer, and how quickly you can typically close. We use this profile to match deals specifically to your requirements. You receive only deals that match your criteria. No irrelevant listings. No wasted time.',
+					'body'  => 'Register free in under two minutes. Tell us your exact buying criteria, which states you operate in, your price range, the property types you prefer, and how quickly you can typically close. We use this profile to match deals specifically to your requirements. You receive only deals that match your criteria. No irrelevant listings. No wasted time.',
 				),
 				array(
 					'num'   => '02',
@@ -119,7 +119,7 @@ $phone_raw = get_theme_mod( 'company_phone_raw', '' );
 					'num'   => '03',
 					'time'  => 'Average 12 Days to Close',
 					'title' => 'Submit Your Offer and Close Fast',
-					'body'  => 'Submit your offer through our platform. We facilitate the entire process from there. Title work is already underway on every deal we present, so there are no weeks of waiting for a basic title search. Our average time from accepted offer to funded closing is 12 days. JV partnership structures — where we co-own and split the deal with you — are available on select inventory if that structure works better for your situation.',
+					'body'  => 'Submit your offer through our platform. We facilitate the entire process from there. Title work is already underway on every deal we present, so there are no weeks of waiting for a basic title search. Our average time from accepted offer to funded closing is 12 days. JV partnership structures, where we co-own and split the deal with you, are available on select inventory if that structure works better for your situation.',
 				),
 			);
 			foreach ( $buyer_steps as $i => $step ) : ?>
@@ -154,7 +154,7 @@ $phone_raw = get_theme_mod( 'company_phone_raw', '' );
 			$seller_faqs = array(
 				array(
 					'q' => 'What types of properties do you buy?',
-					'a' => 'We buy single family homes, multi-family properties up to four units, condos, townhouses, and vacant land across Ohio, Texas and Georgia. We buy in any condition — cosmetic fixer-uppers, properties needing major renovation, fire or flood damage, and properties that have been vacant for years. We also buy occupied properties with tenants in place.',
+					'a' => 'We buy single family homes, multi-family properties up to four units, condos, townhouses, and vacant land across Ohio, Texas and Georgia. We buy in any condition, cosmetic fixer-uppers, properties needing major renovation, fire or flood damage, and properties that have been vacant for years. We also buy occupied properties with tenants in place.',
 				),
 				array(
 					'q' => 'What states do you operate in?',
@@ -226,7 +226,7 @@ $phone_raw = get_theme_mod( 'company_phone_raw', '' );
 <section class="section" aria-labelledby="hiw-cta-heading">
 	<div class="container narrow text-center animate-on-scroll">
 		<h2 id="hiw-cta-heading" style="margin-bottom:var(--space-md);">Ready to Get Started?</h2>
-		<p style="color:var(--wp-gray);margin-bottom:var(--space-xl);">Takes 2 minutes. No obligation. Just a fair offer — or matched deals.</p>
+		<p style="color:var(--wp-gray);margin-bottom:var(--space-xl);">Takes 2 minutes. No obligation. Just a fair offer, or matched deals.</p>
 		<div style="display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap;">
 			<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--lg">Get My Free Cash Offer</a>
 			<a href="<?php echo esc_url( $deals_url ); ?>" class="btn btn--buyer btn--lg">Join Buyer Network</a>

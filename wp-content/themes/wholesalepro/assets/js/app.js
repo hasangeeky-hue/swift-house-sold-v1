@@ -223,3 +223,22 @@ document.addEventListener('DOMContentLoaded', () => wholesalePro.init());
 
 // Expose globally for inline callbacks
 window.wholesalePro = wholesalePro;
+
+/* ── FAQ accordion (js-faq-trigger) ─────────────────────────── */
+document.addEventListener('DOMContentLoaded', function () {
+	document.querySelectorAll('.js-faq-trigger').forEach(function (btn) {
+		btn.addEventListener('click', function () {
+			var body = document.getElementById(btn.getAttribute('aria-controls'));
+			if (!body) return;
+			var open = btn.getAttribute('aria-expanded') === 'true';
+			btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+			if (open) {
+				body.setAttribute('hidden', '');
+			} else {
+				body.removeAttribute('hidden');
+			}
+			var icon = btn.querySelector('.faq-item__icon');
+			if (icon) { icon.style.transform = open ? '' : 'rotate(180deg)'; }
+		});
+	});
+});

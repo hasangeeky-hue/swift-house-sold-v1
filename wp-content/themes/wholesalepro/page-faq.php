@@ -17,11 +17,11 @@ $deals_url    = ( $p = get_page_by_path( 'browse-deals' ) )       ? get_permalin
 $seller_faqs = array(
 	array(
 		'q' => 'How fast can you close on my house?',
-		'a' => 'We can close in as little as 7 days. The timeline depends on the title search and your schedule. If you need more time to move out, we can also close in 30, 45, or 60 days — whatever works best for you. You set the closing date.',
+		'a' => 'We can close in as little as 7 days. The timeline depends on the title search and your schedule. If you need more time to move out, we can also close in 30, 45, or 60 days, whatever works best for you. You set the closing date.',
 	),
 	array(
 		'q' => 'Do I need to make repairs before selling?',
-		'a' => 'No. We buy houses in any condition — roof problems, foundation issues, water damage, fire damage, full of belongings, code violations. You do not need to clean, repair, or stage anything. We handle it all after closing.',
+		'a' => 'No. We buy houses in any condition, roof problems, foundation issues, water damage, fire damage, full of belongings, code violations. You do not need to clean, repair, or stage anything. We handle it all after closing.',
 	),
 	array(
 		'q' => 'How do you determine your cash offer?',
@@ -29,11 +29,11 @@ $seller_faqs = array(
 	),
 	array(
 		'q' => 'Are there any fees or commissions?',
-		'a' => 'None. We are not real estate agents. We do not charge commissions, listing fees, or closing cost fees. What we offer is what you receive at closing — no deductions.',
+		'a' => 'None. We are not real estate agents. We do not charge commissions, listing fees, or closing cost fees. What we offer is what you receive at closing, no deductions.',
 	),
 	array(
 		'q' => 'Will you really pay cash?',
-		'a' => 'Yes. We use our own funds — not bank financing — to purchase properties. This means there is no loan approval process and no risk of the deal falling through due to financing. The sale is not contingent on anything.',
+		'a' => 'Yes. We use our own funds, not bank financing, to purchase properties. This means there is no loan approval process and no risk of the deal falling through due to financing. The sale is not contingent on anything.',
 	),
 	array(
 		'q' => 'What if my house is in foreclosure?',
@@ -41,7 +41,7 @@ $seller_faqs = array(
 	),
 	array(
 		'q' => 'What types of properties do you buy?',
-		'a' => 'We buy single-family homes, duplexes, multi-family properties, condos, townhouses, mobile homes, and vacant land. Occupied, vacant, rented, inherited, divorce situations — we handle all of them.',
+		'a' => 'We buy single-family homes, duplexes, multi-family properties, condos, townhouses, mobile homes, and vacant land. Occupied, vacant, rented, inherited, divorce situations, we handle all of them.',
 	),
 	array(
 		'q' => 'Do I have to accept the offer?',
@@ -49,7 +49,7 @@ $seller_faqs = array(
 	),
 	array(
 		'q' => 'What happens after I submit my information?',
-		'a' => 'One of our team members will contact you within 24 hours — often within hours. We will ask a few questions about the property, schedule a walkthrough at your convenience, and present you with a written cash offer. The entire process from first contact to offer typically takes 24-48 hours.',
+		'a' => 'One of our team members will contact you within 24 hours, often within hours. We will ask a few questions about the property, schedule a walkthrough at your convenience, and present you with a written cash offer. The entire process from first contact to offer typically takes 24-48 hours.',
 	),
 	array(
 		'q' => 'Is my information kept private?',
@@ -109,7 +109,7 @@ $seller_faqs = array(
 	<div class="container text-center">
 		<h2 id="faq-cta-heading">Still Have Questions?</h2>
 		<p style="font-size:var(--text-lg);color:var(--wp-gray);margin-bottom:var(--space-lg);">
-			Call us directly — a real person answers every call.
+			Call us directly, a real person answers every call.
 		</p>
 		<div style="display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap;">
 			<a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="btn btn--seller btn--lg">

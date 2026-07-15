@@ -144,3 +144,52 @@ add_action( 'init', function () {
 		}
 	}
 }, 26 );
+
+/**
+ * Menu rebuild v3: clean primary menu with Services dropdown.
+ */
+add_action( 'init', function () {
+	if ( get_option( 'shs_menu_v3' ) ) {
+		return;
+	}
+	$locations = get_nav_menu_locations();
+	$menu_id   = ! empty( $locations['primary'] ) ? (int) $locations['primary'] : 0;
+	if ( ! $menu_id ) {
+		$menu_id = wp_create_nav_menu( 'Primary' );
+		if ( is_wp_error( $menu_id ) ) { return; }
+		$locations['primary'] = $menu_id;
+		set_theme_mod( 'nav_menu_locations', $locations );
+	}
+	// Wipe existing items.
+	foreach ( (array) wp_get_nav_menu_items( $menu_id ) as $item ) {
+		wp_delete_post( $item->ID, true );
+	}
+	$add_page = function ( $slug, $title, $parent = 0 ) use ( $menu_id ) {
+		$page = get_page_by_path( $slug );
+		if ( ! $page ) { return 0; }
+		return wp_update_nav_menu_item( $menu_id, 0, array(
+			'menu-item-title'     => $title,
+			'menu-item-object'    => 'page',
+			'menu-item-object-id' => $page->ID,
+			'menu-item-type'      => 'post_type',
+			'menu-item-status'    => 'publish',
+			'menu-item-parent-id' => $parent,
+		) );
+	};
+	$add_page( 'sell-my-house-fast', 'Sell My House' );
+	$services_id = $add_page( 'services', 'Services' );
+	if ( $services_id && ! is_wp_error( $services_id ) ) {
+		$add_page( 'stop-foreclosure',      'Stop Foreclosure',            $services_id );
+		$add_page( 'sell-probate-property', 'Probate & Inherited',         $services_id );
+		$add_page( 'sell-house-divorce',    'Divorce Home Sale',           $services_id );
+		$add_page( 'sell-house-tax-liens',  'Tax Liens & Back Taxes',      $services_id );
+		$add_page( 'sell-damaged-house',    'House Needs Major Repairs',   $services_id );
+		$add_page( 'sell-rental-property',  'Tired Landlord / Rental',     $services_id );
+	}
+	$add_page( 'blog',         'Guides' );
+	$add_page( 'how-it-works', 'How It Works' );
+	$add_page( 'faq',          'FAQ' );
+	$add_page( 'about-us',     'About' );
+	$add_page( 'contact',      'Contact' );
+	update_option( 'shs_menu_v3', 1 );
+}, 30 );

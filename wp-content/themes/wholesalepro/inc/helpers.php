@@ -181,7 +181,7 @@ function wholesalepro_get_trust_bar() {
 		),
 		array(
 			'number' => get_theme_mod( 'counties_covered', '501' ),
-			'label'  => __( 'Counties — OH · TX · GA', 'wholesalepro' ),
+			'label'  => __( 'Counties, OH · TX · GA', 'wholesalepro' ),
 			'suffix' => '',
 		),
 		array(
@@ -196,7 +196,7 @@ function wholesalepro_get_trust_bar() {
 		),
 		array(
 			'number' => get_theme_mod( 'repairs_needed', '0' ),
-			'label'  => __( 'Repairs Needed — As-Is', 'wholesalepro' ),
+			'label'  => __( 'Repairs Needed, As-Is', 'wholesalepro' ),
 			'suffix' => '',
 		),
 	);

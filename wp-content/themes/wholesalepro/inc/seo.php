@@ -26,7 +26,7 @@ function wholesalepro_seo_meta() {
 
 	if ( is_front_page() ) {
 		$title       = $company . ' | Sell Your House Fast For Cash in Ohio, Texas & Georgia';
-		$description = wholesalepro_content( '{{META_HOME}}', 'We buy houses for cash in Ohio, Texas and Georgia — any condition, any situation. Written offer in 24 hours, no repairs, no fees. Close in as little as 7 days.' );
+		$description = wholesalepro_content( '{{META_HOME}}', 'We buy houses for cash in Ohio, Texas and Georgia, any condition, any situation. Written offer in 24 hours, no repairs, no fees. Close in as little as 7 days.' );
 
 	} elseif ( is_page_template( 'page-sell.php' ) ) {
 		$title       = 'Sell My House Fast For Cash | ' . $company . ' | Any Condition';

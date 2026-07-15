@@ -1,6 +1,6 @@
 <?php
 /**
- * Thank You – Buyer Page Template
+ * Thank You to Buyer Page Template
  * Template Name: Thank You Buyer
  *
  * @package WholesalePro
@@ -45,14 +45,14 @@ $deals_url = ( $p = get_page_by_path( 'browse-deals' ) ) ? get_permalink( $p->ID
 					<div style="width:36px;height:36px;border-radius:50%;background:var(--wp-green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">2</div>
 					<div>
 						<strong style="display:block;margin-bottom:4px;">Ongoing: Instant match alerts</strong>
-						<span style="color:var(--wp-gray);font-size:0.9rem;">The moment a new deal matching your profile becomes available — before it goes to the wider network — you receive an alert with the key numbers, photos, and deal package.</span>
+						<span style="color:var(--wp-gray);font-size:0.9rem;">The moment a new deal matching your profile becomes available, before it goes to the wider network, you receive an alert with the key numbers, photos, and deal package.</span>
 					</div>
 				</div>
 				<div style="display:flex;gap:var(--space-md);align-items:flex-start;">
 					<div style="width:36px;height:36px;border-radius:50%;background:var(--wp-green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">3</div>
 					<div>
 						<strong style="display:block;margin-bottom:4px;">Direct access: Real team members</strong>
-						<span style="color:var(--wp-gray);font-size:0.9rem;">Questions about any deal go directly to our acquisitions team — not a call center, not an automated system. Real people who know the numbers on every deal we present.</span>
+						<span style="color:var(--wp-gray);font-size:0.9rem;">Questions about any deal go directly to our acquisitions team, not a call center, not an automated system. Real people who know the numbers on every deal we present.</span>
 					</div>
 				</div>
 			</div>

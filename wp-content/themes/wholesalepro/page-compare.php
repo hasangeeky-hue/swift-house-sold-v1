@@ -15,17 +15,17 @@ $sell_url     = ( $p = get_page_by_path( 'sell-my-house-fast' ) ) ? get_permalin
 
 $comparisons = array(
 	array( 'factor' => 'Time to Close',            'cash' => '7–14 days',                       'traditional' => '60–90 days' ),
-	array( 'factor' => 'Repairs Required',         'cash' => 'None — sell as-is',               'traditional' => 'Usually required by lender' ),
+	array( 'factor' => 'Repairs Required',         'cash' => 'None, sell as-is',               'traditional' => 'Usually required by lender' ),
 	array( 'factor' => 'Agent Commission',         'cash' => '$0',                              'traditional' => '5–6% of sale price' ),
 	array( 'factor' => 'Closing Costs',            'cash' => 'We pay all closing costs',        'traditional' => '1–3% paid by seller' ),
 	array( 'factor' => 'Home Staging / Cleaning',  'cash' => 'Not required',                    'traditional' => 'Required for showings' ),
-	array( 'factor' => 'Open Houses / Showings',   'cash' => 'One walkthrough — that\'s it',    'traditional' => 'Multiple showings, weekends' ),
-	array( 'factor' => 'Financing Contingency',    'cash' => 'No — cash deal is guaranteed',    'traditional' => 'Yes — 14% of deals fall through' ),
-	array( 'factor' => 'Appraisal Required',       'cash' => 'No',                              'traditional' => 'Yes — required by lender' ),
-	array( 'factor' => 'Price Negotiation',        'cash' => 'One written offer — no games',    'traditional' => 'Back-and-forth offers/counters' ),
+	array( 'factor' => 'Open Houses / Showings',   'cash' => 'One walkthrough, that\'s it',    'traditional' => 'Multiple showings, weekends' ),
+	array( 'factor' => 'Financing Contingency',    'cash' => 'No, cash deal is guaranteed',    'traditional' => 'Yes, 14% of deals fall through' ),
+	array( 'factor' => 'Appraisal Required',       'cash' => 'No',                              'traditional' => 'Yes, required by lender' ),
+	array( 'factor' => 'Price Negotiation',        'cash' => 'One written offer, no games',    'traditional' => 'Back-and-forth offers/counters' ),
 	array( 'factor' => 'Repair Requests',          'cash' => 'None',                            'traditional' => 'Common after inspection' ),
 	array( 'factor' => 'Closing Date Flexibility', 'cash' => 'You choose the date',             'traditional' => 'Buyer\'s lender controls timeline' ),
-	array( 'factor' => 'Sale Certainty',           'cash' => '100% — no contingencies',         'traditional' => 'Never guaranteed until funded' ),
+	array( 'factor' => 'Sale Certainty',           'cash' => '100%, no contingencies',         'traditional' => 'Never guaranteed until funded' ),
 );
 ?>
 
@@ -90,7 +90,7 @@ $comparisons = array(
 	<div class="container">
 		<div class="section-header text-center" style="margin-bottom:var(--space-xl);">
 			<h2 class="section-header__title" id="example-heading">A Real Numbers Example</h2>
-			<p class="section-header__sub">$220,000 home — what you actually walk away with after each method.</p>
+			<p class="section-header__sub">$220,000 home, what you actually walk away with after each method.</p>
 		</div>
 
 		<div class="split-layout" style="max-width:900px;margin:0 auto;gap:var(--space-lg);">
@@ -132,7 +132,7 @@ $comparisons = array(
 		</div>
 
 		<p class="text-center" style="margin-top:var(--space-xl);font-size:var(--text-lg);font-weight:600;color:var(--wp-navy);">
-			Same net proceeds — but one takes 7 days and the other takes 75. You decide which makes more sense.
+			Same net proceeds, but one takes 7 days and the other takes 75. You decide which makes more sense.
 		</p>
 	</div>
 </section>
@@ -148,7 +148,7 @@ $comparisons = array(
 			<li>You are in a hot seller's market where homes sell in days at or above asking</li>
 			<li>Maximizing the final sale price is more important than speed or certainty</li>
 		</ul>
-		<p>If none of those apply to your situation — if you need speed, certainty, or are dealing with a property that needs work — a cash sale is almost certainly the smarter financial move when you factor in all the real costs.</p>
+		<p>If none of those apply to your situation, if you need speed, certainty, or are dealing with a property that needs work, a cash sale is almost certainly the smarter financial move when you factor in all the real costs.</p>
 	</div>
 </section>
 

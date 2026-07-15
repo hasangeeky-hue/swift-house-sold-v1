@@ -243,7 +243,7 @@ function wholesalepro_render_buyer_form( $location = 'generic' ) {
 
 		<div class="form-submit-wrap">
 			<button type="submit" class="btn btn--buyer btn--lg btn--full js-submit">
-				<?php esc_html_e( 'Join Our Buyer Network — Get Deals First', 'wholesalepro' ); ?>
+				<?php esc_html_e( 'Join Our Buyer Network, Get Deals First', 'wholesalepro' ); ?>
 			</button>
 		</div>
 
@@ -308,7 +308,7 @@ function wholesalepro_render_offer_form( $property_id = 0 ) {
 		</div>
 
 		<div class="form-group">
-			<label class="form-label" for="proof_of_funds"><?php esc_html_e( 'Proof of Funds (PDF, JPG, or PNG — max 5MB)', 'wholesalepro' ); ?></label>
+			<label class="form-label" for="proof_of_funds"><?php esc_html_e( 'Proof of Funds (PDF, JPG, or PNG, max 5MB)', 'wholesalepro' ); ?></label>
 			<input class="form-control" type="file" id="proof_of_funds" name="proof_of_funds" accept=".pdf,.jpg,.jpeg,.png">
 		</div>
 

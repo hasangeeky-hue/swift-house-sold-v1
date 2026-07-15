@@ -27,9 +27,9 @@ function wholesalepro_meta_fields() {
 	return array(
 		// Pricing
 		array( 'key' => '_property_price_asking',    'label' => __( 'Asking Price ($)', 'wholesalepro' ),               'type' => 'number',   'sanitize' => 'absint',                  'readonly' => false ),
-		array( 'key' => '_property_price_arv',       'label' => __( 'After Repair Value – ARV ($)', 'wholesalepro' ),   'type' => 'number',   'sanitize' => 'absint',                  'readonly' => false ),
+		array( 'key' => '_property_price_arv',       'label' => __( 'After Repair Value to ARV ($)', 'wholesalepro' ),   'type' => 'number',   'sanitize' => 'absint',                  'readonly' => false ),
 		array( 'key' => '_property_repairs_estimate','label' => __( 'Estimated Repairs ($)', 'wholesalepro' ),          'type' => 'number',   'sanitize' => 'absint',                  'readonly' => false ),
-		array( 'key' => '_property_profit_potential','label' => __( 'Potential Profit ($) — auto-calculated', 'wholesalepro' ), 'type' => 'number', 'sanitize' => 'absint',           'readonly' => true  ),
+		array( 'key' => '_property_profit_potential','label' => __( 'Potential Profit ($), auto-calculated', 'wholesalepro' ), 'type' => 'number', 'sanitize' => 'absint',           'readonly' => true  ),
 		// Property specs
 		array( 'key' => '_property_beds',            'label' => __( 'Bedrooms', 'wholesalepro' ),                       'type' => 'number',   'sanitize' => 'absint',                  'readonly' => false ),
 		array( 'key' => '_property_baths',           'label' => __( 'Bathrooms (e.g. 2 or 2.5)', 'wholesalepro' ),     'type' => 'text',     'sanitize' => 'sanitize_text_field',     'readonly' => false ),
@@ -44,7 +44,7 @@ function wholesalepro_meta_fields() {
 		array( 'key' => '_property_county',          'label' => __( 'County', 'wholesalepro' ),                         'type' => 'text',     'sanitize' => 'sanitize_text_field',     'readonly' => false ),
 		// Dates / Admin
 		array( 'key' => '_property_closing_deadline','label' => __( 'Closing Deadline', 'wholesalepro' ),               'type' => 'date',     'sanitize' => 'sanitize_text_field',     'readonly' => false ),
-		array( 'key' => '_property_days_listed',     'label' => __( 'Days Listed — auto-calculated', 'wholesalepro' ),  'type' => 'number',   'sanitize' => 'absint',                  'readonly' => true  ),
+		array( 'key' => '_property_days_listed',     'label' => __( 'Days Listed, auto-calculated', 'wholesalepro' ),  'type' => 'number',   'sanitize' => 'absint',                  'readonly' => true  ),
 		array( 'key' => '_property_mls_number',      'label' => __( 'Reference Number', 'wholesalepro' ),               'type' => 'text',     'sanitize' => 'sanitize_text_field',     'readonly' => false ),
 		// Highlights
 		array( 'key' => '_property_highlight_1',     'label' => __( 'Highlight Point 1', 'wholesalepro' ),              'type' => 'text',     'sanitize' => 'sanitize_text_field',     'readonly' => false ),

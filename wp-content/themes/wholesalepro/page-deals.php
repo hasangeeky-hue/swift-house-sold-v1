@@ -13,7 +13,7 @@ get_header();
 	<div class="container">
 		<?php wholesalepro_breadcrumb(); ?>
 		<h1 class="page-hero__title animate-on-scroll" id="deals-hero-heading">
-			Exclusive Off-Market Wholesale Deals &mdash; All 50 States
+			Exclusive Off-Market Wholesale Deals, All 50 States
 		</h1>
 		<p class="page-hero__subtitle animate-on-scroll" style="transition-delay:0.1s">
 			Pre-analyzed below-market properties added to our network daily. Verified ARV. Repair estimates included. Seller committed to close.
@@ -119,7 +119,7 @@ get_header();
 				<div class="empty-state" style="grid-column:1/-1">
 					<div class="empty-state__icon">🏠</div>
 					<h3 class="empty-state__title">No Deals Available Right Now</h3>
-					<p class="empty-state__text">We are actively acquiring new properties. Join our buyer list to get notified first — before they go public.</p>
+					<p class="empty-state__text">We are actively acquiring new properties. Join our buyer list to get notified first, before they go public.</p>
 					<a href="#buyer-list" class="btn btn--buyer">Join the Buyer List</a>
 				</div>
 			<?php endif; ?>
@@ -145,7 +145,7 @@ get_header();
 				array( '🗺️', 'JV partnership structures available on any deal in our inventory' ),
 				array( '📞', 'Direct access to our acquisitions team for questions on any deal' ),
 				array( '📈', 'Market analysis reports for your active investment markets' ),
-				array( '✅', 'Zero cost — completely free to join and remain a member' ),
+				array( '✅', 'Zero cost, completely free to join and remain a member' ),
 			);
 			foreach ( $benefits as $i => $b ) : ?>
 			<div class="card animate-on-scroll" style="transition-delay:<?php echo esc_attr( $i * 0.06 ); ?>s;display:flex;gap:var(--space-sm);align-items:flex-start;">
@@ -163,16 +163,16 @@ get_header();
 		<div class="split-layout">
 			<div class="split-layout__content animate-on-scroll">
 				<p class="hero__eyebrow" style="color:var(--wp-gold);">INVESTOR ACCESS</p>
-				<h2 style="color:#fff;" id="buyer-list-heading">Join Our Buyer Network &mdash; Free</h2>
+				<h2 style="color:#fff;" id="buyer-list-heading">Join Our Buyer Network, Free</h2>
 				<p style="color:rgba(255,255,255,0.85);margin-bottom:var(--space-xl);">
 					Tell us exactly what you are looking for and receive deal alerts before the wider market sees them. Our network includes over 5,000 active investors. Deals at your criteria come directly to your inbox the moment they are available.
 				</p>
 				<ul class="checklist" style="margin-bottom:var(--space-xl);">
-					<li class="checklist__item checklist__item--check" style="color:rgba(255,255,255,0.9);">First access to new wholesale deals — before they go public</li>
+					<li class="checklist__item checklist__item--check" style="color:rgba(255,255,255,0.9);">First access to new wholesale deals, before they go public</li>
 					<li class="checklist__item checklist__item--check" style="color:rgba(255,255,255,0.9);">Off-market and pre-market properties across all 50 states</li>
 					<li class="checklist__item checklist__item--check" style="color:rgba(255,255,255,0.9);">Match alerts based on your specific buy box criteria</li>
 					<li class="checklist__item checklist__item--check" style="color:rgba(255,255,255,0.9);">JV opportunities available on select deals in our inventory</li>
-					<li class="checklist__item checklist__item--check" style="color:rgba(255,255,255,0.9);">Zero cost — completely free, no catch, no spam</li>
+					<li class="checklist__item checklist__item--check" style="color:rgba(255,255,255,0.9);">Zero cost, completely free, no catch, no spam</li>
 				</ul>
 			</div>
 			<div class="split-layout__form animate-on-scroll" style="transition-delay:0.2s">

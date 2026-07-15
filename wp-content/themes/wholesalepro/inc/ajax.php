@@ -107,7 +107,7 @@ function wholesalepro_send_email( $to, $subject, $body, $priority = false ) {
 }
 
 /* ════════════════════════════════════════════════════════════════
-   HANDLER 1 — Seller Form
+   HANDLER 1, Seller Form
    ════════════════════════════════════════════════════════════════ */
 add_action( 'wp_ajax_wholesalepro_seller_form',        'wholesalepro_handle_seller_form' );
 add_action( 'wp_ajax_nopriv_wholesalepro_seller_form', 'wholesalepro_handle_seller_form' );
@@ -175,7 +175,7 @@ function wholesalepro_handle_seller_form() {
 
 	$admin_email   = get_theme_mod( 'company_email', get_option( 'admin_email' ) );
 	$company_name  = get_theme_mod( 'company_name', 'Swift House Sold' );
-	$admin_subject = sprintf( '🏠 New Seller Lead: %s — %s', $address, $name );
+	$admin_subject = sprintf( '🏠 New Seller Lead: %s, %s', $address, $name );
 	$admin_body    = "<h2 style='color:#1B2B4B'>New Seller Lead</h2><table cellpadding='8' style='width:100%;border-collapse:collapse'>";
 	$admin_body   .= "<tr><td><strong>Name</strong></td><td>" . esc_html( $name ) . "</td></tr>";
 	$admin_body   .= "<tr style='background:#f9f9f9'><td><strong>Phone</strong></td><td>" . esc_html( $phone ) . "</td></tr>";
@@ -189,12 +189,12 @@ function wholesalepro_handle_seller_form() {
 	wholesalepro_send_email( $admin_email, $admin_subject, $admin_body, true );
 
 	if ( $email ) {
-		$confirm_subject = sprintf( __( 'We received your request — %s', 'wholesalepro' ), $company_name );
+		$confirm_subject = sprintf( __( 'We received your request, %s', 'wholesalepro' ), $company_name );
 		$confirm_body    = "<p>Hi " . esc_html( $name ) . ",</p>";
 		$confirm_body   .= "<p>Thank you for reaching out! We've received your information and one of our local specialists will contact you within <strong>" . esc_html( get_theme_mod( 'response_guarantee', '1 hour' ) ) . "</strong>.</p>";
 		$confirm_body   .= "<p>Here's what happens next:</p><ol><li>We review your property information</li><li>We prepare your no-obligation cash offer</li><li>We call you to walk through the offer</li></ol>";
 		$confirm_body   .= "<p>Questions? Call us at <a href='tel:" . esc_attr( get_theme_mod( 'company_phone_raw', '' ) ) . "'>" . esc_html( get_theme_mod( 'company_phone', '' ) ) . "</a></p>";
-		$confirm_body   .= "<p>— The " . esc_html( $company_name ) . " Team</p>";
+		$confirm_body   .= "<p>The " . esc_html( $company_name ) . " Team</p>";
 		wholesalepro_send_email( $email, $confirm_subject, $confirm_body );
 	}
 
@@ -205,7 +205,7 @@ function wholesalepro_handle_seller_form() {
 }
 
 /* ════════════════════════════════════════════════════════════════
-   HANDLER 2 — Buyer Form
+   HANDLER 2, Buyer Form
    ════════════════════════════════════════════════════════════════ */
 add_action( 'wp_ajax_wholesalepro_buyer_form',        'wholesalepro_handle_buyer_form' );
 add_action( 'wp_ajax_nopriv_wholesalepro_buyer_form', 'wholesalepro_handle_buyer_form' );
@@ -267,15 +267,15 @@ function wholesalepro_handle_buyer_form() {
 	$admin_subject = sprintf( '💼 New Buyer Sign-Up: %s', $name );
 	$admin_body    = "<h2 style='color:#1B2B4B'>New Buyer Network Sign-Up</h2>";
 	$admin_body   .= "<p><strong>Name:</strong> " . esc_html( $name ) . "<br><strong>Email:</strong> " . esc_html( $email ) . "<br><strong>Phone:</strong> " . esc_html( $phone ) . "</p>";
-	$admin_body   .= "<p><strong>Target States:</strong> " . esc_html( implode( ', ', $states ) ) . "<br><strong>Property Types:</strong> " . esc_html( implode( ', ', $types ) ) . "<br><strong>Price Range:</strong> " . wholesalepro_format_currency( $price_min ) . " – " . wholesalepro_format_currency( $price_max ) . "<br><strong>Close Timeline:</strong> " . esc_html( $close_timeline ) . "<br><strong>Financing:</strong> " . esc_html( $financing_type ) . "</p>";
+	$admin_body   .= "<p><strong>Target States:</strong> " . esc_html( implode( ', ', $states ) ) . "<br><strong>Property Types:</strong> " . esc_html( implode( ', ', $types ) ) . "<br><strong>Price Range:</strong> " . wholesalepro_format_currency( $price_min ) . " to " . wholesalepro_format_currency( $price_max ) . "<br><strong>Close Timeline:</strong> " . esc_html( $close_timeline ) . "<br><strong>Financing:</strong> " . esc_html( $financing_type ) . "</p>";
 	wholesalepro_send_email( $admin_email, $admin_subject, $admin_body );
 
 	$welcome_subject = sprintf( __( "You're in! Welcome to the %s Buyer Network", 'wholesalepro' ), $company_name );
 	$welcome_body    = "<p>Hi " . esc_html( $name ) . ",</p>";
 	$welcome_body   .= "<p>Welcome to the <strong>" . esc_html( $company_name ) . "</strong> buyer network! Here's what you can expect:</p>";
-	$welcome_body   .= "<ul><li>Off-market deals sent directly to your inbox as they become available</li><li>Properties matching your criteria: " . esc_html( implode( ', ', $states ) ) . "</li><li>Price range: " . wholesalepro_format_currency( $price_min ) . " – " . wholesalepro_format_currency( $price_max ) . "</li><li>Response expected within 48 hours of deal alerts</li></ul>";
+	$welcome_body   .= "<ul><li>Off-market deals sent directly to your inbox as they become available</li><li>Properties matching your criteria: " . esc_html( implode( ', ', $states ) ) . "</li><li>Price range: " . wholesalepro_format_currency( $price_min ) . " to " . wholesalepro_format_currency( $price_max ) . "</li><li>Response expected within 48 hours of deal alerts</li></ul>";
 	$welcome_body   .= "<p>Questions? Call <a href='tel:" . esc_attr( get_theme_mod( 'company_phone_raw', '' ) ) . "'>" . esc_html( get_theme_mod( 'company_phone', '' ) ) . "</a></p>";
-	$welcome_body   .= "<p>— The " . esc_html( $company_name ) . " Team</p>";
+	$welcome_body   .= "<p>The " . esc_html( $company_name ) . " Team</p>";
 	wholesalepro_send_email( $email, $welcome_subject, $welcome_body );
 
 	$buyer_page_id = (int) get_theme_mod( 'buyer_thankyou_page', 0 );
@@ -285,7 +285,7 @@ function wholesalepro_handle_buyer_form() {
 }
 
 /* ════════════════════════════════════════════════════════════════
-   HANDLER 3 — Offer Form
+   HANDLER 3, Offer Form
    ════════════════════════════════════════════════════════════════ */
 add_action( 'wp_ajax_wholesalepro_offer_form',        'wholesalepro_handle_offer_form' );
 add_action( 'wp_ajax_nopriv_wholesalepro_offer_form', 'wholesalepro_handle_offer_form' );
@@ -359,7 +359,7 @@ function wholesalepro_handle_offer_form() {
 	);
 
 	$admin_email   = get_theme_mod( 'company_email', get_option( 'admin_email' ) );
-	$admin_subject = sprintf( '💰 New Offer Received: %s — %s', wholesalepro_format_currency( $offer_amount ), $property_title );
+	$admin_subject = sprintf( '💰 New Offer Received: %s, %s', wholesalepro_format_currency( $offer_amount ), $property_title );
 	$admin_body    = "<h2 style='color:#1B2B4B'>New Property Offer</h2>";
 	$admin_body   .= "<p><strong>Property:</strong> " . esc_html( $property_title ) . "<br><strong>Offer Amount:</strong> " . wholesalepro_format_currency( $offer_amount ) . "<br><strong>Close Date:</strong> " . esc_html( $close_date ) . "</p>";
 	$admin_body   .= "<p><strong>From:</strong> " . esc_html( $offeror_name ) . "<br><strong>Email:</strong> " . esc_html( $offeror_email ) . "<br><strong>Phone:</strong> " . esc_html( $offeror_phone ) . "</p>";
@@ -368,7 +368,7 @@ function wholesalepro_handle_offer_form() {
 	wholesalepro_send_email( $admin_email, $admin_subject, $admin_body, true );
 
 	if ( $offeror_email ) {
-		$confirm_subject = __( 'Offer Received — We\'ll Be In Touch Shortly', 'wholesalepro' );
+		$confirm_subject = __( 'Offer Received, We\'ll Be In Touch Shortly', 'wholesalepro' );
 		$confirm_body    = "<p>Hi " . esc_html( $offeror_name ) . ",</p><p>We received your offer of <strong>" . wholesalepro_format_currency( $offer_amount ) . "</strong> on <strong>" . esc_html( $property_title ) . "</strong>. Our team will review and respond within 24 hours.</p>";
 		wholesalepro_send_email( $offeror_email, $confirm_subject, $confirm_body );
 	}
@@ -377,7 +377,7 @@ function wholesalepro_handle_offer_form() {
 }
 
 /* ════════════════════════════════════════════════════════════════
-   HANDLER 4 — Filter Properties
+   HANDLER 4, Filter Properties
    ════════════════════════════════════════════════════════════════ */
 add_action( 'wp_ajax_wholesalepro_filter_properties',        'wholesalepro_handle_filter_properties' );
 add_action( 'wp_ajax_nopriv_wholesalepro_filter_properties', 'wholesalepro_handle_filter_properties' );
@@ -458,7 +458,7 @@ function wholesalepro_handle_filter_properties() {
 }
 
 /* ════════════════════════════════════════════════════════════════
-   HANDLER 5 — Contact Form
+   HANDLER 5, Contact Form
    ════════════════════════════════════════════════════════════════ */
 add_action( 'wp_ajax_wholesalepro_contact_form',        'wholesalepro_handle_contact_form' );
 add_action( 'wp_ajax_nopriv_wholesalepro_contact_form', 'wholesalepro_handle_contact_form' );
@@ -492,15 +492,15 @@ function wholesalepro_handle_contact_form() {
 
 	$admin_email   = get_theme_mod( 'company_email', get_option( 'admin_email' ) );
 	$company_name  = get_theme_mod( 'company_name', 'Swift House Sold' );
-	$admin_subject = sprintf( 'Contact Form: %s — %s', $contact_subject, $contact_name );
+	$admin_subject = sprintf( 'Contact Form: %s, %s', $contact_subject, $contact_name );
 	$admin_body    = "<h2 style='color:#1B2B4B'>New Contact Form Submission</h2>";
 	$admin_body   .= "<p><strong>Name:</strong> " . esc_html( $contact_name ) . "<br><strong>Email:</strong> " . esc_html( $contact_email ) . "<br><strong>Phone:</strong> " . esc_html( $contact_phone ) . "<br><strong>Type:</strong> " . esc_html( $contact_type ) . "<br><strong>Subject:</strong> " . esc_html( $contact_subject ) . "</p>";
 	$admin_body   .= "<p><strong>Message:</strong><br>" . nl2br( esc_html( $contact_message ) ) . "</p>";
 	wholesalepro_send_email( $admin_email, $admin_subject, $admin_body );
 
 	if ( $contact_email ) {
-		$confirm_subject = sprintf( __( "We received your message — %s", 'wholesalepro' ), $company_name );
-		$confirm_body    = "<p>Hi " . esc_html( $contact_name ) . ",</p><p>Thank you for contacting us. We've received your message and will respond within <strong>" . esc_html( get_theme_mod( 'response_guarantee', '1 hour' ) ) . "</strong> during business hours.</p><p>— The " . esc_html( $company_name ) . " Team</p>";
+		$confirm_subject = sprintf( __( "We received your message, %s", 'wholesalepro' ), $company_name );
+		$confirm_body    = "<p>Hi " . esc_html( $contact_name ) . ",</p><p>Thank you for contacting us. We've received your message and will respond within <strong>" . esc_html( get_theme_mod( 'response_guarantee', '1 hour' ) ) . "</strong> during business hours.</p><p>The " . esc_html( $company_name ) . " Team</p>";
 		wholesalepro_send_email( $contact_email, $confirm_subject, $confirm_body );
 	}
 

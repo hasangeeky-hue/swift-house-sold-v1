@@ -256,10 +256,10 @@ while ( have_posts() ) :
 					<?php
 					if ( 'hot' === $urgency_mod ) {
 						/* translators: %d: days listed */
-						printf( esc_html__( '🔥 Listed %d days ago — moving fast!', 'wholesalepro' ), absint( $days_listed ) );
+						printf( esc_html__( '🔥 Listed %d days ago, moving fast!', 'wholesalepro' ), absint( $days_listed ) );
 					} elseif ( 'warm' === $urgency_mod ) {
 						/* translators: %d: days listed */
-						printf( esc_html__( '⏳ %d days on market — act soon', 'wholesalepro' ), absint( $days_listed ) );
+						printf( esc_html__( '⏳ %d days on market, act soon', 'wholesalepro' ), absint( $days_listed ) );
 					} else {
 						/* translators: %d: days listed */
 						printf( esc_html__( '📅 %d days on market', 'wholesalepro' ), absint( $days_listed ) );

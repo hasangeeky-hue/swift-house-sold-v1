@@ -1,6 +1,6 @@
 <?php
 /**
- * Book a Call — free human consultation, online or phone.
+ * Book a Call, free human consultation, online or phone.
  * Submits through the existing contact form handler.
  *
  * @package WholesalePro
@@ -11,9 +11,9 @@ get_header();
 
 <section class="page-hero page-hero--seller" aria-labelledby="book-hero-heading">
 	<div class="container">
-		<p class="page-hero__eyebrow">FREE CONSULTATION — NO PRESSURE, NO OBLIGATION</p>
+		<p class="page-hero__eyebrow">FREE CONSULTATION, NO PRESSURE, NO OBLIGATION</p>
 		<h1 class="page-hero__title" id="book-hero-heading">Talk to a Real Person About Your Situation</h1>
-		<p class="page-hero__subtitle">Choose an online video call or a phone call. We'll listen, explain your options honestly — including the ones that don't involve us — and you decide from there.</p>
+		<p class="page-hero__subtitle">Choose an online video call or a phone call. We'll listen, explain your options honestly, including the ones that don't involve us, and you decide from there.</p>
 	</div>
 </section>
 
@@ -26,9 +26,9 @@ get_header();
 				<div style="display:flex;flex-direction:column;gap:var(--space-md);">
 					<?php
 					$steps = array(
-						array( '1', 'You tell us your situation', 'Foreclosure timeline, inherited house, divorce, liens — whatever it is, plainly.' ),
+						array( '1', 'You tell us your situation', 'Foreclosure timeline, inherited house, divorce, liens, whatever it is, plainly.' ),
 						array( '2', 'We explain your real options', 'Including listing with an agent or keeping the house, when those are genuinely better for you.' ),
-						array( '3', 'You decide — nothing is signed on a call', 'If a cash offer makes sense, we prepare it in writing within 24 hours. If not, you leave with clarity.' ),
+						array( '3', 'You decide, nothing is signed on a call', 'If a cash offer makes sense, we prepare it in writing within 24 hours. If not, you leave with clarity.' ),
 					);
 					foreach ( $steps as $s ) : ?>
 					<div style="display:flex;gap:var(--space-md);align-items:flex-start;">

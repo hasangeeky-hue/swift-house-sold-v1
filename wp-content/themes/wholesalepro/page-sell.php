@@ -22,20 +22,20 @@ $sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-
 				<?php wholesalepro_breadcrumb(); ?>
 				<p class="hero__eyebrow animate-on-scroll">SELL MY HOUSE FAST FOR CASH</p>
 				<h1 class="hero__title animate-on-scroll" id="sell-hero-heading" style="transition-delay:0.1s">
-					Sell Your House For Cash &mdash; Exactly As It Is
+					Sell Your House For Cash, Exactly As It Is
 				</h1>
 				<p class="hero__subtitle animate-on-scroll" style="transition-delay:0.2s">
 					No cleaning. No repairs. No agent commissions. No waiting three months for a buyer who might not qualify for their mortgage. Get a fair written cash offer within 24 hours and close on a date that works for your life, not ours.
 				</p>
 				<div class="animate-on-scroll" style="transition-delay:0.25s;background:rgba(230,57,70,0.1);border:1px solid rgba(230,57,70,0.3);border-radius:var(--radius-md);padding:var(--space-md);margin-bottom:var(--space-lg);">
-					<p style="color:var(--wp-navy);font-size:0.9rem;margin:0;"><strong>Important if you are in pre-foreclosure:</strong> Every day you wait reduces your available options. Our team responds within one hour — including evenings and weekends.</p>
+					<p style="color:var(--wp-navy);font-size:0.9rem;margin:0;"><strong>Important if you are in pre-foreclosure:</strong> Every day you wait reduces your available options. Our team responds within one hour, including evenings and weekends.</p>
 				</div>
 				<ul class="checklist animate-on-scroll" style="transition-delay:0.3s">
-					<li class="checklist__item checklist__item--check">No repairs or cleaning required — sell exactly as it sits</li>
+					<li class="checklist__item checklist__item--check">No repairs or cleaning required, sell exactly as it sits</li>
 					<li class="checklist__item checklist__item--check">Zero commissions, zero closing costs, nothing deducted</li>
 					<li class="checklist__item checklist__item--check">No open houses, no showings, no strangers in your home</li>
 					<li class="checklist__item checklist__item--check">Fair written cash offer within 24 hours of your inquiry</li>
-					<li class="checklist__item checklist__item--check">Close on your timeline — as fast as 7 days or up to 60 days</li>
+					<li class="checklist__item checklist__item--check">Close on your timeline, as fast as 7 days or up to 60 days</li>
 				</ul>
 				<div class="hero__actions animate-on-scroll" style="transition-delay:0.4s">
 					<a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="btn btn--outline btn--lg" style="color:var(--wp-navy);border-color:var(--wp-navy);">
@@ -76,7 +76,7 @@ $sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-
 				array(
 					'icon'  => '🏚️',
 					'title' => 'Inherited and Probate Properties',
-					'body'  => 'Inheriting a property is not always the gift it seems. Whether the home needs significant repairs, has tenants who need to be managed, or simply sits empty accumulating taxes and maintenance costs — we help families convert inherited real estate into a clean, simple cash distribution with no complications and no delays.',
+					'body'  => 'Inheriting a property is not always the gift it seems. Whether the home needs significant repairs, has tenants who need to be managed, or simply sits empty accumulating taxes and maintenance costs, we help families convert inherited real estate into a clean, simple cash distribution with no complications and no delays.',
 				),
 				array(
 					'icon'  => '💔',
@@ -85,18 +85,18 @@ $sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-
 				),
 				array(
 					'icon'  => '🔑',
-					'title' => 'Tired Landlord Exit — Any Tenancy',
+					'title' => 'Tired Landlord Exit, Any Tenancy',
 					'body'  => 'Whether your tenants are paying and cooperative or months behind and resistant, we purchase occupied rental properties regularly. We take on the tenant situation independently so you never have to make another difficult call to someone living in your property. You close and move on.',
 				),
 				array(
 					'icon'  => '🔥',
 					'title' => 'Fire, Flood, and Major Damage',
-					'body'  => 'Properties with significant damage — whether from fire, flooding, storm, structural failure, or years of deferred maintenance — are exactly the opportunities our investor network pursues. You do not repair a single thing. We assess the property in its current state and make our offer on what stands today.',
+					'body'  => 'Properties with significant damage, whether from fire, flooding, storm, structural failure, or years of deferred maintenance, are exactly the opportunities our investor network pursues. You do not repair a single thing. We assess the property in its current state and make our offer on what stands today.',
 				),
 				array(
 					'icon'  => '📋',
 					'title' => 'Tax Delinquency and Lien Situations',
-					'body'  => 'Properties with accumulated delinquent taxes, judgment liens, or other encumbrances can still be sold. We work with properties that have title complications and structure the sale to clear all obligations from the proceeds at closing. You receive whatever remains above the total debt — without managing creditors yourself.',
+					'body'  => 'Properties with accumulated delinquent taxes, judgment liens, or other encumbrances can still be sold. We work with properties that have title complications and structure the sale to clear all obligations from the proceeds at closing. You receive whatever remains above the total debt, without managing creditors yourself.',
 				),
 			);
 			foreach ( $cards as $i => $card ) : ?>
@@ -114,7 +114,7 @@ $sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-
 <section class="section bg--light-gray" aria-labelledby="process-heading">
 	<div class="container narrow">
 		<div class="section-header animate-on-scroll">
-			<h2 class="section-header__title" id="process-heading">From Your First Message to Cash in Your Account &mdash; Five Simple Steps</h2>
+			<h2 class="section-header__title" id="process-heading">From Your First Message to Cash in Your Account, Five Simple Steps</h2>
 			<p class="section-header__subtitle">No surprises. No complications. No delays you have not been told about in advance.</p>
 		</div>
 
@@ -122,31 +122,31 @@ $sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-
 			<?php
 			$steps = array(
 				array(
-					'label' => 'Step One &mdash; Today',
+					'label' => 'Step One, Today',
 					'title' => 'You Reach Out to Us',
 					'body'  => 'Fill out the form on this page or call us directly. Our system operates around the clock. During business hours, a real person calls you back within one hour. Outside business hours, our system acknowledges your inquiry immediately and you hear from a live team member first thing the following morning. Your information goes nowhere except to our acquisitions team. We never contact you more than you want to be contacted.',
 					'time'  => 'Within 1 Hour',
 				),
 				array(
-					'label' => 'Step Two &mdash; Within 24 Hours',
+					'label' => 'Step Two, Within 24 Hours',
 					'title' => 'We Research Your Property Thoroughly',
 					'body'  => 'Using comparable sales data from the last 90 days in your specific neighborhood, our team calculates what your property would realistically sell for if fully updated. We then factor in realistic renovation costs and determine a fair offer that accounts for the current condition of your property. This process typically completes within 24 hours of your inquiry.',
 					'time'  => 'Within 24 Hours',
 				),
 				array(
-					'label' => 'Step Three &mdash; Within 48 Hours',
+					'label' => 'Step Three, Within 48 Hours',
 					'title' => 'You Receive a Written Cash Offer',
-					'body'  => 'We send you a written offer showing every figure — the comparable sales we used, our repair estimate, and the exact cash amount we are offering. We schedule a call to walk through the numbers with you at a time that works for you. We answer every question you have with complete transparency. You have as much time as you need to consider the offer. There is no expiry date and no pressure tactic.',
+					'body'  => 'We send you a written offer showing every figure, the comparable sales we used, our repair estimate, and the exact cash amount we are offering. We schedule a call to walk through the numbers with you at a time that works for you. We answer every question you have with complete transparency. You have as much time as you need to consider the offer. There is no expiry date and no pressure tactic.',
 					'time'  => 'Within 48 Hours',
 				),
 				array(
-					'label' => 'Step Four &mdash; Your Decision',
-					'title' => 'You Accept or Decline &mdash; Completely Your Choice',
+					'label' => 'Step Four, Your Decision',
+					'title' => 'You Accept or Decline, Completely Your Choice',
 					'body'  => 'If our offer works for your situation, you let us know. If it does not, we part on good terms and you are free to explore other options without any obligation whatsoever. If you accept, you tell us your preferred closing date and we open the title process through our licensed title company in your state.',
 					'time'  => 'Your Timeline',
 				),
 				array(
-					'label' => 'Step Five &mdash; Closing Day',
+					'label' => 'Step Five, Closing Day',
 					'title' => 'You Sign and Receive Your Funds',
 					'body'  => 'You meet at the title company or sign remotely in states where that is permitted. The title company manages all paperwork, pays off any existing mortgage from the proceeds, and wires the remaining funds to your bank account on the same business day. You hand over the keys and the property is no longer your responsibility.',
 					'time'  => 'Same Business Day',
@@ -192,10 +192,10 @@ $sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-
 						array( 'Time to Close',             'As fast as 7 days',               '60 to 90+ days typical' ),
 						array( 'Commissions',               'Zero',                             '5 to 6% of sale price' ),
 						array( 'Closing Costs',             'We pay 100% of closing costs',    'Seller often pays 1 to 3%' ),
-						array( 'Repairs Before Sale',       'None — buy completely as-is',      'Buyer inspection demands repairs' ),
+						array( 'Repairs Before Sale',       'None, buy completely as-is',      'Buyer inspection demands repairs' ),
 						array( 'Showings Required',         'No showings. No strangers.',       'Multiple showings, open houses' ),
-						array( 'Deal Falls Through Risk',   'Zero — guaranteed cash close',    'High — mortgage denials common' ),
-						array( 'Appraisal Required',        'No appraisal',                     'Yes — and low appraisals kill deals' ),
+						array( 'Deal Falls Through Risk',   'Zero, guaranteed cash close',    'High, mortgage denials common' ),
+						array( 'Appraisal Required',        'No appraisal',                     'Yes, and low appraisals kill deals' ),
 						array( 'Your Preparation Time',     'Under 30 minutes total',           'Weeks of staging and prep work' ),
 					);
 					foreach ( $compare_rows as $row ) : ?>
@@ -223,7 +223,7 @@ $sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-
 			$faqs = array(
 				array(
 					'q' => 'How exactly do you calculate what you will offer for my house?',
-					'a' => 'We use three data points. First, we find the After Repair Value — what your property would realistically sell for on the open market if it were fully updated to current standards. We find this by analyzing actual recent sales of similar homes in your immediate neighborhood. Second, we estimate realistic repair costs based on the condition you describe. Third, we calculate a fair return for the investor taking on the renovation risk. We share all of these numbers with you transparently when we present your offer.',
+					'a' => 'We use three data points. First, we find the After Repair Value, what your property would realistically sell for on the open market if it were fully updated to current standards. We find this by analyzing actual recent sales of similar homes in your immediate neighborhood. Second, we estimate realistic repair costs based on the condition you describe. Third, we calculate a fair return for the investor taking on the renovation risk. We share all of these numbers with you transparently when we present your offer.',
 				),
 				array(
 					'q' => 'Is this genuinely free with no obligation?',
@@ -251,7 +251,7 @@ $sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-
 				),
 				array(
 					'q' => 'What states do you buy in?',
-					'a' => 'We buy houses in Ohio (all 88 counties), Texas (all 254 counties) and Georgia (all 159 counties). From Columbus, Cleveland and Cincinnati to Houston, Dallas and San Antonio, to Atlanta, Savannah and Augusta — metro or rural, we cover the entire state.',
+					'a' => 'We buy houses in Ohio (all 88 counties), Texas (all 254 counties) and Georgia (all 159 counties). From Columbus, Cleveland and Cincinnati to Houston, Dallas and San Antonio, to Atlanta, Savannah and Augusta, metro or rural, we cover the entire state.',
 				),
 				array(
 					'q' => 'How fast can you actually close?',
@@ -259,11 +259,11 @@ $sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-
 				),
 				array(
 					'q' => 'Are there any fees I should know about?',
-					'a' => 'There are none. We charge zero commissions, zero administrative fees, and zero closing costs. We pay all standard closing costs ourselves. The offer we make is the amount you receive at the closing table — nothing is subtracted after the offer is accepted.',
+					'a' => 'There are none. We charge zero commissions, zero administrative fees, and zero closing costs. We pay all standard closing costs ourselves. The offer we make is the amount you receive at the closing table, nothing is subtracted after the offer is accepted.',
 				),
 				array(
 					'q' => 'What happens after I submit the form?',
-					'a' => 'Our system receives your inquiry immediately and you receive an automated confirmation. During business hours, a member of our acquisitions team calls or texts you within one hour. If you submit outside business hours, you receive an immediate system acknowledgment and a personal follow-up first thing the next morning. We contact you however you prefer — phone, text, or email.',
+					'a' => 'Our system receives your inquiry immediately and you receive an automated confirmation. During business hours, a member of our acquisitions team calls or texts you within one hour. If you submit outside business hours, you receive an immediate system acknowledgment and a personal follow-up first thing the next morning. We contact you however you prefer, phone, text, or email.',
 				),
 				array(
 					'q' => 'Is WholesalePro a legitimate and trustworthy company?',
