@@ -57,32 +57,6 @@ $seller_faqs = array(
 	),
 );
 
-$investor_faqs = array(
-	array(
-		'q' => 'How do I join the buyer network?',
-		'a' => 'Fill out the investor registration form on our Browse Deals page. Tell us your target markets, price range, and buy criteria. We will add you to our list and contact you first when we have a deal that matches your criteria.',
-	),
-	array(
-		'q' => 'Are these properties on the MLS?',
-		'a' => 'No. All properties in our inventory are off-market deals acquired directly from motivated sellers. You will not find them on Zillow, the MLS, or any public listing platform. This is the primary advantage of buying from a wholesaler.',
-	),
-	array(
-		'q' => 'How are ARVs calculated?',
-		'a' => 'We pull comparable sold properties within the same zip code, similar square footage, and similar bedroom/bathroom count that sold in the last 90 days in fully renovated condition. We use conservative comps, not optimistic outliers. You should always verify ARVs with your own agent or data source before purchasing.',
-	),
-	array(
-		'q' => 'Can I inspect the property before buying?',
-		'a' => 'Yes. We encourage due diligence. We can schedule a walkthrough for you or your contractor before you commit. We provide earnest money contracts with an inspection period so you have time to verify the numbers.',
-	),
-	array(
-		'q' => 'Do you offer assignment contracts or double closes?',
-		'a' => 'We primarily use assignment contracts, which keeps costs low for both parties. In situations where the original contract or state law requires it, we can accommodate a double close. Our title company is experienced with both structures.',
-	),
-	array(
-		'q' => 'How quickly do deals sell?',
-		'a' => 'Our best deals — those with the highest profit margins — typically sell within 24-72 hours of being sent to our buyer list. If you are serious about a particular market, make sure you respond quickly when we reach out.',
-	),
-);
 ?>
 
 <section class="page-hero page-hero--inner" aria-labelledby="faq-hero-heading">
@@ -119,39 +93,6 @@ $investor_faqs = array(
 					</svg>
 				</button>
 				<div class="faq-item__body" id="faq-seller-<?php echo $i; ?>" hidden
-					itemscope itemtype="https://schema.org/Answer">
-					<div itemprop="text">
-						<p><?php echo esc_html( $faq['a'] ); ?></p>
-					</div>
-				</div>
-			</div>
-			<?php endforeach; ?>
-		</div>
-	</div>
-</section>
-
-<!-- Investor FAQs -->
-<section class="section bg--light-gray" aria-labelledby="investor-faq-heading">
-	<div class="container">
-		<div class="section-header text-center" style="margin-bottom:var(--space-xl);">
-			<span class="section-header__eyebrow badge badge--buyer">For Investors</span>
-			<h2 class="section-header__title" id="investor-faq-heading">Buying Wholesale Deals</h2>
-			<p class="section-header__sub">Common questions from real estate investors in our buyer network.</p>
-		</div>
-
-		<div class="faq-list narrow" role="list">
-			<?php foreach ( $investor_faqs as $i => $faq ) : ?>
-			<div class="faq-item" role="listitem" itemscope itemtype="https://schema.org/Question">
-				<button class="faq-item__trigger js-faq-trigger"
-					aria-expanded="false"
-					aria-controls="faq-investor-<?php echo $i; ?>"
-					itemprop="name">
-					<span><?php echo esc_html( $faq['q'] ); ?></span>
-					<svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-						<polyline points="6 9 12 15 18 9"/>
-					</svg>
-				</button>
-				<div class="faq-item__body" id="faq-investor-<?php echo $i; ?>" hidden
 					itemscope itemtype="https://schema.org/Answer">
 					<div itemprop="text">
 						<p><?php echo esc_html( $faq['a'] ); ?></p>
