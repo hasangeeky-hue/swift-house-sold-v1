@@ -107,7 +107,7 @@ function wholesalepro_enqueue_assets() {
 	wp_localize_script( 'wholesalepro-app', 'wholesalePro', array(
 		'ajaxUrl'       => admin_url( 'admin-ajax.php' ),
 		'nonce'         => wp_create_nonce( 'wholesalepro-nonce' ),
-		'phone'         => get_theme_mod( 'company_phone', '(555) 000-0000' ),
+		'phone'         => get_theme_mod( 'company_phone', '' ),
 		'email'         => get_theme_mod( 'company_email', 'info@wholesalepro.com' ),
 		'sellerThankyou'=> esc_url( $seller_thankyou ),
 		'buyerThankyou' => esc_url( $buyer_thankyou ),

@@ -8,8 +8,8 @@
 
 get_header();
 
-$company_phone   = get_theme_mod( 'company_phone', '(555) 000-0000' );
-$phone_raw       = get_theme_mod( 'company_phone_raw', '5550000000' );
+$company_phone   = get_theme_mod( 'company_phone', '' );
+$phone_raw       = get_theme_mod( 'company_phone_raw', '' );
 $company_email   = get_theme_mod( 'company_email', '' );
 $company_address = get_theme_mod( 'company_address', '' );
 $business_hours  = get_theme_mod( 'business_hours', 'Mon–Fri: 8am–7pm EST &middot; Sat: 9am–5pm EST' );

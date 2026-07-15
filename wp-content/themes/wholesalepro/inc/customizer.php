@@ -27,9 +27,9 @@ function wholesalepro_customizer_register( $wp_customize ) {
 	) );
 
 	$company_fields = array(
-		array( 'id' => 'company_name',         'label' => __( 'Company Name', 'wholesalepro' ),              'default' => 'WholesalePro',            'type' => 'text',     'transport' => 'postMessage' ),
-		array( 'id' => 'company_phone',        'label' => __( 'Phone (formatted)', 'wholesalepro' ),         'default' => '(555) 000-0000',          'type' => 'text',     'transport' => 'refresh' ),
-		array( 'id' => 'company_phone_raw',    'label' => __( 'Phone (digits only for tel: links)', 'wholesalepro' ), 'default' => '5550000000',   'type' => 'text',     'transport' => 'refresh' ),
+		array( 'id' => 'company_name',         'label' => __( 'Company Name', 'wholesalepro' ),              'default' => 'Swift House Sold',            'type' => 'text',     'transport' => 'postMessage' ),
+		array( 'id' => 'company_phone',        'label' => __( 'Phone (formatted)', 'wholesalepro' ),         'default' => '',          'type' => 'text',     'transport' => 'refresh' ),
+		array( 'id' => 'company_phone_raw',    'label' => __( 'Phone (digits only for tel: links)', 'wholesalepro' ), 'default' => '',   'type' => 'text',     'transport' => 'refresh' ),
 		array( 'id' => 'company_email',        'label' => __( 'Email Address', 'wholesalepro' ),             'default' => 'info@wholesalepro.com',   'type' => 'text',     'transport' => 'refresh' ),
 		array( 'id' => 'company_address',      'label' => __( 'Business Address', 'wholesalepro' ),          'default' => '',                        'type' => 'textarea', 'transport' => 'refresh' ),
 		array( 'id' => 'company_tagline',      'label' => __( 'Company Tagline', 'wholesalepro' ),           'default' => 'We Buy Houses For Cash',  'type' => 'text',     'transport' => 'postMessage' ),
@@ -134,7 +134,7 @@ function wholesalepro_customizer_register( $wp_customize ) {
 	$wp_customize->selective_refresh->add_partial( 'company_name', array(
 		'selector'        => '.nav-logo__text, .footer__brand-name',
 		'render_callback' => function() {
-			return esc_html( get_theme_mod( 'company_name', 'WholesalePro' ) );
+			return esc_html( get_theme_mod( 'company_name', 'Swift House Sold' ) );
 		},
 	) );
 	$wp_customize->selective_refresh->add_partial( 'company_tagline', array(

@@ -12,8 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 function wholesalepro_output_schema() {
 	$schemas = array();
 
-	$company      = get_theme_mod( 'company_name', 'WholesalePro' );
-	$phone        = get_theme_mod( 'company_phone', '(555) 000-0000' );
+	$company      = get_theme_mod( 'company_name', 'Swift House Sold' );
+	$phone        = get_theme_mod( 'company_phone', '' );
 	$email        = get_theme_mod( 'company_email', '' );
 	$address_raw  = get_theme_mod( 'company_address', '' );
 	$social_urls  = array_filter( array(

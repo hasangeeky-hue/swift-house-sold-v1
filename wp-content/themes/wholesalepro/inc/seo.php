@@ -14,7 +14,7 @@ add_filter( 'document_title_separator', function() { return '|'; } );
 
 /* ── Output Meta Tags ────────────────────────────────────────── */
 function wholesalepro_seo_meta() {
-	$company   = get_theme_mod( 'company_name', 'WholesalePro' );
+	$company   = get_theme_mod( 'company_name', 'Swift House Sold' );
 	$site_url  = home_url( '/' );
 	$current   = ( is_ssl() ? 'https://' : 'http://' ) . sanitize_text_field( $_SERVER['HTTP_HOST'] ?? '' ) . sanitize_text_field( $_SERVER['REQUEST_URI'] ?? '' );
 	$canonical = esc_url( $current );

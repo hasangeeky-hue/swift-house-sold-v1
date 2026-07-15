@@ -49,16 +49,16 @@ if ( $fb_pixel ) :
 			<div class="topbar__inner">
 				<span class="topbar__message">
 					<?php echo esc_html( get_theme_mod( 'topbar_message', sprintf(
-						'%s | %s+ Deals Closed | We Buy Houses Nationwide',
-						__( 'Serving All 50 States', 'wholesalepro' ),
+						'%s | %s+ Deals Closed | Written Cash Offer in 24 Hours',
+						__( 'We Buy Houses in Ohio, Texas & Georgia', 'wholesalepro' ),
 						get_theme_mod( 'deals_closed_count', '500' )
 					) ) ); ?>
 				</span>
 				<span class="topbar__contact">
-					<a href="tel:<?php echo esc_attr( get_theme_mod( 'company_phone_raw', '5550000000' ) ); ?>" class="topbar__phone">
+					<a href="tel:<?php echo esc_attr( get_theme_mod( 'company_phone_raw', '' ) ); ?>" class="topbar__phone">
 						<?php echo wholesalepro_get_star_rating( 4.9 ); // phpcs:ignore ?>
 						<?php esc_html_e( 'Call:', 'wholesalepro' ); ?>
-						<?php echo esc_html( get_theme_mod( 'company_phone', '(555) 000-0000' ) ); ?>
+						<?php echo esc_html( get_theme_mod( 'company_phone', '' ) ); ?>
 					</a>
 				</span>
 			</div>
@@ -92,8 +92,8 @@ if ( $fb_pixel ) :
 						'fallback_cb'    => function() {
 							$nav_pages = array(
 								'sell-my-house-fast' => __( 'Sell My House', 'wholesalepro' ),
-								'browse-deals'       => __( 'Browse Deals', 'wholesalepro' ),
 								'how-it-works'       => __( 'How It Works', 'wholesalepro' ),
+								'faq'                => __( 'FAQ', 'wholesalepro' ),
 								'about-us'           => __( 'About', 'wholesalepro' ),
 								'contact'            => __( 'Contact', 'wholesalepro' ),
 							);
@@ -111,14 +111,9 @@ if ( $fb_pixel ) :
 					<?php
 					$sell_page = get_page_by_path( 'sell-my-house-fast' );
 					$sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-house-fast' );
-					$deal_page = get_page_by_path( 'browse-deals' );
-					$deal_url  = $deal_page ? get_permalink( $deal_page->ID ) : home_url( '/browse-deals' );
 					?>
 					<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--sm">
 						<?php esc_html_e( 'Get Cash Offer', 'wholesalepro' ); ?>
-					</a>
-					<a href="<?php echo esc_url( $deal_url ); ?>" class="btn btn--outline btn--sm" style="color:var(--wp-navy);border-color:var(--wp-navy);">
-						<?php esc_html_e( 'View Deals', 'wholesalepro' ); ?>
 					</a>
 				</div>
 
@@ -149,11 +144,13 @@ if ( $fb_pixel ) :
 	<ul class="nav-overlay__links" role="list">
 		<?php
 		$overlay_pages = array(
-			'sell-my-house-fast' => __( 'Sell My House', 'wholesalepro' ),
-			'browse-deals'       => __( 'Browse Deals', 'wholesalepro' ),
-			'how-it-works'       => __( 'How It Works', 'wholesalepro' ),
-			'about-us'           => __( 'About Us', 'wholesalepro' ),
-			'contact'            => __( 'Contact', 'wholesalepro' ),
+			'sell-my-house-fast'   => __( 'Sell My House', 'wholesalepro' ),
+			'how-it-works'         => __( 'How It Works', 'wholesalepro' ),
+			'cash-sale-vs-listing' => __( 'Cash Sale vs. Agent', 'wholesalepro' ),
+			'faq'                  => __( 'FAQ', 'wholesalepro' ),
+			'about-us'             => __( 'About Us', 'wholesalepro' ),
+			'blog'                 => __( 'Seller Guides', 'wholesalepro' ),
+			'contact'              => __( 'Contact', 'wholesalepro' ),
 		);
 		foreach ( $overlay_pages as $slug => $label ) {
 			$page = get_page_by_path( $slug );
@@ -173,8 +170,8 @@ if ( $fb_pixel ) :
 	</div>
 
 	<div class="nav-overlay__contact">
-		<a href="tel:<?php echo esc_attr( get_theme_mod( 'company_phone_raw', '5550000000' ) ); ?>">
-			<?php echo esc_html( get_theme_mod( 'company_phone', '(555) 000-0000' ) ); ?>
+		<a href="tel:<?php echo esc_attr( get_theme_mod( 'company_phone_raw', '' ) ); ?>">
+			<?php echo esc_html( get_theme_mod( 'company_phone', '' ) ); ?>
 		</a>
 	</div>
 </div>

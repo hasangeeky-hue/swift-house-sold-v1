@@ -8,8 +8,8 @@
 
 get_header();
 
-$phone     = get_theme_mod( 'company_phone', '(555) 000-0000' );
-$phone_raw = get_theme_mod( 'company_phone_raw', '5550000000' );
+$phone     = get_theme_mod( 'company_phone', '' );
+$phone_raw = get_theme_mod( 'company_phone_raw', '' );
 $deals_url = ( $p = get_page_by_path( 'browse-deals' ) ) ? get_permalink( $p->ID ) : home_url( '/browse-deals' );
 ?>
 

@@ -10,8 +10,8 @@ get_header();
 
 $sell_url  = ( $p = get_page_by_path( 'sell-my-house-fast' ) ) ? get_permalink( $p->ID ) : home_url( '/sell-my-house-fast' );
 $deals_url = ( $p = get_page_by_path( 'browse-deals' ) )       ? get_permalink( $p->ID ) : home_url( '/browse-deals' );
-$phone     = get_theme_mod( 'company_phone', '(555) 000-0000' );
-$phone_raw = get_theme_mod( 'company_phone_raw', '5550000000' );
+$phone     = get_theme_mod( 'company_phone', '' );
+$phone_raw = get_theme_mod( 'company_phone_raw', '' );
 ?>
 
 <section class="page-hero page-hero--compact" aria-labelledby="hiw-hero-heading">

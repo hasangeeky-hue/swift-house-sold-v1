@@ -100,7 +100,7 @@ function wholesalepro_send_email( $to, $subject, $body, $priority = false ) {
 		$headers[] = 'X-MSMail-Priority: High';
 		$headers[] = 'Importance: High';
 	}
-	$from_name  = get_theme_mod( 'company_name', 'WholesalePro' );
+	$from_name  = get_theme_mod( 'company_name', 'Swift House Sold' );
 	$from_email = get_theme_mod( 'company_email', get_option( 'admin_email' ) );
 	$headers[]  = 'From: ' . $from_name . ' <' . $from_email . '>';
 	wp_mail( $to, $subject, $body, $headers );
@@ -174,7 +174,7 @@ function wholesalepro_handle_seller_form() {
 	);
 
 	$admin_email   = get_theme_mod( 'company_email', get_option( 'admin_email' ) );
-	$company_name  = get_theme_mod( 'company_name', 'WholesalePro' );
+	$company_name  = get_theme_mod( 'company_name', 'Swift House Sold' );
 	$admin_subject = sprintf( '🏠 New Seller Lead: %s — %s', $address, $name );
 	$admin_body    = "<h2 style='color:#1B2B4B'>New Seller Lead</h2><table cellpadding='8' style='width:100%;border-collapse:collapse'>";
 	$admin_body   .= "<tr><td><strong>Name</strong></td><td>" . esc_html( $name ) . "</td></tr>";
@@ -263,7 +263,7 @@ function wholesalepro_handle_buyer_form() {
 	);
 
 	$admin_email   = get_theme_mod( 'company_email', get_option( 'admin_email' ) );
-	$company_name  = get_theme_mod( 'company_name', 'WholesalePro' );
+	$company_name  = get_theme_mod( 'company_name', 'Swift House Sold' );
 	$admin_subject = sprintf( '💼 New Buyer Sign-Up: %s', $name );
 	$admin_body    = "<h2 style='color:#1B2B4B'>New Buyer Network Sign-Up</h2>";
 	$admin_body   .= "<p><strong>Name:</strong> " . esc_html( $name ) . "<br><strong>Email:</strong> " . esc_html( $email ) . "<br><strong>Phone:</strong> " . esc_html( $phone ) . "</p>";
@@ -491,7 +491,7 @@ function wholesalepro_handle_contact_form() {
 	}
 
 	$admin_email   = get_theme_mod( 'company_email', get_option( 'admin_email' ) );
-	$company_name  = get_theme_mod( 'company_name', 'WholesalePro' );
+	$company_name  = get_theme_mod( 'company_name', 'Swift House Sold' );
 	$admin_subject = sprintf( 'Contact Form: %s — %s', $contact_subject, $contact_name );
 	$admin_body    = "<h2 style='color:#1B2B4B'>New Contact Form Submission</h2>";
 	$admin_body   .= "<p><strong>Name:</strong> " . esc_html( $contact_name ) . "<br><strong>Email:</strong> " . esc_html( $contact_email ) . "<br><strong>Phone:</strong> " . esc_html( $contact_phone ) . "<br><strong>Type:</strong> " . esc_html( $contact_type ) . "<br><strong>Subject:</strong> " . esc_html( $contact_subject ) . "</p>";

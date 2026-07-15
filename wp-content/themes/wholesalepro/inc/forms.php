@@ -141,7 +141,7 @@ function wholesalepro_render_seller_form( $location = 'generic' ) {
 			<?php printf(
 				/* translators: %s: company name */
 				esc_html__( '🔒 100%% Free, No Obligation. Your information is never shared. %s will contact you within %s.', 'wholesalepro' ),
-				esc_html( get_theme_mod( 'company_name', 'WholesalePro' ) ),
+				esc_html( get_theme_mod( 'company_name', 'Swift House Sold' ) ),
 				esc_html( get_theme_mod( 'response_guarantee', '1 hour' ) )
 			); ?>
 		</p>

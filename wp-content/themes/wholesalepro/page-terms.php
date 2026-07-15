@@ -8,7 +8,7 @@
 
 get_header();
 
-$company_name    = get_theme_mod( 'company_name', 'WholesalePro' );
+$company_name    = get_theme_mod( 'company_name', 'Swift House Sold' );
 $company_email   = get_theme_mod( 'company_email', 'info@example.com' );
 $company_address = get_theme_mod( 'company_address', '123 Main Street, Your City, ST 00000' );
 ?>

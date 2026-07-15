@@ -8,9 +8,9 @@
 
 get_header();
 
-$company_name = get_theme_mod( 'company_name', 'WholesalePro' );
-$phone        = get_theme_mod( 'company_phone', '(555) 000-0000' );
-$phone_raw    = get_theme_mod( 'company_phone_raw', '5550000000' );
+$company_name = get_theme_mod( 'company_name', 'Swift House Sold' );
+$phone        = get_theme_mod( 'company_phone', '' );
+$phone_raw    = get_theme_mod( 'company_phone_raw', '' );
 $sell_url     = ( $p = get_page_by_path( 'sell-my-house-fast' ) ) ? get_permalink( $p->ID ) : home_url( '/sell-my-house-fast' );
 
 $comparisons = array(

@@ -13,21 +13,21 @@
 		<div class="container">
 			<div class="footer-cta-band__inner">
 				<div class="footer-cta-band__copy">
-					<h2><?php esc_html_e( 'Ready to Sell or Invest?', 'wholesalepro' ); ?></h2>
-					<p><?php esc_html_e( 'Join hundreds of satisfied homeowners and investors who trust us every year.', 'wholesalepro' ); ?></p>
+					<h2><?php esc_html_e( 'Ready to Sell Your House Fast?', 'wholesalepro' ); ?></h2>
+					<p><?php esc_html_e( 'Written cash offer in 24 hours. Ohio, Texas and Georgia. No fees, no repairs, no pressure.', 'wholesalepro' ); ?></p>
 				</div>
 				<div class="footer-cta-band__actions">
 					<?php
 					$sell_page = get_page_by_path( 'sell-my-house-fast' );
 					$sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-house-fast' );
-					$deal_page = get_page_by_path( 'browse-deals' );
-					$deal_url  = $deal_page ? get_permalink( $deal_page->ID ) : home_url( '/browse-deals' );
+					$how_page = get_page_by_path( 'how-it-works' );
+					$how_url  = $how_page ? get_permalink( $how_page->ID ) : home_url( '/how-it-works' );
 					?>
 					<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--lg">
 						<?php esc_html_e( 'Get My Cash Offer', 'wholesalepro' ); ?>
 					</a>
-					<a href="<?php echo esc_url( $deal_url ); ?>" class="btn btn--buyer btn--lg">
-						<?php esc_html_e( 'Browse Available Deals', 'wholesalepro' ); ?>
+					<a href="<?php echo esc_url( $how_url ); ?>" class="btn btn--buyer btn--lg">
+						<?php esc_html_e( 'See How It Works', 'wholesalepro' ); ?>
 					</a>
 				</div>
 			</div>
@@ -106,7 +106,7 @@
 				</div>
 
 				<div class="footer-col">
-					<h3 class="footer-col__heading"><?php esc_html_e( 'For Investors', 'wholesalepro' ); ?></h3>
+					<h3 class="footer-col__heading"><?php esc_html_e( 'Situations We Solve', 'wholesalepro' ); ?></h3>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'footer-col-2',
@@ -114,9 +114,10 @@
 						'menu_class'     => 'footer-nav',
 						'fallback_cb'    => function() {
 							$links = array(
-								'browse-deals'   => __( 'Browse Deals', 'wholesalepro' ),
-								'buyer-criteria' => __( 'Buyer Criteria', 'wholesalepro' ),
-								'contact'        => __( 'Join Buyer List', 'wholesalepro' ),
+								'sell-my-house-fast'    => __( 'Foreclosure · Probate · Divorce', 'wholesalepro' ),
+								'cash-sale-vs-listing'  => __( 'Cash Sale vs. Agent', 'wholesalepro' ),
+								'blog'                  => __( 'Free Seller Guides', 'wholesalepro' ),
+								'faq'                   => __( 'Common Questions', 'wholesalepro' ),
 							);
 							echo '<ul class="footer-nav">';
 							foreach ( $links as $slug => $label ) {

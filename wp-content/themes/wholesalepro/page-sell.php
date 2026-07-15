@@ -8,8 +8,8 @@
 
 get_header();
 
-$phone     = get_theme_mod( 'company_phone', '(555) 000-0000' );
-$phone_raw = get_theme_mod( 'company_phone_raw', '5550000000' );
+$phone     = get_theme_mod( 'company_phone', '' );
+$phone_raw = get_theme_mod( 'company_phone_raw', '' );
 $sell_page = get_page_by_path( 'sell-my-house-fast' );
 $sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-house-fast' );
 ?>

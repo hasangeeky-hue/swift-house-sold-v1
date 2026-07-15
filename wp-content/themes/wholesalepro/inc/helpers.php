@@ -175,28 +175,28 @@ function wholesalepro_get_property_card( $post_id, $show_cta = true ) {
 function wholesalepro_get_trust_bar() {
 	$stats = array(
 		array(
-			'number' => get_theme_mod( 'deals_closed_count', '500' ),
-			'label'  => __( 'Deals Closed', 'wholesalepro' ),
-			'suffix' => '+',
-		),
-		array(
-			'number' => get_theme_mod( 'states_covered', '50' ),
-			'label'  => __( 'States Served', 'wholesalepro' ),
+			'number' => get_theme_mod( 'offer_hours', '24' ),
+			'label'  => __( 'Hour Written Offer', 'wholesalepro' ),
 			'suffix' => '',
 		),
 		array(
-			'number' => get_theme_mod( 'average_close_days', '14' ),
-			'label'  => __( 'Avg. Days to Close', 'wholesalepro' ),
+			'number' => get_theme_mod( 'counties_covered', '501' ),
+			'label'  => __( 'Counties — OH · TX · GA', 'wholesalepro' ),
 			'suffix' => '',
 		),
 		array(
-			'number' => get_theme_mod( 'seller_rating', '4.9' ),
-			'label'  => __( 'Seller Rating', 'wholesalepro' ),
-			'suffix' => '/5',
+			'number' => get_theme_mod( 'fastest_close_days', '7' ),
+			'label'  => __( 'Day Fastest Close', 'wholesalepro' ),
+			'suffix' => '',
 		),
 		array(
-			'number' => get_theme_mod( 'company_founding_year', '2020' ),
-			'label'  => __( 'In Business Since', 'wholesalepro' ),
+			'number' => get_theme_mod( 'seller_fees', '0' ),
+			'label'  => __( 'Fees or Commissions', 'wholesalepro' ),
+			'suffix' => '$',
+		),
+		array(
+			'number' => get_theme_mod( 'repairs_needed', '0' ),
+			'label'  => __( 'Repairs Needed — As-Is', 'wholesalepro' ),
 			'suffix' => '',
 		),
 	);
