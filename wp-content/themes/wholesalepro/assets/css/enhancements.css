@@ -523,3 +523,15 @@ img, svg, video { max-width: 100%; height: auto; }
 /* Guide cards: whole card clickable feel */
 .card--guide a { transition: color .15s ease; }
 .card--guide:hover h3 { color: var(--wp-red, #E63946); }
+
+/* Nav pills: Sellers / Investors / Menu as clear buttons */
+.nav-pill { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px; border: 1.5px solid var(--wp-gray-200, #e2e8f0); border-radius: 999px; font-weight: 600; font-size: 0.9rem; color: var(--wp-navy, #1B2B4B); text-decoration: none; background: #fff; cursor: pointer; transition: all .15s ease; }
+.nav-pill:hover { border-color: var(--wp-navy, #1B2B4B); background: #f8fafc; transform: translateY(-1px); }
+.nav-pill--menu { background: var(--wp-navy, #1B2B4B); color: #fff; border-color: var(--wp-navy, #1B2B4B); }
+.nav-pill--menu:hover { background: #24365c; color: #fff; }
+.nav-links { gap: 10px; align-items: center; }
+/* the pills replace the old link row; keep dropdowns working on the pills */
+.nav-links .menu-item-has-children:hover > .sub-menu,
+.nav-links .menu-item-has-children:focus-within > .sub-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+/* hamburger icon-only button hidden on desktop (Menu pill replaces it) */
+@media (min-width: 1025px) { .nav-toggle { display: none !important; } }

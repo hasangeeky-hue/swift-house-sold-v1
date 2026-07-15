@@ -84,28 +84,41 @@ if ( $fb_pixel ) :
 
 				<ul class="nav-links" role="list" id="primary-menu">
 					<?php
-					wp_nav_menu( array(
-						'theme_location' => 'primary',
-						'container'      => false,
-						'items_wrap'     => '%3$s',
-						'fallback_cb'    => function() {
-							$nav_pages = array(
-								'sell-my-house-fast' => __( 'Sell My House', 'wholesalepro' ),
-								'services'           => __( 'Services', 'wholesalepro' ),
-								'investors'          => __( 'Investors', 'wholesalepro' ),
-								'how-it-works'       => __( 'How It Works', 'wholesalepro' ),
-								'faq'                => __( 'FAQ', 'wholesalepro' ),
-								'about-us'           => __( 'About', 'wholesalepro' ),
-								'contact'            => __( 'Contact', 'wholesalepro' ),
-							);
-							foreach ( $nav_pages as $slug => $label ) {
-								$page = get_page_by_path( $slug );
-								$url  = $page ? get_permalink( $page->ID ) : home_url( '/' . $slug );
-								echo '<li class="nav-links__item menu-item"><a href="' . esc_url( $url ) . '">' . esc_html( $label ) . '</a></li>';
-							}
-						},
-					) );
+					$svc_page = get_page_by_path( 'services' );
+					$svc_url  = $svc_page ? get_permalink( $svc_page->ID ) : home_url( '/services' );
+					$inv_page = get_page_by_path( 'investors' );
+					$inv_url  = $inv_page ? get_permalink( $inv_page->ID ) : home_url( '/investors' );
 					?>
+					<li class="nav-links__item menu-item menu-item-has-children">
+						<a href="<?php echo esc_url( $svc_url ); ?>" class="nav-pill"><?php esc_html_e( 'Sellers', 'wholesalepro' ); ?> <span aria-hidden="true" style="font-size:0.7em;">&#9662;</span></a>
+						<ul class="sub-menu">
+							<?php
+							foreach ( shs_services_config() as $slug => $svc ) {
+								$p = get_page_by_path( $slug );
+								echo '<li><a href="' . esc_url( $p ? get_permalink( $p->ID ) : home_url( '/' . $slug ) ) . '">' . esc_html( $svc['menu'] ) . '</a></li>';
+							}
+							?>
+							<li><a href="<?php echo esc_url( $svc_url ); ?>"><?php esc_html_e( 'All Seller Services →', 'wholesalepro' ); ?></a></li>
+						</ul>
+					</li>
+					<li class="nav-links__item menu-item menu-item-has-children">
+						<a href="<?php echo esc_url( $inv_url ); ?>" class="nav-pill"><?php esc_html_e( 'Investors', 'wholesalepro' ); ?> <span aria-hidden="true" style="font-size:0.7em;">&#9662;</span></a>
+						<ul class="sub-menu">
+							<?php
+							foreach ( shs_investors_config() as $slug => $svc ) {
+								$p = get_page_by_path( $slug );
+								echo '<li><a href="' . esc_url( $p ? get_permalink( $p->ID ) : home_url( '/' . $slug ) ) . '">' . esc_html( $svc['menu'] ) . '</a></li>';
+							}
+							?>
+							<li><a href="<?php echo esc_url( $inv_url ); ?>"><?php esc_html_e( 'Investor Hub →', 'wholesalepro' ); ?></a></li>
+						</ul>
+					</li>
+					<li class="nav-links__item menu-item">
+						<button class="nav-pill nav-pill--menu js-nav-toggle" aria-expanded="false" aria-controls="nav-overlay">
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+							<?php esc_html_e( 'Menu', 'wholesalepro' ); ?>
+						</button>
+					</li>
 				</ul>
 
 				<div class="nav-ctas" role="group" aria-label="<?php esc_attr_e( 'Quick action buttons', 'wholesalepro' ); ?>">
