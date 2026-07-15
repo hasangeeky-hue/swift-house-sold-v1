@@ -235,9 +235,10 @@ function wholesalepro_handle_buyer_form() {
 	$types  = array_map( 'sanitize_text_field', $types_raw );
 
 	$errors = array();
+	$is_newsletter = isset( $_POST['form_location'] ) && 0 === strpos( sanitize_text_field( wp_unslash( $_POST['form_location'] ) ), 'newsletter' );
 	if ( ! $name )  $errors['buyer_name']  = __( 'Name is required.', 'wholesalepro' );
 	if ( ! $email ) $errors['buyer_email'] = __( 'Email is required.', 'wholesalepro' );
-	if ( ! $phone ) $errors['buyer_phone'] = __( 'Phone is required.', 'wholesalepro' );
+	if ( ! $phone && ! $is_newsletter ) $errors['buyer_phone'] = __( 'Phone is required.', 'wholesalepro' );
 
 	if ( $errors ) {
 		wp_send_json_error( array( 'message' => __( 'Please fill in all required fields.', 'wholesalepro' ), 'errors' => $errors ) );
