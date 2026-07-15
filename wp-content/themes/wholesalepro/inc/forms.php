@@ -243,7 +243,7 @@ function wholesalepro_render_buyer_form( $location = 'generic' ) {
 
 		<div class="form-submit-wrap">
 			<button type="submit" class="btn btn--buyer btn--lg btn--full js-submit">
-				<?php esc_html_e( 'Join Our Buyer Network, Get Deals First', 'wholesalepro' ); ?>
+				<?php echo __( 'Join the List &rarr;', 'wholesalepro' ) /* short CTA */; ?>
 			</button>
 		</div>
 

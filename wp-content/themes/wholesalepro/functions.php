@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /* ── Constants ───────────────────────────────────────────────────── */
-define( 'WHOLESALEPRO_VERSION', '2.8.0' );
+define( 'WHOLESALEPRO_VERSION', '2.8.1' );
 define( 'WHOLESALEPRO_DIR',     get_template_directory() );
 define( 'WHOLESALEPRO_URI',     get_template_directory_uri() );
 
@@ -218,16 +218,14 @@ function wholesalepro_social_links() {
 		'linkedin_url'  => array( 'LinkedIn',  'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z' ),
 	);
 
-	$has_any = false;
-	foreach ( $networks as $mod => $data ) {
-		if ( get_theme_mod( $mod, '' ) ) { $has_any = true; break; }
-	}
-	if ( ! $has_any ) return '';
+	// Placeholder mode: FB / IG / LinkedIn always visible; user sets real URLs in Customizer later.
+	$placeholders = array( 'facebook_url', 'instagram_url', 'linkedin_url' );
 
 	$html = '<div class="social-links">';
 	foreach ( $networks as $mod => $data ) {
 		$url = get_theme_mod( $mod, '' );
-		if ( ! $url ) continue;
+		if ( ! $url && ! in_array( $mod, $placeholders, true ) ) continue;
+		if ( ! $url ) { $url = '#'; }
 		$html .= sprintf(
 			'<a href="%s" class="social-link" aria-label="%s" target="_blank" rel="noopener noreferrer">
 				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
