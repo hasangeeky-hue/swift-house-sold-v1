@@ -154,7 +154,7 @@ $phone_raw = get_theme_mod( 'company_phone_raw', '' );
 			$seller_faqs = array(
 				array(
 					'q' => 'What types of properties do you buy?',
-					'a' => 'We buy single family homes, multi-family properties up to four units, condos, townhouses, and vacant land across all 50 states. We buy in any condition — cosmetic fixer-uppers, properties needing major renovation, fire or flood damage, and properties that have been vacant for years. We also buy occupied properties with tenants in place.',
+					'a' => 'We buy single family homes, multi-family properties up to four units, condos, townhouses, and vacant land across Ohio, Texas and Georgia. We buy in any condition — cosmetic fixer-uppers, properties needing major renovation, fire or flood damage, and properties that have been vacant for years. We also buy occupied properties with tenants in place.',
 				),
 				array(
 					'q' => 'What states do you operate in?',

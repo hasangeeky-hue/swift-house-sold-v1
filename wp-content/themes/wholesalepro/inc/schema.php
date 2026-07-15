@@ -210,7 +210,7 @@ function wholesalepro_get_faq_schema_items() {
 		),
 		array(
 			'question' => wholesalepro_content( '{{FAQ_QUESTION_5}}', 'What types of properties do you buy?' ),
-			'answer'   => wholesalepro_content( '{{FAQ_ANSWER_5}}', 'We buy single-family homes, multi-family properties, condos, townhouses, land, and commercial properties in all 50 states.' ),
+			'answer'   => wholesalepro_content( '{{FAQ_ANSWER_5}}', 'We buy single-family homes, multi-family properties, condos, townhouses and land across Ohio, Texas and Georgia — any condition, including houses needing major repairs.' ),
 		),
 	);
 

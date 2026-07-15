@@ -25,8 +25,8 @@ function wholesalepro_seo_meta() {
 	$og_type     = 'website';
 
 	if ( is_front_page() ) {
-		$title       = $company . ' | We Buy Houses For Cash | All 50 States';
-		$description = wholesalepro_content( '{{META_HOME}}', 'We buy houses fast for cash in all 50 states. No repairs, no commissions, no hassle. Get your free no-obligation cash offer today.' );
+		$title       = $company . ' | Sell Your House Fast For Cash in Ohio, Texas & Georgia';
+		$description = wholesalepro_content( '{{META_HOME}}', 'We buy houses for cash in Ohio, Texas and Georgia — any condition, any situation. Written offer in 24 hours, no repairs, no fees. Close in as little as 7 days.' );
 
 	} elseif ( is_page_template( 'page-sell.php' ) ) {
 		$title       = 'Sell My House Fast For Cash | ' . $company . ' | Any Condition';

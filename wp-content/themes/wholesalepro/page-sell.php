@@ -231,7 +231,7 @@ $sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-
 				),
 				array(
 					'q' => 'What types of properties do you buy?',
-					'a' => 'We buy single family homes, duplexes, small multi-family properties, townhouses, and condominiums in any condition across all 50 states. We purchase properties that need cosmetic updates, major renovation, or complete rebuilds. We buy tenant-occupied properties, vacant properties, and properties with title complications including back taxes and judgment liens.',
+					'a' => 'We buy single family homes, duplexes, small multi-family properties, townhouses, and condominiums in any condition across Ohio, Texas and Georgia. We purchase properties that need cosmetic updates, major renovation, or complete rebuilds. We buy tenant-occupied properties, vacant properties, and properties with title complications including back taxes and judgment liens.',
 				),
 				array(
 					'q' => 'Do I need to make repairs or clean before selling?',
@@ -251,7 +251,7 @@ $sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-
 				),
 				array(
 					'q' => 'What states do you buy in?',
-					'a' => 'We buy properties in all 50 states. From the major metropolitan markets of Texas, Florida, and Georgia to the smaller cities of Montana and Wyoming. Our national network of buyers and our data infrastructure mean we can make offers on properties anywhere in the country.',
+					'a' => 'We buy houses in Ohio (all 88 counties), Texas (all 254 counties) and Georgia (all 159 counties). From Columbus, Cleveland and Cincinnati to Houston, Dallas and San Antonio, to Atlanta, Savannah and Augusta — metro or rural, we cover the entire state.',
 				),
 				array(
 					'q' => 'How fast can you actually close?',
@@ -267,7 +267,7 @@ $sell_url  = $sell_page ? get_permalink( $sell_page->ID ) : home_url( '/sell-my-
 				),
 				array(
 					'q' => 'Is WholesalePro a legitimate and trustworthy company?',
-					'a' => 'We are a registered LLC operating legally across all 50 states. We use licensed title companies and real estate attorneys for every transaction. Our testimonials come from real homeowners we have worked with — you are welcome to request references. We encourage you to research us thoroughly, ask every question you have, and take the time you need to feel completely comfortable before making any decision.',
+					'a' => 'We use licensed title companies and real estate attorneys for every transaction, and every offer we send shows the complete math behind it. We encourage you to research us thoroughly, ask every question you have, and take our offer to your own attorney before deciding.',
 				),
 			);
 			foreach ( $faqs as $faq ) : ?>

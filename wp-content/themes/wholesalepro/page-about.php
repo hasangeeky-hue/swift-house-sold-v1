@@ -40,7 +40,7 @@ $deals_url = ( $p = get_page_by_path( 'browse-deals' ) )       ? get_permalink( 
 					We built a different kind of operation. One that uses data to find motivated sellers before they even begin searching for help, that responds within hours rather than days, and that measures success by how cleanly each seller walks away from a difficult situation — not by how wide the margin was on the deal.
 				</p>
 				<p style="color:var(--wp-gray);margin-bottom:var(--space-xl);">
-					Today we operate across all 50 states through a combination of proprietary data infrastructure, a national network of trusted buyers and investors, and a process that has been refined by hundreds of closed transactions. For every seller who receives a fair outcome and for every investor who closes a profitable deal, the model proves itself again.
+					We focus on three states we know deeply — Ohio, Texas and Georgia. Deep local knowledge of foreclosure timelines, probate courts and tax rules in these markets means faster closings and fairer offers than any generalist buyer claiming to cover the whole country.
 				</p>
 				<div style="display:flex;gap:var(--space-lg);flex-wrap:wrap;">
 					<div class="text-center" style="padding:var(--space-lg);background:var(--wp-light-gray);border-radius:var(--radius-md);min-width:120px;">
@@ -96,7 +96,7 @@ $deals_url = ( $p = get_page_by_path( 'browse-deals' ) )       ? get_permalink( 
 				array(
 					'icon'  => '🗺️',
 					'title' => 'National Reach, Local Knowledge',
-					'body'  => 'Covering all 50 states is not simply about having a large footprint. It means having current comparable sales data, active cash buyers, and knowledge of local regulations in every market we operate. Scale without local accuracy is not a service — it is a liability.',
+					'body'  => 'We cover every county in Ohio, Texas and Georgia — with current comparable sales data and knowledge of each state's foreclosure, probate and tax rules. Focus beats footprint: three states known deeply serve sellers better than fifty known barely.',
 				),
 			);
 			foreach ( $values as $i => $val ) : ?>
