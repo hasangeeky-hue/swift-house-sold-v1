@@ -130,26 +130,6 @@ if ( $fb_pixel ) :
 						<a href="<?php echo esc_url( $inv_url ); ?>" class="nav-investors"><?php esc_html_e( 'For Investors', 'wholesalepro' ); ?></a>
 					</li>
 				</ul>
-					</li>
-					<li class="nav-links__item menu-item menu-item-has-children">
-						<a href="<?php echo esc_url( $inv_url ); ?>" class="nav-pill"><?php esc_html_e( 'Investors', 'wholesalepro' ); ?> <span aria-hidden="true" style="font-size:0.7em;">&#9662;</span></a>
-						<ul class="sub-menu">
-							<?php
-							foreach ( shs_investors_config() as $slug => $svc ) {
-								$p = get_page_by_path( $slug );
-								echo '<li><a href="' . esc_url( $p ? get_permalink( $p->ID ) : home_url( '/' . $slug ) ) . '">' . esc_html( $svc['menu'] ) . '</a></li>';
-							}
-							?>
-							<li><a href="<?php echo esc_url( $inv_url ); ?>"><?php esc_html_e( 'Investor Hub →', 'wholesalepro' ); ?></a></li>
-						</ul>
-					</li>
-					<li class="nav-links__item menu-item">
-						<button class="nav-pill nav-pill--menu js-nav-toggle" aria-expanded="false" aria-controls="nav-overlay">
-							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-							<?php esc_html_e( 'Menu', 'wholesalepro' ); ?>
-						</button>
-					</li>
-				</ul>
 
 				<div class="nav-ctas" role="group" aria-label="<?php esc_attr_e( 'Quick action buttons', 'wholesalepro' ); ?>">
 					<?php
