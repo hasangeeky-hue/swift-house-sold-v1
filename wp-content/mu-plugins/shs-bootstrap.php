@@ -114,7 +114,12 @@ add_action( 'init', function () {
 			if ( $ids ) { wp_set_post_categories( $post_id, $ids, false ); }
 		}
 	}
-	// 3. Add Services + Book a Call to the primary menu (if a menu is assigned).
+}, 26 );
+
+/**
+ * Keep Services + Book a Call present in the primary menu (idempotent).
+ */
+add_action( 'init', function () {
 	$locations = get_nav_menu_locations();
 	if ( ! empty( $locations['primary'] ) ) {
 		$menu_id  = (int) $locations['primary'];
@@ -138,5 +143,4 @@ add_action( 'init', function () {
 			}
 		}
 	}
-	update_option( 'shs_cleanup_v2', 1 );
-}, 25 );
+}, 26 );
