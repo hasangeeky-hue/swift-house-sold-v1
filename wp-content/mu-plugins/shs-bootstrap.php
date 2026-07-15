@@ -193,3 +193,39 @@ add_action( 'init', function () {
 	$add_page( 'contact',      'Contact' );
 	update_option( 'shs_menu_v3', 1 );
 }, 30 );
+
+/**
+ * One-time v4: assign the guide library posts to service categories.
+ */
+add_action( 'init', function () {
+	if ( get_option( 'shs_guides_v4' ) ) {
+		return;
+	}
+	$all_cats = array( 'foreclosure', 'probate', 'divorce', 'tax-liens', 'repairs', 'landlord', 'general' );
+	$map = array(
+		74 => $all_cats, 75 => $all_cats, 76 => $all_cats, 77 => $all_cats,
+		78 => $all_cats, 79 => $all_cats, 80 => $all_cats,
+		81 => array( 'probate' ),
+		82 => array( 'foreclosure' ),
+		83 => array( 'divorce' ),
+		84 => array( 'tax-liens' ),
+		85 => array( 'repairs' ),
+		86 => array( 'landlord' ),
+	);
+	$assigned = 0;
+	foreach ( $map as $post_id => $slugs ) {
+		if ( ! get_post( $post_id ) ) { continue; }
+		$ids = array();
+		foreach ( $slugs as $sl ) {
+			$term = get_term_by( 'slug', $sl, 'category' );
+			if ( $term ) { $ids[] = (int) $term->term_id; }
+		}
+		if ( $ids ) {
+			wp_set_post_categories( $post_id, $ids, false );
+			$assigned++;
+		}
+	}
+	if ( $assigned === count( $map ) ) {
+		update_option( 'shs_guides_v4', 1 );
+	}
+}, 35 );
