@@ -89,6 +89,7 @@
 						'fallback_cb'    => function() {
 							$links = array(
 								'sell-my-house-fast' => __( 'Sell My House', 'wholesalepro' ),
+								'seller-protection'  => __( 'Seller Protection Center', 'wholesalepro' ),
 								'how-it-works'       => __( 'How It Works', 'wholesalepro' ),
 								'faq'                => __( 'FAQs', 'wholesalepro' ),
 								'testimonials'       => __( 'Reviews', 'wholesalepro' ),
@@ -115,6 +116,7 @@
 						'fallback_cb'    => function() {
 							$links = array(
 								'investors'            => __( 'Join the Buyer List', 'wholesalepro' ),
+								'buyer-protection'     => __( 'Buyer Protection Center', 'wholesalepro' ),
 								'invest-fix-and-flip'  => __( 'Fix & Flip Deals', 'wholesalepro' ),
 								'invest-buy-and-hold'  => __( 'Buy & Hold Rentals', 'wholesalepro' ),
 								'invest-out-of-state'  => __( 'Out-of-State Investing', 'wholesalepro' ),

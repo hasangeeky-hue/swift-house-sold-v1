@@ -30,8 +30,8 @@ $blog_url  = $blog_page ? get_permalink( $blog_page->ID ) : home_url( '/blog' );
 					Tired of picked-over MLS listings and wholesalers with fantasy ARVs? We source distressed properties directly from motivated sellers. Every deal comes with the comparables, a line-item repair scope and an inspection period. Verify everything before a dollar moves.
 				</p>
 				<div class="hero__actions animate-on-scroll" style="transition-delay:0.3s">
-					<a href="<?php echo esc_url( $book_url ); ?>" class="btn btn--outline-white btn--lg">
-						Talk Strategy First
+					<a href="<?php echo esc_url( ( $bp = get_page_by_path( 'buyer-protection' ) ) ? get_permalink( $bp->ID ) : home_url( '/buyer-protection' ) ); ?>" class="btn btn--outline-white btn--lg">
+						How Your Money Is Protected
 					</a>
 				</div>
 				<p class="animate-on-scroll" style="transition-delay:0.4s;color:rgba(255,255,255,0.85);font-size:0.9rem;margin-top:var(--space-md);">

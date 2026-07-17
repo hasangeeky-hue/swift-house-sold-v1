@@ -112,6 +112,7 @@ if ( $fb_pixel ) :
 							<li class="sub-menu__divider" aria-hidden="true"></li>
 							<li><a href="<?php echo esc_url( $svc_url ); ?>"><?php esc_html_e( 'See all situations →', 'wholesalepro' ); ?></a></li>
 							<li><a href="<?php echo esc_url( $book_url2 ); ?>"><?php esc_html_e( 'Book a free call', 'wholesalepro' ); ?></a></li>
+						<li><a href="<?php echo esc_url( ( $pp = get_page_by_path( 'seller-protection' ) ) ? get_permalink( $pp->ID ) : home_url( '/seller-protection' ) ); ?>"><?php esc_html_e( 'How your money is protected', 'wholesalepro' ); ?></a></li>
 						</ul>
 					</li>
 					<?php
