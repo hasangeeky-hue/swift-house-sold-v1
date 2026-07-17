@@ -599,3 +599,31 @@ img, svg, video { max-width: 100%; height: auto; }
 .pc-pillar img { width:100%; height:130px; object-fit:cover; display:block; }
 .pc-pillar__body { padding:20px 22px 24px; }
 .pc-pillar__icon { width:40px; height:40px; border-radius:10px; background:var(--wp-navy,#1B2B4B); color:#fff; display:flex; align-items:center; justify-content:center; margin:-42px 0 10px; position:relative; border:3px solid #fff; }
+
+/* ══ Neuro layer: focus, whitespace, single accent ═════════════ */
+
+/* Sticky mobile CTA bar: action never leaves the screen */
+.sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 300; display: none; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-top: 1px solid #e5e9f0; box-shadow: 0 -8px 24px rgba(15,23,42,0.12); }
+@media (max-width: 1024px) { .sticky-cta { display: flex; } body { padding-bottom: 68px; } }
+.sticky-cta__btn { flex: 1; text-align: center; background: var(--wp-red,#E63946); color: #fff; font-weight: 700; padding: 14px; border-radius: 10px; text-decoration: none; font-size: 1rem; }
+.sticky-cta__call { flex-shrink: 0; width: 50px; display: flex; align-items: center; justify-content: center; border: 1.5px solid var(--wp-navy,#1B2B4B); border-radius: 10px; color: var(--wp-navy,#1B2B4B); }
+
+/* Two-step form stage 2 */
+.form-stage2__head { font-weight: 700; color: var(--wp-navy,#1B2B4B); font-size: 0.95rem; margin: 4px 0 14px; padding: 10px 12px; background: #eef6f0; border-radius: 8px; border-left: 3px solid #22c55e; }
+.form-stage1 .form-control { height: 52px; font-size: 1.05rem; }
+noscript ~ form .form-stage2[hidden] { display: block !important; }
+
+/* Von Restorff: red belongs to the primary CTA only */
+.btn--buyer { background: var(--wp-navy,#1B2B4B) !important; }
+.hero__eyebrow { color: var(--wp-gold,#F4A261) !important; }
+.section-header__eyebrow { color: #64748b !important; }
+
+/* Loss-aversion strip */
+.loss-strip { background: #fff8ec; border-top: 1px solid #f3e2c0; border-bottom: 1px solid #f3e2c0; padding: 18px 0; }
+.loss-strip__inner { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; text-align: center; }
+.loss-strip__num { font-size: 1.5rem; font-weight: 800; color: #b45309; white-space: nowrap; }
+.loss-strip__txt { color: #7c5c22; font-size: 0.98rem; max-width: 560px; }
+
+/* Breathing room: whitespace lowers cognitive load */
+.section { padding-top: clamp(56px, 8vw, 96px); padding-bottom: clamp(56px, 8vw, 96px); }
+.section-header { margin-bottom: clamp(28px, 4vw, 48px); }

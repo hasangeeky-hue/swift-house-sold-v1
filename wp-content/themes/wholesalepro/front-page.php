@@ -44,9 +44,6 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 					<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--lg">
 						<?php echo esc_html( get_theme_mod( 'shs_hero_cta', 'Get My Free Cash Offer' ) ); ?>
 					</a>
-					<a href="<?php echo esc_url( $how_url ); ?>" class="btn btn--outline-white btn--lg">
-						See How It Works
-					</a>
 				</div>
 				<p class="animate-on-scroll" style="transition-delay:0.4s;color:rgba(255,255,255,0.85);font-size:0.9rem;margin-top:var(--space-md);">
 					No obligation &bull; No fees &bull; You choose the closing date
@@ -65,6 +62,16 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 
 <!-- ━━ TRUST BAR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <?php echo wholesalepro_get_trust_bar(); // phpcs:ignore ?>
+
+<!-- ━━ LOSS AVERSION STRIP ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div class="loss-strip">
+	<div class="container">
+		<div class="loss-strip__inner">
+			<span class="loss-strip__num">$1,500&ndash;$2,500</span>
+			<span class="loss-strip__txt">is what a typical month of waiting costs in mortgage, taxes, insurance and utilities on a house you no longer want. A written offer this week costs $0 and decides nothing yet.</span>
+		</div>
+	</div>
+</div>
 
 <!-- ━━ SITUATIONS (PAIN POINTS) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section class="section" aria-labelledby="situations-heading">
@@ -146,33 +153,6 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 	</div>
 </section>
 
-<!-- ━━ THREE STATES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<section class="section bg--navy" aria-labelledby="states-heading">
-	<div class="container">
-		<div class="section-header text-center">
-			<p class="section-header__eyebrow" style="color:var(--wp-gold);">THREE STATES. DEEP LOCAL KNOWLEDGE.</p>
-			<h2 class="section-header__title" id="states-heading" style="color:#fff;">Where Do We Buy Houses?</h2>
-			<p class="section-header__subtitle" style="color:rgba(255,255,255,0.75);">Ohio, Texas and Georgia, every county. We know the local foreclosure timelines, probate courts and tax rules, because we work them every week.</p>
-		</div>
-		<div class="grid grid-3" style="gap:var(--space-lg);">
-			<?php
-			$states = array(
-				array( 'Ohio', 'All 88 counties', 'Columbus &middot; Cleveland &middot; Cincinnati &middot; Dayton &middot; Toledo', 'Judicial foreclosure specialists. We know Ohio\'s court timeline and often close before the sheriff\'s sale.' ),
-				array( 'Texas', 'All 254 counties', 'Houston &middot; Dallas &middot; San Antonio &middot; Austin &middot; Fort Worth', 'Property tax liens handled at closing. Flood and storm damage welcome, Houston to the Panhandle.' ),
-				array( 'Georgia', 'All 159 counties', 'Atlanta &middot; Savannah &middot; Augusta &middot; Macon &middot; Columbus', 'Georgia probate experience. Historic and older properties welcome, code violations included.' ),
-			);
-			foreach ( $states as $i => $st ) : ?>
-			<div class="card animate-on-scroll" style="padding:var(--space-xl);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);transition-delay:<?php echo esc_attr( $i * 0.1 ); ?>s">
-				<h3 style="color:#fff;font-size:1.4rem;margin-bottom:var(--space-xs);"><?php echo esc_html( $st[0] ); ?></h3>
-				<p style="color:var(--wp-gold);font-weight:600;font-size:0.85rem;margin-bottom:var(--space-sm);"><?php echo esc_html( $st[1] ); ?></p>
-				<p style="color:rgba(255,255,255,0.85);font-size:0.9rem;margin-bottom:var(--space-sm);"><?php echo $st[2]; // phpcs:ignore ?></p>
-				<p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:var(--space-md);"><?php echo $st[3]; // phpcs:ignore ?></p>
-				<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--full">Sell My <?php echo esc_html( $st[0] ); ?> House &rarr;</a>
-			</div>
-			<?php endforeach; ?>
-		</div>
-	</div>
-</section>
 
 <!-- ━━ COMPARISON TABLE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section class="section" aria-labelledby="compare-heading">
@@ -233,7 +213,7 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 		<div class="section-header text-center">
 			<p class="section-header__eyebrow">STRAIGHT ANSWERS, EVERY NUMBER SHOWN</p>
 			<h2 class="section-header__title" id="trust-heading">Why Should I Trust a "We Buy Houses" Company?</h2>
-			<p class="section-header__subtitle">You shouldn't, not automatically. Judge every cash buyer by the same three tests we invite you to run on us.</p>
+			<p class="section-header__subtitle">You shouldn't, not automatically. Judge every cash buyer by the same three tests we invite you to run on us. The full protection machine, escrow, regulators, title insurance, is documented in the <a href="/seller-protection/">Seller Protection Center</a>.</p>
 		</div>
 		<div class="grid grid-3" style="gap:var(--space-lg);">
 			<?php

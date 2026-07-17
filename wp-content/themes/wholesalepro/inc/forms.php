@@ -42,15 +42,32 @@ function wholesalepro_render_seller_form( $location = 'generic' ) {
 		<input type="hidden" name="utm_medium"    value="<?php echo esc_attr( $utm_medium ); ?>">
 		<input type="hidden" name="utm_campaign"  value="<?php echo esc_attr( $utm_campaign ); ?>">
 
+		<!-- STEP 1: micro-commitment, address only -->
+		<div class="form-stage1">
+		<div class="form-group">
+			<label class="form-label" for="property_address-<?php echo esc_attr( $location ); ?>"><?php esc_html_e( 'Property Address', 'wholesalepro' ); ?> <span aria-hidden="true" style="color:var(--wp-red)">*</span></label>
+			<input class="form-control" type="text" id="property_address-<?php echo esc_attr( $location ); ?>" name="property_address" required autocomplete="street-address" aria-required="true" placeholder="<?php esc_attr_e( '123 Main St', 'wholesalepro' ); ?>">
+			<span class="form-error" id="err-property_address-<?php echo esc_attr( $location ); ?>" role="alert"></span>
+		</div>
+			<button type="button" class="btn btn--seller btn--lg btn--full js-form-continue">
+				<?php echo __( 'Get My Cash Offer &rarr;', 'wholesalepro' ); ?>
+			</button>
+			<p class="form-privacy" style="text-align:center;margin-top:10px;"><?php esc_html_e( 'Takes 60 seconds. No obligation. No spam.', 'wholesalepro' ); ?></p>
+		</div>
+
+		<!-- STEP 2: revealed after commitment -->
+		<div class="form-stage2" hidden>
+			<p class="form-stage2__head"><?php esc_html_e( 'Step 2 of 2: where do we send your written offer?', 'wholesalepro' ); ?></p>
+
 		<div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);">
 			<div class="form-group">
 				<label class="form-label" for="seller_name-<?php echo esc_attr( $location ); ?>"><?php esc_html_e( 'Your Name', 'wholesalepro' ); ?> <span aria-hidden="true" style="color:var(--wp-red)">*</span></label>
-				<input class="form-control" type="text" id="seller_name-<?php echo esc_attr( $location ); ?>" name="seller_name" required autocomplete="name" aria-required="true" placeholder="<?php esc_attr_e( 'John Smith', 'wholesalepro' ); ?>">
+				<input class="form-control" type="text" id="seller_name-<?php echo esc_attr( $location ); ?>" name="seller_name" data-req="1" autocomplete="name" placeholder="<?php esc_attr_e( 'John Smith', 'wholesalepro' ); ?>">
 				<span class="form-error" id="err-seller_name-<?php echo esc_attr( $location ); ?>" role="alert"></span>
 			</div>
 			<div class="form-group">
 				<label class="form-label" for="seller_phone-<?php echo esc_attr( $location ); ?>"><?php esc_html_e( 'Phone Number', 'wholesalepro' ); ?> <span aria-hidden="true" style="color:var(--wp-red)">*</span></label>
-				<input class="form-control" type="tel" id="seller_phone-<?php echo esc_attr( $location ); ?>" name="seller_phone" required autocomplete="tel" aria-required="true" placeholder="(555) 000-0000">
+				<input class="form-control" type="tel" id="seller_phone-<?php echo esc_attr( $location ); ?>" name="seller_phone" data-req="1" autocomplete="tel" placeholder="(555) 000-0000">
 				<span class="form-error" id="err-seller_phone-<?php echo esc_attr( $location ); ?>" role="alert"></span>
 			</div>
 		</div>
@@ -61,11 +78,6 @@ function wholesalepro_render_seller_form( $location = 'generic' ) {
 			<span class="form-error" id="err-seller_email-<?php echo esc_attr( $location ); ?>" role="alert"></span>
 		</div>
 
-		<div class="form-group">
-			<label class="form-label" for="property_address-<?php echo esc_attr( $location ); ?>"><?php esc_html_e( 'Property Address', 'wholesalepro' ); ?> <span aria-hidden="true" style="color:var(--wp-red)">*</span></label>
-			<input class="form-control" type="text" id="property_address-<?php echo esc_attr( $location ); ?>" name="property_address" required autocomplete="street-address" aria-required="true" placeholder="<?php esc_attr_e( '123 Main St', 'wholesalepro' ); ?>">
-			<span class="form-error" id="err-property_address-<?php echo esc_attr( $location ); ?>" role="alert"></span>
-		</div>
 
 		<div class="form-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--s4);">
 			<div class="form-group">
@@ -89,7 +101,7 @@ function wholesalepro_render_seller_form( $location = 'generic' ) {
 
 		<div class="form-group">
 			<label class="form-label" for="situation-<?php echo esc_attr( $location ); ?>"><?php esc_html_e( 'Why are you selling? (helps us make a better offer)', 'wholesalepro' ); ?> <span aria-hidden="true" style="color:var(--wp-red)">*</span></label>
-			<textarea class="form-control form-textarea" id="situation-<?php echo esc_attr( $location ); ?>" name="situation" required aria-required="true" rows="3" placeholder="<?php esc_attr_e( 'e.g. inherited property, behind on payments, divorce, need to relocate quickly...', 'wholesalepro' ); ?>"></textarea>
+			<textarea class="form-control form-textarea" id="situation-<?php echo esc_attr( $location ); ?>" name="situation" data-req="1" aria-required="true" rows="3" placeholder="<?php esc_attr_e( 'e.g. inherited property, behind on payments, divorce, need to relocate quickly...', 'wholesalepro' ); ?>"></textarea>
 			<span class="form-error" id="err-situation-<?php echo esc_attr( $location ); ?>" role="alert"></span>
 		</div>
 
@@ -122,6 +134,7 @@ function wholesalepro_render_seller_form( $location = 'generic' ) {
 				<?php esc_html_e( 'Get My Free Cash Offer', 'wholesalepro' ); ?>
 			</button>
 		</div>
+		</div><!-- /.form-stage2 -->
 
 		<p class="form-privacy">
 			<?php printf(

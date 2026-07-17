@@ -267,8 +267,39 @@
 			document.body.style.overflow = '';
 		}
 	}, true);
+	// Two-step seller form: reveal stage 2 after address commitment.
+	document.addEventListener('click', function (e) {
+		var t = e.target; while (t && t !== document && !(t.classList && t.classList.contains('js-form-continue'))) { t = t.parentNode; }
+		if (!t || t === document) return;
+		var form = t.closest ? t.closest('form') : null;
+		if (!form) return;
+		var addr = form.querySelector('[name="property_address"]');
+		if (addr && !addr.value.trim()) { addr.focus(); addr.style.borderColor = '#E63946'; return; }
+		var s1 = form.querySelector('.form-stage1');
+		var s2 = form.querySelector('.form-stage2');
+		if (s1) s1.setAttribute('hidden', '');
+		if (s2) {
+			s2.removeAttribute('hidden');
+			s2.querySelectorAll('[data-req]').forEach(function (f) { f.setAttribute('required', ''); f.setAttribute('aria-required', 'true'); });
+			var first = s2.querySelector('input:not([type=hidden])');
+			if (first) first.focus();
+			s2.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		}
+	}, true);
 })();
 </script>
+
+
+<div class="sticky-cta" role="complementary" aria-label="<?php esc_attr_e( 'Quick action', 'wholesalepro' ); ?>">
+	<a href="<?php echo esc_url( ( $scp = get_page_by_path( 'sell-my-house-fast' ) ) ? get_permalink( $scp->ID ) : home_url( '/sell-my-house-fast' ) ); ?>" class="sticky-cta__btn">
+		<?php esc_html_e( 'Get My Cash Offer', 'wholesalepro' ); ?>
+	</a>
+	<?php if ( get_theme_mod( 'company_phone_raw', '' ) ) : ?>
+	<a href="tel:<?php echo esc_attr( get_theme_mod( 'company_phone_raw', '' ) ); ?>" class="sticky-cta__call" aria-label="<?php esc_attr_e( 'Call us', 'wholesalepro' ); ?>">
+		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.82 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.73 1.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.18 6.18l1.09-1.09a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+	</a>
+	<?php endif; ?>
+</div>
 
 <?php wp_footer(); ?>
 </body>
