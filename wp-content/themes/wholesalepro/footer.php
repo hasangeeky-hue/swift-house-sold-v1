@@ -9,6 +9,7 @@
 
 <footer class="site-footer" id="site-footer" role="contentinfo">
 
+	<?php if ( ! is_front_page() ) : ?>
 	<div class="footer-cta-band">
 		<div class="container">
 			<div class="footer-cta-band__inner">
@@ -33,6 +34,7 @@
 			</div>
 		</div>
 	</div>
+	<?php endif; ?>
 
 	<div class="footer-main">
 		<div class="container">

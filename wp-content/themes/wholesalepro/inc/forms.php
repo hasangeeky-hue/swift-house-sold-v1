@@ -52,7 +52,11 @@ function wholesalepro_render_seller_form( $location = 'generic' ) {
 			<button type="button" class="btn btn--seller btn--lg btn--full js-form-continue">
 				<?php echo __( 'Get My Cash Offer &rarr;', 'wholesalepro' ); ?>
 			</button>
-			<p class="form-privacy" style="text-align:center;margin-top:10px;"><?php esc_html_e( 'Takes 60 seconds. No obligation. No spam.', 'wholesalepro' ); ?></p>
+			<div class="form-trust">
+				<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+				<span><?php esc_html_e( 'Secure. Never sold. Closings via licensed title companies.', 'wholesalepro' ); ?></span>
+			</div>
+			<p class="form-privacy" style="text-align:center;margin-top:8px;"><?php esc_html_e( 'Takes 60 seconds. No obligation.', 'wholesalepro' ); ?></p>
 		</div>
 
 		<!-- STEP 2: revealed after commitment -->

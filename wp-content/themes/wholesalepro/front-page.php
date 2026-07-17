@@ -26,8 +26,7 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 ?>
 
 <!-- ━━ HERO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<section class="hero hero--split" aria-labelledby="hero-heading">
-	<div class="hero__bg" aria-hidden="true"></div>
+<section class="hero hero--split hero--photo" aria-labelledby="hero-heading" style="background-image:linear-gradient(rgba(16,26,48,0.88),rgba(27,43,75,0.86)),url('<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/house-suburban.jpg');background-size:cover;background-position:center;">
 	<div class="container">
 		<div class="hero__inner">
 			<div class="hero__content">
@@ -74,6 +73,16 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 </div>
 
 <!-- ━━ SITUATIONS (PAIN POINTS) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<?php
+$sit_icons = array(
+	'clock'  => '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
+	'home'   => '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>',
+	'scale'  => '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v18M3 7h18M6 7l-3 7a4 4 0 008 0zM18 7l-3 7a4 4 0 008 0z"/></svg>',
+	'tool'   => '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>',
+	'file'   => '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg>',
+	'key'    => '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>',
+);
+?>
 <section class="section" aria-labelledby="situations-heading">
 	<div class="container">
 		<div class="section-header text-center">
@@ -84,19 +93,23 @@ $compare_url   = $compare_page ? get_permalink( $compare_page->ID ) : home_url( 
 		<div class="grid grid-3" style="gap:var(--space-lg);">
 			<?php
 			$situations = array(
-				array( '⏰', 'Behind on Mortgage / Foreclosure', 'Once the bank files, the clock moves fast. In many cases we can close before the sheriff\'s sale and you walk away with cash instead of a foreclosure on your record.' ),
-				array( '🏠', 'Inherited or Probate Property', 'A house you didn\'t ask for, in another city, full of belongings. We work with your estate attorney, buy as-is, and you never have to clean it out.' ),
-				array( '⚖️', 'Divorce, Need a Clean, Fast Split', 'Two people who need to move on can\'t wait six months for a buyer. One cash sale, one closing date, both sides get certainty.' ),
-				array( '🔧', 'Major Repairs You Can\'t Afford', 'Foundation, roof, fire damage, mold, outdated everything. We buy the house exactly as it stands. You fix nothing, clean nothing.' ),
-				array( '📋', 'Tax Liens &amp; Code Violations', 'Most owners think liens mean they can\'t sell. Usually wrong, liens are handled at closing, out of the sale price, not your pocket.' ),
-				array( '🔑', 'Tired Landlord / Problem Tenants', 'Non-paying tenants, constant repairs, eviction costs. Sell the property with tenants in place and stop the bleeding this month.' ),
+				array( 'clock', 'house-suburban.jpg', 'Behind on Mortgage / Foreclosure', 'Once the bank files, the clock moves fast. In many cases we close before the sheriff's sale and you walk away with cash instead of a foreclosure on your record.', '/stop-foreclosure/' ),
+				array( 'home', 'house-brick.jpg', 'Inherited or Probate Property', 'A house you didn't ask for, in another city, full of belongings. We work with your estate attorney, buy as-is, and you never clean it out.', '/sell-probate-property/' ),
+				array( 'scale', 'keys-hand.jpg', 'Divorce: a Clean, Fast Split', 'Two people who need to move on can't wait six months for a buyer. One cash sale, one closing date, both sides get certainty.', '/sell-house-divorce/' ),
+				array( 'tool', 'house-porch.jpg', 'Major Repairs You Can't Afford', 'Foundation, roof, fire damage, mold. We buy the house exactly as it stands. You fix nothing, clean nothing.', '/sell-damaged-house/' ),
+				array( 'file', 'calculator-tax.jpg', 'Tax Liens &amp; Code Violations', 'Liens are handled at closing, out of the sale price, not your pocket. Most owners are wrong about not being able to sell.', '/sell-house-tax-liens/' ),
+				array( 'key', 'house-modern.jpg', 'Tired Landlord / Problem Tenants', 'Non-paying tenants, constant repairs, eviction costs. Sell with tenants in place and stop the bleeding this month.', '/sell-rental-property/' ),
 			);
-			foreach ( $situations as $i => $s ) : ?>
-			<div class="card animate-on-scroll" style="padding:var(--space-xl);transition-delay:<?php echo esc_attr( $i * 0.08 ); ?>s">
-				<div style="font-size:2rem;margin-bottom:var(--space-sm);" aria-hidden="true"><?php echo $s[0]; // phpcs:ignore ?></div>
-				<h3 style="font-size:1.1rem;margin-bottom:var(--space-sm);"><?php echo $s[1]; // phpcs:ignore ?></h3>
-				<p style="color:var(--wp-gray);font-size:0.95rem;margin:0;"><?php echo $s[2]; // phpcs:ignore ?></p>
-			</div>
+			foreach ( $situations as $i => $sit ) : ?>
+			<a href="<?php echo esc_url( home_url( $sit[4] ) ); ?>" class="card card--guide sit-card animate-on-scroll" style="padding:0;overflow:hidden;text-decoration:none;color:inherit;display:block;transition-delay:<?php echo esc_attr( $i * 0.08 ); ?>s">
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . $sit[1] ); ?>" alt="" loading="lazy" style="width:100%;height:140px;object-fit:cover;display:block;">
+				<div style="padding:var(--space-lg) var(--space-xl) var(--space-xl);">
+					<div class="sit-card__icon"><?php echo $sit_icons[ $sit[0] ]; // phpcs:ignore ?></div>
+					<h3 style="font-size:1.08rem;margin-bottom:var(--space-sm);"><?php echo $sit[2]; // phpcs:ignore ?></h3>
+					<p style="color:var(--wp-gray);font-size:0.94rem;margin:0 0 10px;"><?php echo $sit[3]; // phpcs:ignore ?></p>
+					<span style="font-weight:700;color:var(--wp-red);font-size:0.9rem;">This is my situation &rarr;</span>
+				</div>
+			</a>
 			<?php endforeach; ?>
 		</div>
 		<div class="text-center" style="margin-top:var(--space-xl);">

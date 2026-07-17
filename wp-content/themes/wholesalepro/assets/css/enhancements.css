@@ -627,3 +627,15 @@ noscript ~ form .form-stage2[hidden] { display: block !important; }
 /* Breathing room: whitespace lowers cognitive load */
 .section { padding-top: clamp(56px, 8vw, 96px); padding-bottom: clamp(56px, 8vw, 96px); }
 .section-header { margin-bottom: clamp(28px, 4vw, 48px); }
+
+/* Situation cards: icon chip overlapping image */
+.sit-card__icon { width:46px; height:46px; border-radius:12px; background:var(--wp-navy,#1B2B4B); color:#fff; display:flex; align-items:center; justify-content:center; margin:-46px 0 12px; position:relative; border:3px solid #fff; box-shadow:0 6px 16px rgba(15,23,42,0.18); }
+.sit-card:hover .sit-card__icon { background:var(--wp-red,#E63946); }
+
+/* Trust row under form button */
+.form-trust { display:flex; align-items:center; justify-content:center; gap:7px; margin-top:12px; color:#166534; font-size:0.78rem; font-weight:600; background:#f0faf4; border:1px solid #d6eede; border-radius:8px; padding:8px 10px; }
+.form-trust svg { flex-shrink:0; }
+
+/* Hero photo variant */
+.hero--photo .hero__title { text-shadow:0 2px 18px rgba(0,0,0,0.35); }
+.hero--photo .hero__form-card { box-shadow:0 30px 70px rgba(0,0,0,0.45); }
