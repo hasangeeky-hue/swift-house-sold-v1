@@ -310,3 +310,36 @@ add_action( 'init', function () {
 		update_option( 'shs_investors_v7', 1 );
 	}
 }, 45 );
+
+/**
+ * v8: escrow + divorce content push category assignments.
+ */
+add_action( 'init', function () {
+	if ( get_option( 'shs_content_v8' ) ) {
+		return;
+	}
+	$seller_cats   = array( 'foreclosure', 'probate', 'divorce', 'tax-liens', 'repairs', 'landlord', 'general' );
+	$investor_cats = array( 'fix-flip', 'buy-hold', 'out-of-state' );
+	$map = array(
+		2782 => $seller_cats,
+		2785 => $investor_cats,
+		2787 => array( 'divorce' ),
+		2790 => array( 'divorce' ),
+		2792 => array( 'divorce' ),
+		2795 => array( 'divorce' ),
+		2797 => array( 'divorce' ),
+	);
+	$done = 0;
+	foreach ( $map as $post_id => $slugs ) {
+		if ( ! get_post( $post_id ) ) { continue; }
+		$tids = array();
+		foreach ( $slugs as $sl ) {
+			$term = get_term_by( 'slug', $sl, 'category' );
+			if ( $term ) { $tids[] = (int) $term->term_id; }
+		}
+		if ( $tids ) { wp_set_post_categories( $post_id, $tids, false ); $done++; }
+	}
+	if ( count( $map ) === $done ) {
+		update_option( 'shs_content_v8', 1 );
+	}
+}, 50 );
