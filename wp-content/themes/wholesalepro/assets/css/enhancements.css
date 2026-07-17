@@ -551,3 +551,51 @@ img, svg, video { max-width: 100%; height: auto; }
 
 /* Nav items stay on one line */
 .nav-links > .menu-item > a { white-space: nowrap; }
+
+/* ══ Protection Center components ═════════════════════════════ */
+.pc-badges { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+.pc-badge { display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.25); color:#fff; border-radius:999px; padding:7px 14px; font-size:0.8rem; font-weight:600; }
+.pc-badge svg { flex-shrink:0; }
+
+/* money flow diagram */
+.pc-flow { display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; }
+.pc-flow__step { position:relative; padding:26px 18px 22px; background:#fff; border:1px solid #e5e9f0; text-align:center; transition:transform .2s ease, box-shadow .2s ease; }
+.pc-flow__step:first-child { border-radius:14px 0 0 14px; }
+.pc-flow__step:last-child { border-radius:0 14px 14px 0; }
+.pc-flow__step:hover { transform:translateY(-4px); box-shadow:0 14px 34px rgba(15,23,42,0.12); z-index:2; }
+.pc-flow__step + .pc-flow__step { border-left:0; }
+.pc-flow__step::after { content:"→"; position:absolute; right:-13px; top:38px; width:26px; height:26px; background:var(--wp-red,#E63946); color:#fff; border-radius:50%; font-size:0.95rem; line-height:26px; z-index:3; }
+.pc-flow__step:last-child::after { display:none; }
+.pc-flow__icon { width:52px; height:52px; margin:0 auto 12px; border-radius:14px; background:#eef2f8; display:flex; align-items:center; justify-content:center; color:var(--wp-navy,#1B2B4B); }
+.pc-flow__where { display:inline-block; margin-top:10px; font-size:0.7rem; font-weight:700; letter-spacing:0.06em; padding:4px 10px; border-radius:999px; background:#e8f5ee; color:#166534; }
+@media (max-width:900px){ .pc-flow { grid-template-columns:1fr; } .pc-flow__step { border-radius:0!important; border-left:1px solid #e5e9f0; border-top:0; } .pc-flow__step:first-child{border-top:1px solid #e5e9f0;border-radius:14px 14px 0 0!important;} .pc-flow__step:last-child{border-radius:0 0 14px 14px!important;} .pc-flow__step::after{ content:"↓"; right:auto; left:50%; margin-left:-13px; top:auto; bottom:-13px; } }
+
+/* green/red flags */
+.pc-flags { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.pc-flags__col { border-radius:16px; padding:28px; }
+.pc-flags__col--good { background:#f0faf4; border:1.5px solid #bbe5c8; }
+.pc-flags__col--bad { background:#fdf1f1; border:1.5px solid #f3c6c6; }
+.pc-flags__title { display:flex; align-items:center; gap:10px; font-size:1.1rem; font-weight:700; margin-bottom:16px; }
+.pc-flags__col--good .pc-flags__title { color:#166534; }
+.pc-flags__col--bad .pc-flags__title { color:#991b1b; }
+.pc-flags__col ul { list-style:none; margin:0; padding:0; }
+.pc-flags__col li { display:flex; gap:10px; align-items:flex-start; padding:9px 0; font-size:0.95rem; color:#334155; border-bottom:1px dashed rgba(0,0,0,0.07); }
+.pc-flags__col li:last-child { border-bottom:0; }
+.pc-flags__mark { flex-shrink:0; width:22px; height:22px; border-radius:50%; font-size:0.8rem; font-weight:800; display:flex; align-items:center; justify-content:center; margin-top:1px; }
+.pc-flags__col--good .pc-flags__mark { background:#22c55e; color:#fff; }
+.pc-flags__col--bad .pc-flags__mark { background:#ef4444; color:#fff; }
+@media (max-width:800px){ .pc-flags { grid-template-columns:1fr; } }
+
+/* settlement statement mock */
+.pc-stmt { max-width:520px; margin:0 auto; background:#fff; border:1px solid #dfe5ee; border-radius:14px; box-shadow:0 20px 50px rgba(15,23,42,0.12); overflow:hidden; font-variant-numeric:tabular-nums; }
+.pc-stmt__head { background:var(--wp-navy,#1B2B4B); color:#fff; padding:16px 22px; display:flex; justify-content:space-between; align-items:center; font-size:0.85rem; letter-spacing:0.04em; }
+.pc-stmt__row { display:flex; justify-content:space-between; padding:12px 22px; font-size:0.95rem; color:#334155; border-bottom:1px solid #eef1f6; }
+.pc-stmt__row--minus span:last-child { color:#b91c1c; }
+.pc-stmt__row--total { background:#f0faf4; font-weight:800; color:#166534; font-size:1.05rem; border-bottom:0; }
+.pc-stmt__note { padding:12px 22px 18px; font-size:0.8rem; color:#64748b; background:#fafbfd; }
+
+/* photo pillar cards */
+.pc-pillar { padding:0!important; overflow:hidden; }
+.pc-pillar img { width:100%; height:130px; object-fit:cover; display:block; }
+.pc-pillar__body { padding:20px 22px 24px; }
+.pc-pillar__icon { width:40px; height:40px; border-radius:10px; background:var(--wp-navy,#1B2B4B); color:#fff; display:flex; align-items:center; justify-content:center; margin:-42px 0 10px; position:relative; border:3px solid #fff; }
