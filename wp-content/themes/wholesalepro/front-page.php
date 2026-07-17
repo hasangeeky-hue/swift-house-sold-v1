@@ -93,10 +93,10 @@ $sit_icons = array(
 		<div class="grid grid-3" style="gap:var(--space-lg);">
 			<?php
 			$situations = array(
-				array( 'clock', 'house-suburban.jpg', 'Behind on Mortgage / Foreclosure', 'Once the bank files, the clock moves fast. In many cases we close before the sheriff's sale and you walk away with cash instead of a foreclosure on your record.', '/stop-foreclosure/' ),
-				array( 'home', 'house-brick.jpg', 'Inherited or Probate Property', 'A house you didn't ask for, in another city, full of belongings. We work with your estate attorney, buy as-is, and you never clean it out.', '/sell-probate-property/' ),
-				array( 'scale', 'keys-hand.jpg', 'Divorce: a Clean, Fast Split', 'Two people who need to move on can't wait six months for a buyer. One cash sale, one closing date, both sides get certainty.', '/sell-house-divorce/' ),
-				array( 'tool', 'house-porch.jpg', 'Major Repairs You Can't Afford', 'Foundation, roof, fire damage, mold. We buy the house exactly as it stands. You fix nothing, clean nothing.', '/sell-damaged-house/' ),
+				array( 'clock', 'house-suburban.jpg', 'Behind on Mortgage / Foreclosure', "Once the bank files, the clock moves fast. In many cases we close before the sheriff's sale and you walk away with cash instead of a foreclosure on your record.", '/stop-foreclosure/' ),
+				array( 'home', 'house-brick.jpg', 'Inherited or Probate Property', "A house you didn't ask for, in another city, full of belongings. We work with your estate attorney, buy as-is, and you never clean it out.", '/sell-probate-property/' ),
+				array( 'scale', 'keys-hand.jpg', 'Divorce: a Clean, Fast Split', "Two people who need to move on can't wait six months for a buyer. One cash sale, one closing date, both sides get certainty.", '/sell-house-divorce/' ),
+				array( 'tool', 'house-porch.jpg', "Major Repairs You Can't Afford", 'Foundation, roof, fire damage, mold. We buy the house exactly as it stands. You fix nothing, clean nothing.', '/sell-damaged-house/' ),
 				array( 'file', 'calculator-tax.jpg', 'Tax Liens &amp; Code Violations', 'Liens are handled at closing, out of the sale price, not your pocket. Most owners are wrong about not being able to sell.', '/sell-house-tax-liens/' ),
 				array( 'key', 'house-modern.jpg', 'Tired Landlord / Problem Tenants', 'Non-paying tenants, constant repairs, eviction costs. Sell with tenants in place and stop the bleeding this month.', '/sell-rental-property/' ),
 			);
