@@ -34,14 +34,6 @@ $svg_icons = array(
 		<h2 class="sr-only" id="services-grid-heading">All services</h2>
 		<div class="grid grid-3" style="gap:var(--space-lg);">
 			<?php
-			$icons = array(
-				'sell-probate-property' => '🏠',
-				'stop-foreclosure'      => '⏰',
-				'sell-house-divorce'    => '⚖️',
-				'sell-house-tax-liens'  => '📋',
-				'sell-damaged-house'    => '🔧',
-				'sell-rental-property'  => '🔑',
-			);
 			foreach ( shs_services_config() as $slug => $svc ) :
 				$page = get_page_by_path( $slug );
 				$url  = $page ? get_permalink( $page->ID ) : home_url( '/' . $slug );
