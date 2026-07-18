@@ -82,16 +82,16 @@ $blog_url  = $blog_page ? get_permalink( $blog_page->ID ) : home_url( '/blog' );
 		<div class="grid grid-3" style="gap:var(--space-lg);">
 			<?php
 			$pains = array(
-				array( '📉', 'Inflated ARVs', 'Our ARV arrives with the actual comparable sales attached. Pull your own comps and check us. We expect it.' ),
-				array( '🔨', 'Mystery repair numbers', 'Line-item scope, not one scary round figure. Walk it with your contractor during the inspection period.' ),
-				array( '⏱️', 'Pressure tactics', 'Real deals survive verification. The inspection window is in the contract, not a favor we grant.' ),
-				array( '🗑️', 'Deals outside your box', 'Your criteria filter everything. Wrong county, wrong price band, wrong strategy: you never hear about it.' ),
-				array( '💸', 'Fees before value', 'Joining is free. Earnest money sits with the licensed title company, never in anyone\'s personal account.' ),
-				array( '👻', 'Wholesalers who vanish', 'Every closing runs through a title company you can call. Ask them about us before your first deal.' ),
+				array( '<div class="sit-card__icon" style="margin:0 0 12px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M23 18l-9.5-9.5-5 5L1 6"/><path d="M17 18h6v-6"/></svg></div>', 'Inflated ARVs', 'Our ARV arrives with the actual comparable sales attached. Pull your own comps and check us. We expect it.' ),
+				array( '<div class="sit-card__icon" style="margin:0 0 12px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/><path d="M17.64 15L22 10.64l-5.34-5.35a2 2 0 00-2.83 0L11 8.12l6.64 6.88z"/></svg></div>', 'Mystery repair numbers', 'Line-item scope, not one scary round figure. Walk it with your contractor during the inspection period.' ),
+				array( '<div class="sit-card__icon" style="margin:0 0 12px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4M12 14l3-3"/><circle cx="12" cy="14" r="8"/></svg></div>', 'Pressure tactics', 'Real deals survive verification. The inspection window is in the contract, not a favor we grant.' ),
+				array( '<div class="sit-card__icon" style="margin:0 0 12px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 3H2l8 9.46V19l4 2v-8.54z"/></svg></div>', 'Deals outside your box', 'Your criteria filter everything. Wrong county, wrong price band, wrong strategy: you never hear about it.' ),
+				array( '<div class="sit-card__icon" style="margin:0 0 12px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>', 'Fees before value', 'Joining is free. Earnest money sits with the licensed title company, never in anyone\'s personal account.' ),
+				array( '<div class="sit-card__icon" style="margin:0 0 12px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>', 'Wholesalers who vanish', 'Every closing runs through a title company you can call. Ask them about us before your first deal.' ),
 			);
 			foreach ( $pains as $i => $pn ) : ?>
 			<div class="card animate-on-scroll" style="padding:var(--space-xl);transition-delay:<?php echo esc_attr( $i * 0.08 ); ?>s">
-				<div style="font-size:2rem;margin-bottom:var(--space-sm);" aria-hidden="true"><?php echo $pn[0]; // phpcs:ignore ?></div>
+				<?php echo $pn[0]; // phpcs:ignore ?>
 				<h3 style="font-size:1.1rem;margin-bottom:var(--space-sm);"><?php echo esc_html( $pn[1] ); ?></h3>
 				<p style="color:var(--wp-gray);font-size:0.95rem;margin:0;"><?php echo esc_html( $pn[2] ); ?></p>
 			</div>

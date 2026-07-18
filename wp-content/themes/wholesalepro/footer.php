@@ -119,6 +119,7 @@
 							$links = array(
 								'investors'            => __( 'Join the Buyer List', 'wholesalepro' ),
 								'buyer-protection'     => __( 'Buyer Protection Center', 'wholesalepro' ),
+								'escrow-agents'        => __( 'Meet the Escrow Agents', 'wholesalepro' ),
 								'invest-fix-and-flip'  => __( 'Fix & Flip Deals', 'wholesalepro' ),
 								'invest-buy-and-hold'  => __( 'Buy & Hold Rentals', 'wholesalepro' ),
 								'invest-out-of-state'  => __( 'Out-of-State Investing', 'wholesalepro' ),

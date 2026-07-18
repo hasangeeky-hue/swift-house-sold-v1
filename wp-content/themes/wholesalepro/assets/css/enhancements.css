@@ -639,3 +639,46 @@ noscript ~ form .form-stage2[hidden] { display: block !important; }
 /* Hero photo variant */
 .hero--photo .hero__title { text-shadow:0 2px 18px rgba(0,0,0,0.35); }
 .hero--photo .hero__form-card { box-shadow:0 30px 70px rgba(0,0,0,0.45); }
+
+/* ══ Dynamic card effects layer ════════════════════════════════ */
+.card { position: relative; }
+.card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, transparent 40%, rgba(230,57,70,0.55), transparent 60%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity .3s ease; pointer-events: none; }
+.card:hover::before { opacity: 1; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 22px 48px rgba(15,23,42,0.16); }
+
+/* shine sweep across image cards */
+.card--guide::after, .sit-card::after, .pc-pillar::after { content: ""; position: absolute; top: 0; left: -80%; width: 50%; height: 100%; background: linear-gradient(105deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left .55s ease; pointer-events: none; }
+.card--guide:hover::after, .sit-card:hover::after, .pc-pillar:hover::after { left: 130%; }
+
+/* arrow micro-motion on any card link */
+.card a span:last-child, .sit-card span:last-child { display: inline-block; transition: transform .2s ease; }
+.card:hover a span:last-child, .sit-card:hover span:last-child { transform: translateX(5px); }
+
+/* icon chip pulse */
+.sit-card__icon, .pc-flow__icon, .pc-pillar__icon { transition: transform .25s ease, background .25s ease; }
+.sit-card:hover .sit-card__icon, .pc-flow__step:hover .pc-flow__icon { transform: scale(1.12) rotate(-4deg); }
+
+/* trust bar counters glow on hover */
+.trust-bar__stat { transition: transform .2s ease; }
+.trust-bar__stat:hover { transform: scale(1.06); }
+.trust-bar__stat:hover .trust-bar__number { color: var(--wp-gold, #F4A261); }
+
+/* staggered fade-up baseline for scroll reveals */
+.animate-on-scroll { will-change: transform, opacity; }
+
+/* in-post components */
+.post-keyfacts { background: #f4f7fb; border: 1px solid #dde5f0; border-left: 4px solid var(--wp-navy,#1B2B4B); border-radius: 12px; padding: 18px 22px; margin: 0 0 26px; }
+.post-keyfacts h4 { margin: 0 0 10px; font-size: 0.8rem; letter-spacing: 0.08em; color: #64748b; }
+.post-keyfacts ul { margin: 0; padding-left: 18px; }
+.post-keyfacts li { margin: 5px 0; color: #334155; font-size: 0.95rem; }
+.post-related { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 12px; background: #fff; border: 1px solid #e5e9f0; border-radius: 12px; padding: 18px; margin: 26px 0; }
+.post-related a { display: block; padding: 12px 14px; background: #f8fafc; border-radius: 9px; text-decoration: none; color: var(--wp-navy,#1B2B4B); font-weight: 600; font-size: 0.9rem; border: 1px solid transparent; transition: all .2s ease; }
+.post-related a:hover { border-color: var(--wp-red,#E63946); transform: translateY(-2px); background: #fff; }
+.post-related__label { grid-column: 1/-1; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; color: #94a3b8; }
+.post-cta { background: linear-gradient(135deg,#16233f,#24365c); border-radius: 14px; padding: 26px 28px; margin: 28px 0; color: #fff; display: flex; gap: 18px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.post-cta p { margin: 0; color: rgba(255,255,255,0.9); font-size: 1rem; max-width: 480px; }
+.post-cta a { background: var(--wp-red,#E63946); color: #fff; font-weight: 700; padding: 13px 22px; border-radius: 10px; text-decoration: none; white-space: nowrap; transition: transform .15s ease; }
+.post-cta a:hover { transform: translateY(-2px); }
+.post-sources { background: #fbfcfe; border: 1px solid #e5e9f0; border-radius: 12px; padding: 20px 24px; margin: 30px 0 0; }
+.post-sources h4 { margin: 0 0 10px; font-size: 0.8rem; letter-spacing: 0.08em; color: #64748b; }
+.post-sources li { margin: 6px 0; font-size: 0.9rem; }

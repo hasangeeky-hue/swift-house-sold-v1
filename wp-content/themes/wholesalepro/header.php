@@ -113,6 +113,7 @@ if ( $fb_pixel ) :
 							<li><a href="<?php echo esc_url( $svc_url ); ?>"><?php esc_html_e( 'See all situations →', 'wholesalepro' ); ?></a></li>
 							<li><a href="<?php echo esc_url( $book_url2 ); ?>"><?php esc_html_e( 'Book a free call', 'wholesalepro' ); ?></a></li>
 						<li><a href="<?php echo esc_url( ( $pp = get_page_by_path( 'seller-protection' ) ) ? get_permalink( $pp->ID ) : home_url( '/seller-protection' ) ); ?>"><?php esc_html_e( 'How your money is protected', 'wholesalepro' ); ?></a></li>
+						<li><a href="<?php echo esc_url( ( $ea = get_page_by_path( 'escrow-agents' ) ) ? get_permalink( $ea->ID ) : home_url( '/escrow-agents' ) ); ?>"><?php esc_html_e( 'Meet the escrow agents', 'wholesalepro' ); ?></a></li>
 						</ul>
 					</li>
 					<?php
