@@ -343,3 +343,12 @@ add_action( 'init', function () {
 		update_option( 'shs_content_v8', 1 );
 	}
 }, 50 );
+
+/**
+ * Launch: site must be indexable. (WP "discourage search engines" was on.)
+ */
+add_action( 'init', function () {
+	if ( '1' !== get_option( 'blog_public' ) ) {
+		update_option( 'blog_public', '1' );
+	}
+}, 55 );
