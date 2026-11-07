@@ -30,6 +30,7 @@ function wholesalepro_customizer_register( $wp_customize ) {
 		array( 'id' => 'company_name',         'label' => __( 'Company Name', 'wholesalepro' ),              'default' => 'Swift House Sold',            'type' => 'text',     'transport' => 'postMessage' ),
 		array( 'id' => 'company_phone',        'label' => __( 'Phone (formatted)', 'wholesalepro' ),         'default' => '',          'type' => 'text',     'transport' => 'refresh' ),
 		array( 'id' => 'company_phone_raw',    'label' => __( 'Phone (digits only for tel: links)', 'wholesalepro' ), 'default' => '',   'type' => 'text',     'transport' => 'refresh' ),
+		array( 'id' => 'company_whatsapp',     'label' => __( 'WhatsApp number (digits only, with country code, e.g. 4915112345678)', 'wholesalepro' ), 'default' => '', 'type' => 'text', 'transport' => 'refresh' ),
 		array( 'id' => 'company_email',        'label' => __( 'Email Address', 'wholesalepro' ),             'default' => 'info@wholesalepro.com',   'type' => 'text',     'transport' => 'refresh' ),
 		array( 'id' => 'company_address',      'label' => __( 'Business Address', 'wholesalepro' ),          'default' => '',                        'type' => 'textarea', 'transport' => 'refresh' ),
 		array( 'id' => 'company_tagline',      'label' => __( 'Company Tagline', 'wholesalepro' ),           'default' => 'We Buy Houses For Cash',  'type' => 'text',     'transport' => 'postMessage' ),
