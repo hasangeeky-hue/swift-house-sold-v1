@@ -140,6 +140,9 @@ if ( $fb_pixel ) :
 					$book_page = get_page_by_path( 'book-a-call' );
 					$book_url  = $book_page ? get_permalink( $book_page->ID ) : home_url( '/book-a-call' );
 					?>
+					<a href="#newsletter" class="btn btn--outline btn--sm nav-newsletter-btn">
+						<?php esc_html_e( 'Newsletter', 'wholesalepro' ); ?>
+					</a>
 					<a href="<?php echo esc_url( $sell_url ); ?>" class="btn btn--seller btn--sm">
 						<?php esc_html_e( 'Get Cash Offer', 'wholesalepro' ); ?>
 					</a>

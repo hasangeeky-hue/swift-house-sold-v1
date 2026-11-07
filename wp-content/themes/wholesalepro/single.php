@@ -146,7 +146,7 @@ while ( have_posts() ) :
 <?php
 /* Newsletter: deal list & seller tips (replaces comments sitewide) */
 ?>
-<section class="section bg--navy" aria-labelledby="newsletter-heading">
+<section class="section bg--navy" id="newsletter" aria-labelledby="newsletter-heading">
 	<div class="container" style="max-width:720px;">
 		<div class="text-center">
 			<p class="section-header__eyebrow" style="color:var(--wp-gold);">FREE NEWSLETTER</p>

@@ -682,3 +682,10 @@ noscript ~ form .form-stage2[hidden] { display: block !important; }
 .post-sources { background: #fbfcfe; border: 1px solid #e5e9f0; border-radius: 12px; padding: 20px 24px; margin: 30px 0 0; }
 .post-sources h4 { margin: 0 0 10px; font-size: 0.8rem; letter-spacing: 0.08em; color: #64748b; }
 .post-sources li { margin: 6px 0; font-size: 0.9rem; }
+
+/* ---- Newsletter header button + footer band (v3.2.1) ---- */
+.nav-newsletter-btn { border-color: rgba(255,255,255,0.35); }
+html { scroll-behavior: smooth; }
+@media (max-width: 900px) { .nav-newsletter-btn { display: none; } }
+.footer-newsletter .form-control { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); color: #fff; }
+.footer-newsletter .form-control::placeholder { color: rgba(255,255,255,0.5); }

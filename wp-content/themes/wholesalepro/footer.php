@@ -36,6 +36,30 @@
 	</div>
 	<?php endif; ?>
 
+	<?php if ( ! is_singular( 'post' ) ) : /* posts already have their own newsletter section */ ?>
+	<div class="footer-newsletter bg--navy" id="newsletter" style="padding:48px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+		<div class="container" style="max-width:720px;">
+			<div class="text-center">
+				<p class="section-header__eyebrow" style="color:var(--wp-gold);"><?php esc_html_e( 'FREE NEWSLETTER', 'wholesalepro' ); ?></p>
+				<h2 style="color:#fff;margin-bottom:var(--space-sm);font-size:1.4rem;"><?php echo esc_html( "Get New Guides & Off-Market Deal Alerts" ); ?></h2>
+				<p style="color:rgba(255,255,255,0.75);margin-bottom:var(--space-lg);"><?php echo esc_html( "One useful email at a time: new seller guides, and first access to off-market deals in Ohio, Texas and Georgia. No spam, unsubscribe anytime." ); ?></p>
+			</div>
+			<form class="wp-form js-ajax-form" data-action="wholesalepro_buyer_form" novalidate style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+				<?php wp_nonce_field( 'wholesalepro-nonce', 'nonce' ); ?>
+				<input type="hidden" name="action" value="wholesalepro_buyer_form">
+				<input type="hidden" name="form_location" value="newsletter-footer">
+				<div style="position:absolute;left:-9999px;" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+				<input class="form-control" type="text" name="buyer_name" required placeholder="<?php esc_attr_e( 'Your name', 'wholesalepro' ); ?>" autocomplete="name" style="flex:1;min-width:160px;max-width:220px;">
+				<input class="form-control" type="email" name="buyer_email" required placeholder="you@email.com" autocomplete="email" style="flex:2;min-width:200px;max-width:320px;">
+				<button type="submit" class="btn btn--seller js-submit" style="white-space:nowrap;"><?php esc_html_e( 'Subscribe', 'wholesalepro' ); ?> &rarr;</button>
+				<div class="form-success" style="display:none;flex-basis:100%;text-align:center;color:#fff;" role="status" aria-live="polite">
+					<p style="margin:12px 0 0;"><?php echo esc_html( "You're on the list. Watch your inbox!" ); ?></p>
+				</div>
+			</form>
+		</div>
+	</div>
+	<?php endif; ?>
+
 	<div class="footer-main">
 		<div class="container">
 			<div class="footer-grid">
