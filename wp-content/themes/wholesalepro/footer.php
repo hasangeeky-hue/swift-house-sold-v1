@@ -353,6 +353,24 @@
 	<?php endif; ?>
 </div>
 
+<?php
+/* GA4 conversion events */
+if ( is_page( 'thank-you-seller' ) ) : ?>
+<script data-no-optimize="1">if(typeof gtag==='function'){gtag('event','generate_lead',{lead_type:'seller',currency:'USD',value:100});}</script>
+<?php elseif ( is_page( 'thank-you-buyer' ) ) : ?>
+<script data-no-optimize="1">if(typeof gtag==='function'){gtag('event','generate_lead',{lead_type:'buyer',currency:'USD',value:25});}</script>
+<?php endif; ?>
+<script data-no-optimize="1">
+(function(){ /* newsletter + form submit events for GA4 */
+	if(typeof gtag!=='function')return;
+	document.addEventListener('submit',function(e){
+		var f=e.target;if(!f||!f.classList)return;
+		var loc=(f.querySelector('input[name="form_location"]')||{}).value||'';
+		if(loc.indexOf('newsletter')===0){gtag('event','sign_up',{method:loc});}
+		else if(f.classList.contains('js-ajax-form')||f.classList.contains('wp-form')){gtag('event','form_submit_attempt',{form_location:loc||'unknown'});}
+	},true);
+})();
+</script>
 <?php wp_footer(); ?>
 </body>
 </html>
