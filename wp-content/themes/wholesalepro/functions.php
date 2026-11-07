@@ -74,6 +74,7 @@ $wholesalepro_includes = array(
 	'/inc/customizer.php',
 	'/inc/forms.php',
 	'/inc/ajax.php',
+	'/inc/admin-leads.php',
 	'/inc/seo.php',
 	'/inc/schema.php',
 	'/inc/services.php',

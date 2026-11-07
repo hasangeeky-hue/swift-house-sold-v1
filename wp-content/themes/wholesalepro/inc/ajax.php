@@ -77,6 +77,12 @@ function wholesalepro_create_tables() {
 	dbDelta( $sql_leads );
 	dbDelta( $sql_buyers );
 	dbDelta( $sql_offers );
+
+	// Add the source column to buyers (newsletter vs investor signups), once.
+	$col = $wpdb->get_results( "SHOW COLUMNS FROM {$buyers_table} LIKE 'source'" );
+	if ( empty( $col ) ) {
+		$wpdb->query( "ALTER TABLE {$buyers_table} ADD COLUMN source VARCHAR(100) NOT NULL DEFAULT '' AFTER financing_type" );
+	}
 }
 add_action( 'after_switch_theme', 'wholesalepro_create_tables' );
 
@@ -258,9 +264,10 @@ function wholesalepro_handle_buyer_form() {
 			'price_max'      => $price_max,
 			'close_timeline' => $close_timeline,
 			'financing_type' => $financing_type,
+			'source'         => isset( $_POST['form_location'] ) ? sanitize_text_field( wp_unslash( $_POST['form_location'] ) ) : 'buyer-form',
 			'ip_address'     => sanitize_text_field( $_SERVER['REMOTE_ADDR'] ?? '' ),
 		),
-		array( '%s', '%s', '%s', '%s', '%s', '%d', '%d', '%s', '%s', '%s' )
+		array( '%s', '%s', '%s', '%s', '%s', '%d', '%d', '%s', '%s', '%s', '%s' )
 	);
 
 	$admin_email   = get_theme_mod( 'company_email', get_option( 'admin_email' ) );
