@@ -24,16 +24,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"></noscript>
 
-<!-- Google Analytics 4 -->
-<script async data-no-optimize="1" src="https://www.googletagmanager.com/gtag/js?id=G-746SG3F0R8"></script>
-<script data-no-optimize="1">
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-746SG3F0R8');
-</script>
-<!-- End Google Analytics 4 -->
-<!-- Google Tag Manager -->
+<!-- Google Tag Manager (loads GA4 as destination; do not add a separate gtag.js snippet) -->
 <script data-no-optimize="1">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
